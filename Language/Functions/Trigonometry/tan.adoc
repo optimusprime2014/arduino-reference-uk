@@ -1,0 +1,54 @@
+---
+title: tan()
+categories: [ "Functions" ]
+subCategories: [ "Trigonometry" ]
+---
+
+
+
+
+
+= tan(rad)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обчислює тангенс кута (у радіанах). Результат буде від мінус нескінченності до плюс нескінченності.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`tan(rad)`
+
+
+[float]
+=== Parameters
+`rad`: Кут у радіанах. Допустимі типи даних: `float`.
+
+
+[float]
+=== Returns
+Тангенс кута. Тип даних: `double`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../../variables/data-types/float[float]
+* #LANGUAGE# link:../../../variables/data-types/double[double]
+
+--
+// SEE ALSO SECTION ENDS

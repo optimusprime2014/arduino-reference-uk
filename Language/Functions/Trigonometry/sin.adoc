@@ -1,0 +1,54 @@
+---
+title: sin()
+categories: [ "Functions" ]
+subCategories: [ "Trigonometry" ]
+---
+
+
+
+
+
+= sin(rad)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обчислює синус кута (у радіанах). Результат буде між -1 та 1.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`sin(rad)`
+
+
+[float]
+=== Parameters
+`rad`: Кут у радіанах. Допустимі типи даних: `float`.
+
+
+[float]
+=== Returns
+Синус кута. Тип даних: `double`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../../variables/data-types/float[float]
+* #LANGUAGE# link:../../../variables/data-types/double[double]
+
+--
+// SEE ALSO SECTION ENDS

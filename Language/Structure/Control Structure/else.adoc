@@ -1,0 +1,78 @@
+---
+title: else
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+= if...else
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+`if...else` дозволяє краще контролювати хід виконання коду, ніж базовий оператор `link:../if[if]`, дозволяючи групувати кілька перевірок. Блок `else` (якщо він взагалі існує) буде виконано, якщо умова в операторі `if` дає результат `false`. За `else` може слідувати інша перевірка `if`, тому можна одночасно запускати кілька взаємовиключних перевірок.
+[%hardbreaks]
+
+Кожна перевірка переходитиме до наступної, доки не буде знайдено істинну перевірку. Коли знайдено істинну перевірку, виконується пов'язаний з нею блок коду, а потім програма переходить до рядка, що слідує за всією конструкцією if/else. Якщо жодна з перевірок не є істинною, виконується блок `else` за замовчуванням, якщо він присутній, і встановлює поведінку за замовчуванням.
+[%hardbreaks]
+
+Зверніть увагу, що блок `else if` можна використовувати з завершальним блоком `else` або без нього, і навпаки. Допускається необмежена кількість таких гілок `else if`.
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+if (condition1) {
+  // do Thing A
+}
+else if (condition2) {
+  // do Thing B
+}
+else {
+  // do Thing C
+}
+----
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+[float]
+=== Приклад коду
+Нижче наведено фрагмент коду для системи датчиків температури
+[source,arduino]
+----
+if (temperature >= 70) {
+  // Danger! Shut down the system.
+}
+else if (temperature >= 60) { // 60 <= temperature < 70
+  // Warning! User attention required.
+}
+else { // temperature < 60
+  // Safe! Continue usual tasks.
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

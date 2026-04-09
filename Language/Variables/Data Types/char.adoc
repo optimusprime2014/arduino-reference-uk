@@ -1,0 +1,69 @@
+---
+title: char
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= char
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Тип даних, що використовується для зберігання символьного значення. Символьні літерали пишуться в одинарних лапках, ось так: 'A' (для кількох символів - рядків - використовуйте подвійні лапки: "ABC").
+
+Проте символи зберігаються як числа. Ви можете переглянути спеціальне кодування в link:https://www.arduino.cc/en/Reference/ASCIIchart[таблиці ASCII]. Це означає, що з символами можна виконувати арифметичні дії, використовуючи їхні значення ASCII (наприклад, 'A' + 1 має значення 66, оскільки значення ASCII великої літери A дорівнює 65). Перегляньте довідку `link:../../../functions/communication/serial/println[Serial.println]`, щоб дізнатися більше про те, як символи перетворюються на числа.
+
+Розмір типу даних `char` становить щонайменше 8 біт. Рекомендується використовувати `char` лише для зберігання символів. Для беззнакового, однобайтового (8 біт) типу даних використовуйте тип даних `link:../byte[byte]`.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`char var = val;`
+
+
+[float]
+=== Параметри
+`var`: ім'я змінної. +
+`val`: значення, яке присвоюється цій змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+
+[source,arduino]
+----
+char myChar = 'A';
+char myChar = 65; // both are equivalent
+----
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../../functions/communication/serial/println[Serial.println]
+
+--
+// SEE ALSO SECTION ENDS

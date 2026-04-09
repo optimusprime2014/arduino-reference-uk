@@ -1,0 +1,89 @@
+---
+title: Mouse.end()
+---
+
+
+
+
+= Mouse.end()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Припиняє емуляцію миші, підключеної до комп’ютера. Щоб почати керування, використовуйте link:../mousebegin[Mouse.begin()].
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`Mouse.end()`
+
+
+[float]
+=== Parameters
+Немає
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Опишіть, про що йдеться у прикладі коду, та додайте відповідний код  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Mouse.h>
+
+void setup() {
+  pinMode(2, INPUT);
+  //ініціалізувати бібліотеку Mouse
+  Mouse.begin();
+}
+
+void loop() {
+  //якщо кнопка натиснута, відіслати клік лівою кнопкою миші
+  //потім припинити емуляцію Mouse
+  if (digitalRead(2) == HIGH) {
+    Mouse.click();
+    Mouse.end();
+  }
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../mouseclick[Mouse.click()]
+* #LANGUAGE# link:../mousemove[Mouse.move()]
+* #LANGUAGE# link:../mousepress[Mouse.press()]
+* #LANGUAGE# link:../mouserelease[Mouse.release()]
+* #LANGUAGE# link:../mouseispressed[Mouse.isPressed()]
+
+--
+// SEE ALSO SECTION ENDS

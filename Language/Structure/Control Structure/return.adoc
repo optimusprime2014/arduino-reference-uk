@@ -1,0 +1,90 @@
+---
+title: return
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= return
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Завершує функцію та за бажанням повертає значення з функції до функції, яка її викликала.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`return;` +
+`return value;`
+
+
+[float]
+=== Параметри
+`value`: Допустимі типи даних: будь-який тип змінної або константи.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Функція для порівняння входу датчика з пороговим значенням
+
+[source,arduino]
+----
+int checkSensor() {
+  if (analogRead(0) > 400) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+----
+
+Ключове слово return зручно використовувати для тестування частини коду без необхідності "закоментовувати" великі ділянки коду, в яких можуть бути помилки.
+[source,arduino]
+----
+void loop() {
+  // тут геніальна ідея коду для перевірки
+
+  return;
+
+  // тут решта неробочого скетчу
+  // цей код ніколи не буде виконаний
+}
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

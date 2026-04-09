@@ -1,0 +1,118 @@
+---
+title: for
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= for loop
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Оператор `for` використовується для повторення блоку операторів, укладених у фігурні дужки. Зазвичай використовується лічильник інкременту для збільшення та завершення циклу. Оператор `for` корисний для будь-якої повторюваної операції і часто використовується в поєднанні з масивами для роботи з колекціями даних/пінів.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+for (initialization; condition; increment) {
+  // statement(s);
+}
+----
+
+
+[float]
+=== Параметри
+`initialization`: виконується першим і рівно один раз. +
+`condition`: кожного разу при проходженні циклу перевіряється `condition`; якщо він `link:../../../variables/constants/truefalse[true]`, виконується блок операторів та *інкремент*, потім знову перевіряється *умова*. Коли *умова* стає `link:../../../variables/constants/truefalse[false]`, цикл завершується. +
+`increment`: виконується кожного разу при проходженні циклу, коли `condition` дорівнює link:../../../variables/constants/truefalse[`true`].
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+[source,arduino]
+----
+// Brighten an LED using a PWM pin
+int PWMpin = 10;  // LED in series with 470 ohm resistor from pin 10 to ground
+
+void setup() {
+  // no setup needed
+}
+
+void loop() {
+  for (int i = 0; i <= 255; i++) {
+    analogWrite(PWMpin, i);
+    delay(10);
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Цикл pass:[C++] `for` набагато гнучкіший, ніж цикли `for`, які є в деяких інших мовах програмування, включаючи BASIC. Будь-який або всі три елементи заголовка можуть бути опущені, хоча крапки з комою обов'язкові. Також оператори для ініціалізації, умови та інкременту можуть бути будь-якими коректними операторами pass:[C++] з непов'язаними змінними та можуть використовувати будь-які типи даних pass:[C++], включаючи числа з плаваючою комою. Ці типи незвичних операторів `for` можуть запропонувати рішення деяких рідкісних проблем програмування.
+[%hardbreaks]
+
+Наприклад, використання множення в рядку інкременту згенерує логарифмічну прогресію:
+
+[source,arduino]
+----
+for (int x = 2; x < 100; x = x * 1.5) {
+  println(x);
+}
+----
+
+Генерує: 2,3,4,6,9,13,19,28,42,63,94
+[%hardbreaks]
+
+Інший приклад, поступове ввімкнення та вимкнення світлодіода (LED) за допомогою одного циклу `for`:
+
+[source,arduino]
+----
+void loop() {
+  int x = 1;
+  for (int i = 0; i > -1; i = i + x) {
+    analogWrite(PWMpin, i);
+    if (i == 255) {
+      x = -1;  // switch direction at peak
+    }
+    delay(10);
+  }
+}
+----
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

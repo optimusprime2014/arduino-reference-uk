@@ -1,0 +1,111 @@
+---
+title: array
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= Arrays
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Масив — це набір змінних, доступ до яких здійснюється за допомогою порядкового номера (індексу). Масиви в мові програмування C++, на якій пишуться скетчі Arduino, можуть бути складними, але використання простих масивів є відносно простим.
+[float]
+=== Creating (Declaring) an Array
+
+Усі наведені нижче методи є дійсними способами створення (оголошення) масиву.
+[source,arduino]
+----
+  // Declare an array of a given length without initializing the values:
+  int myInts[6];
+
+  // Declare an array without explicitly choosing a size (the compiler
+  // counts the elements and creates an array of the appropriate size):
+  int myPins[] = {2, 4, 8, 3, 6, 4};
+
+  // Declare an array of a given length and initialize its values:
+  int mySensVals[5] = {2, 4, -8, 3, 2};
+
+  // When declaring an array of type char, you'll need to make it longer
+  // by one element to hold the required the null termination character:
+  char message[6] = "hello";
+----
+
+[%hardbreaks]
+
+[float]
+=== Accessing an Array
+Масиви індексуються з нуля, тобто, звертаючись до наведеної вище ініціалізації масиву, перший елемент масиву знаходиться за індексом 0, отже
+
+`mySensVals[0] == 2, mySensVals[1] == 4,` і так далі.
+
+Це також означає, що в масиві з десяти елементів дев'ятий індекс — це останній елемент. Отже:
+
+[source,arduino]
+----
+int myArray[10]={9, 3, 2, 4, 3, 2, 7, 8, 9, 11};
+// myArray[9]    contains 11
+// myArray[10]   is invalid and contains random information (other memory address)
+----
+З цієї причини ви повинні бути обережними при доступі до масивів. Доступ за межами масиву (використання номера індексу, більшого за оголошений розмір масиву мінус 1) є читанням з пам'яті, яка використовується для інших цілей. Читання з цих місць, ймовірно, не дасть нічого, крім недійсних даних. Запис у випадкові ділянки пам'яті, безумовно, є поганою ідеєю і часто може призвести до неприємних наслідків, таких як збої або несправності програми. Цю помилку також може бути важко відстежити.
+[%hardbreaks]
+
+На відміну від BASIC або JAVA, компілятор C++ не перевіряє, чи знаходиться доступ до масиву в межах оголошеного розміру масиву.
+[%hardbreaks]
+
+[float]
+=== To assign a value to an array:
+Щоб присвоїти значення масиву:
+`mySensVals[0] = 10;`
+[%hardbreaks]
+
+[float]
+=== To retrieve a value from an array:
+Щоб отримати значення з масиву:
+`x = mySensVals[4];`
+[%hardbreaks]
+
+[float]
+=== Arrays and FOR Loops
+Масиви часто обробляються всередині циклів `for`, де лічильник циклу використовується як індекс для кожного елемента масиву. Наприклад, щоб надрукувати елементи масиву через послідовний порт, ви можете зробити щось подібне:
+
+[source,arduino]
+----
+for (byte i = 0; i < 5; i = i + 1) {
+  Serial.println(myPins[i]);
+}
+----
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+Для отримання повної програми, яка демонструє використання масивів, дивіться приклад (https://docs.arduino.cc/built-in-examples/control-structures/Arrays[Як використовувати масиви]) з (https://docs.arduino.cc/built-in-examples[Вбудованих прикладів]).
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../utilities/progmem[PROGMEM]
+
+
+--
+// SEE ALSO SECTION ENDS

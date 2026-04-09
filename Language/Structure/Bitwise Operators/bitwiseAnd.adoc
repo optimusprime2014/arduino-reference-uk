@@ -1,0 +1,83 @@
+---
+title: "&"
+title_expanded: bitwise and
+categories: [ "Structure" ]
+subCategories: [ "Bitwise Operators" ]
+---
+
+
+
+
+
+= & Побітове AND (ТА)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Оператором побітового AND (ТА) у C++ є єдиний амперсанд `&`, що використовується між двома іншими цілочисельними виразами. Побітове AND працює з кожною бітовою позицією навколишніх виразів незалежно, відповідно до цього правила: якщо обидва вхідних біти дорівнюють 1, результуючий вихід дорівнює 1, інакше вихід дорівнює 0.
+[%hardbreaks]
+
+Інший спосіб виразити це:
+
+    0  0  1  1    operand1
+    0  1  0  1    operand2
+    ----------
+    0  0  0  1    (operand1 & operand2) - returned result
+[%hardbreaks]
+
+В Arduino тип int є 16-бітним значенням, тому використання `&` між двома виразами типу int призводить до виконання 16 одночасних операцій AND.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+In a code fragment like:
+
+[source,arduino]
+----
+int a =  92;    // in binary: 0000000001011100
+int b = 101;    // in binary: 0000000001100101
+int c = a & b;  // result:    0000000001000100, or 68 in decimal.
+----
+Кожен з 16 бітів у a і b обробляється за допомогою побітового AND, і всі 16 результуючих бітів зберігаються у c, в результаті чого виходить значення 01000100 у двійковому форматі, що дорівнює 68 у десятковому.
+[%hardbreaks]
+
+Одне з найпоширеніших застосувань побітового AND - це вибір певного біта (або бітів) з цілого значення, що часто називається маскуванням (masking). Нижче наведено приклад (специфічний для архітектури AVR).
+
+[source,arduino]
+----
+PORTD = PORTD & 0b00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 untouched (xx & 11 == xx)
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+
+[role="language"]
+* #LANGUAGE# link:../../boolean-operators/logicaland[&& Logical AND]
+
+[role="example"]
+* #EXAMPLE# https://www.arduino.cc/playground/Code/BitMath[BitMath Tutorial^]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,86 @@
+---
+title: goto
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= goto
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Передає потік програми у позначену міткою точку програми
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+label:
+
+goto label; // sends program flow to the label
+----
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+for (byte r = 0; r < 255; r++) {
+  for (byte g = 255; g > 0; g--) {
+    for (byte b = 0; b < 255; b++) {
+      if (analogRead(0) > 250) {
+        goto bailout;
+      }
+      // more statements ...
+    }
+  }
+}
+
+bailout:
+// more statements ...
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Використання `goto` не вітається у програмуванні на C++, і деякі автори підручників з C++ стверджують, що оператор `goto` ніколи не є необхідним, але його обережне використання може спростити певні програми. Причина, чому багато програмістів не схвалюють використання goto, полягає в тому, що з нестримним використанням операторів `goto` легко створити програму з невизначеним потоком управління, яку ніколи не можна буде налагодити.
+
+Зважаючи на це, існують випадки, коли оператор `goto` може стати в нагоді та спростити кодування. Однією з таких ситуацій є вихід із глибоко вкладених циклів link:../for[for] або логічних блоків link:../if[if] за певної умови.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

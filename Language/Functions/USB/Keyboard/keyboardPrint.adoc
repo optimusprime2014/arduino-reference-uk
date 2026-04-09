@@ -1,0 +1,81 @@
+---
+title: Keyboard.print()
+---
+
+
+
+
+= Keyboard.print()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Надсилає одне або кілька натискань клавіш на підключений комп'ютер.
+
+`Keyboard.print()` має бути викликано після ініціалізації link:../keyboardbegin[Keyboard.begin()].
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`Keyboard.print(character)` +
+`Keyboard.print(characters)`
+
+
+[float]
+=== Параметри
+`character`: `char` або `int`, що надсилається на комп'ютер як натискання клавіші. +
+`characters`: рядок, що надсилається на комп'ютер як натискання клавіш.
+
+
+[float]
+=== Повертає
+Кількість надісланих натискань клавіш. Тип даних: `size_t`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Keyboard.h>
+
+void setup() {
+  // make pin 2 an input and turn on the
+  // pullup resistor so it goes high unless
+  // connected to ground:
+  pinMode(2, INPUT_PULLUP);
+  Keyboard.begin();
+}
+
+void loop() {
+  //if the button is pressed
+  if (digitalRead(2) == LOW) {
+    //Send the message
+    Keyboard.print("Hello!");
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Коли ви використовуєте команду `Keyboard.print()`, Arduino перехоплює керування вашою клавіатурою! Переконайтеся, що у вас є контроль, перш ніж використовувати команду. Кнопка для перемикання стану керування клавіатурою є ефективним рішенням.
+
+--
+// HOW TO USE SECTION ENDS

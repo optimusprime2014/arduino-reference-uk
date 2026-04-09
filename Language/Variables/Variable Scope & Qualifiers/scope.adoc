@@ -1,0 +1,77 @@
+---
+title: scope
+categories: [ "Variables" ]
+subCategories: [ "Variable Scope & Qualifiers" ]
+---
+
+
+
+
+
+= Variable Scope
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Змінні в мові програмування C++, яку використовує Arduino, мають властивість, яка називається scope (область видимості). Це на відміну від ранніх версій мов, таких як BASIC, де кожна змінна є _глобальною_ змінною.
+
+Глобальна змінна — це така змінна, яку можуть бачити всі функції в програмі. Локальні змінні видимі лише для тієї функції, в якій вони оголошені. В середовищі Arduino будь-яка змінна, оголошена поза межами функції (наприклад, `link:../../../structure/sketch/setup[setup()]`, `link:../../../structure/sketch/loop[loop()]`, тощо), є _глобальною_ змінною.
+
+Коли програми стають більшими і складнішими, локальні змінні є корисним способом гарантувати, що лише одна функція має доступ до своїх власних змінних. Це запобігає помилкам програмування, коли одна функція ненавмисно змінює змінні, які використовуються іншою функцією.
+
+Іноді буває зручно оголошувати ініціалізовану змінну всередині циклу `link:../../../structure/control-structure/for[for]`. Це створює змінну, до якої можна отримати доступ лише зсередини дужок циклу link:../../../structure/control-structure/for[`for`].
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+int gPWMval;  // any function will see this variable
+
+void setup() {
+  // ...
+}
+
+void loop() {
+  int i;    // "i" is only "visible" inside of "loop"
+  float f;  // "f" is only "visible" inside of "loop"
+  // ...
+
+  for (int j = 0; j < 100; j++) {
+    // variable j can only be accessed inside the for-loop brackets
+  }
+}
+----
+[%hardbreaks]
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

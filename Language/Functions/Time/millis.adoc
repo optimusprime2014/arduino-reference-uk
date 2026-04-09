@@ -1,0 +1,88 @@
+---
+title: millis()
+categories: [ "Functions" ]
+subCategories: [ "Time" ]
+---
+
+= millis()
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Повертає кількість мілісекунд, що пройшла з моменту початку виконання поточної програми платою Arduino. Це число переповниться (повернеться до нуля) приблизно через 50 днів.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`time = millis()`
+
+
+[float]
+=== Parameters
+Немає
+
+
+[float]
+=== Returns
+Кількість мілісекунд, що пройшла з моменту запуску програми. Тип даних: `unsigned long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Цей приклад коду виводить у послідовний порт кількість мілісекунд, що пройшла з моменту запуску коду на платі Arduino.
+
+[source,arduino]
+----
+unsigned long myTime;
+
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  Serial.print("Time: ");
+  myTime = millis();
+
+  Serial.println(myTime); // prints time since program started
+  delay(1000);          // wait a second so as not to send massive amounts of data
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+
+* Значення, яке повертає millis(), має тип `unsigned long`, і тому можуть виникнути логічні помилки, якщо програміст спробує виконати арифметичні операції з меншими типами даних, такими як `int`. Навіть тип `long` (зі знаком) може викликати помилку, оскільки його максимальне значення є вдвічі меншим, ніж у його беззнакового аналога.
+* millis() збільшується (для 16 МГц AVR мікроконтролерів та деяких інших) кожні 1.024 мілісекунди, після чого збільшується на 2 (замість 1) кожні 41 або 42 тіки, щоб зберегти синхронізацію; таким чином, деякі значення millis() пропускаються. Для отримання точного часу на коротких проміжках використовуйте функцію micros().
+* millis() повернеться до 0 приблизно через 49 днів (micros приблизно через 71 хвилину).
+* Переналаштування таймерів мікроконтролера може призвести до неточних показників `millis()`. Ядра "Arduino AVR Boards" та "Arduino megaAVR Boards" використовують Timer0 для генерування `millis()`. Ядра "Arduino ARM (32-bits) Boards" та "Arduino SAMD (32-bits ARM Cortex-M0+) Boards" використовують таймер SysTick.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/BlinkWithoutDelay[Blink Without Delay^]
+
+--
+// SEE ALSO SECTION ENDS

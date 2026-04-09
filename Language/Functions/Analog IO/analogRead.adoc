@@ -1,0 +1,106 @@
+---
+title: analogRead()
+categories: [ "Functions" ]
+subCategories: [ "Analog I/O" ]
+---
+
+= analogRead()
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Зчитує значення з вказаного аналогового виводу. Плати Arduino містять багатоканальний 10-бітний аналогово-цифровий перетворювач. Це означає, що він перетворює вхідну напругу від 0 до робочої напруги (5В або 3.3В) в цілочисельні значення від 0 до 1023. Наприклад, на Arduino UNO це дає роздільну здатність між зчитуваннями: 5 вольт / 1024 одиниці, або 0.0049 вольт (4.9 мВ) на одиницю. Див. таблицю нижче з інформацією про використовувані виводи, робочу напругу та максимальну роздільну здатність для деяких плат Arduino.
+
+Діапазон вхідних значень можна змінити за допомогою link:../analogreference[analogReference()], тоді як роздільну здатність можна змінити (лише для плат Zero, Due та MKR) за допомогою link:../../zero-due-mkr-family/analogreadresolution[analogReadResolution()].
+
+На платах на базі ATmega (UNO, Nano, Mini, Mega) зчитування аналогового входу займає близько 100 мікросекунд (0.0001 с), тому максимальна швидкість зчитування становить близько 10 000 разів на секунду.
+
+[options="header"]
+|===================================================
+|Board                            |Operating voltage |Usable pins |Max resolution
+|UNO R3                           |5 Volts           |A0 to A5    |10 bits
+|UNO R4 (Minima, WiFi)            |5 Volts           |A0 to A5    |14 bits**
+|Mini                             |5 Volts           |A0 to A7    |10 bits
+|Nano, Nano Every                 |5 Volts           |A0 to A7    |10 bits
+|Nano 33 (IoT, BLE, RP2040, ESP32)|3.3  Volts        |A0 to A7    |12 bits**
+|Mega, Mega2560, MegaADK          |5 Volts           |A0 to A14   |10 bits
+|Micro                            |5 Volts           |A0 to A11*  |10 bits
+|Leonardo                         |5 Volts           |A0 to A11*  |10 bits
+|Zero                             |3.3 Volts         |A0 to A5    |12 bits**
+|Due                              |3.3 Volts         |A0 to A11   |12 bits**
+|GIGA R1                          |3.3 Volts         |A0 to A11   |16 bits**
+|MKR Family boards                |3.3 Volts         |A0 to A6    |12 bits**
+|===================================================
+
+*A0 до A5 позначені на платі, A6 до A11 відповідно доступні на виводах 4, 6, 8, 9, 10 та 12 +
+**За замовчуванням роздільна здатність `analogRead()` для цих плат становить 10 біт для забезпечення сумісності. Вам потрібно використати link:../../zero-due-mkr-family/analogreadresolution[analogReadResolution()], щоб змінити її на більш високу роздільну здатність.
+
+[%hardbreaks]
+
+[float]
+=== Syntax
+`analogRead(pin)`
+
+
+[float]
+=== Parameters
+`pin`: назва аналогового вхідного виводу для зчитування.
+
+
+[float]
+=== Returns
+Аналогове значення, зчитане з виводу. Воно обмежене роздільною здатністю аналогово-цифрового перетворювача (0-1023 для 10 біт або 0-4095 для 12 біт). Тип даних: `int`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код зчитує напругу на analogPin та відображає її.
+
+[source,arduino]
+----
+int analogPin = A3; // potentiometer wiper (middle terminal) connected to analog pin 3
+                    // outside leads to ground and +5V
+int val = 0;  // variable to store the value read
+
+void setup() {
+  Serial.begin(9600);           //  setup serial
+}
+
+void loop() {
+  val = analogRead(analogPin);  // read the input pin
+  Serial.println(val);          // debug value
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Якщо аналоговий вхідний вивід ні до чого не підключений, значення, що повертається `analogRead()`, буде коливатися залежно від ряду факторів (наприклад, значень на інших аналогових входах, близькості вашої руки до плати тощо).
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../zero-due-mkr-family/analogreadresolution[analogReadResolution()]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/AnalogInputPins[Description of the analog input pins^]
+--
+// SEE ALSO SECTION ENDS

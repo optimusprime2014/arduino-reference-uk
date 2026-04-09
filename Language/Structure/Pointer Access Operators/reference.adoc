@@ -1,0 +1,72 @@
+---
+title: "&"
+title_expanded: reference operator
+categories: [ "Structure" ]
+subCategories: [ "Pointer Access Operators" ]
+---
+
+
+
+
+
+= & Reference Operator (Оператор посилання)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Отримання посилання (referencing) є однією з функцій, яка використовується спеціально з вказівниками. Для цієї мети використовується оператор амперсанд `&`. Якщо `x` є змінною, то `&x` представляє адресу змінної `x`.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int *p;       // оголошення вказівника на тип даних int
+int i = 5;
+int result = 0;
+p = &i;       // тепер 'p' містить адресу 'i'
+result = *p;  // 'result' отримує значення за адресою, на яку вказує 'p',
+              // тобто отримує значення 'i', яке дорівнює 5
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Вказівники є однією з найскладніших тем для новачків при вивченні C, і переважну більшість скетчів Arduino можна написати, ніколи не маючи справи з вказівниками. Однак для роботи з певними структурами даних використання вказівників може спростити код, тому знання про роботу з вказівниками буде корисним у вашому арсеналі.
+[%hardbreaks]
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+[role="definition"]
+* #DEFINITION#  https://en.wikipedia.org/wiki/Pointer_%28computer_programming%29[Pointers^]
+
+--
+// SEE ALSO SECTION ENDS

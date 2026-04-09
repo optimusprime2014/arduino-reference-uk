@@ -1,0 +1,63 @@
+---
+title: noTone()
+title_expanded: ""
+categories: [ "Functions" ]
+subCategories: [ "Advanced I/O" ]
+aliases: [ /language/functions/advanced-io/noTone/ ]
+---
+
+
+= noTone()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Зупиняє генерацію прямокутної хвилі, ініційовану `tone()`. Не має жодного ефекту, якщо тон не генерується.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`noTone(pin)`
+
+
+[float]
+=== Параметри
+`pin`: пін Arduino, на якому потрібно зупинити генерацію тону
+
+[float]
+=== Повертає
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Примітки та попередження
+Якщо ви хочете відтворювати різні висоти звуку на кількох пінах, вам потрібно викликати `noTone()` на одному піні перед викликом `tone()` на наступному піні.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,66 @@
+---
+title: "||"
+title_expanded: logical or
+categories: [ "Structure" ]
+subCategories: [ "Boolean Operators" ]
+---
+
+
+
+
+
+= || Логічне АБО (Logical OR)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис (Description)
+*Логічне АБО* (Logical OR) повертає `true`, якщо хоча б один із двох операндів є `true`.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду (Example Code)
+Цей оператор можна використовувати всередині умови оператора link:../../control-structure/if[if].
+
+[source,arduino]
+----
+if (x > 0 || y > 0) { // якщо x або y більше нуля
+  // твердження (statements)
+}
+----
+
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження (Notes and Warnings)
+Не плутайте булевий оператор || (подвійна лінія) з побітовим оператором АБО | (одинарна лінія).
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також (See also)
+
+[role="language"]
+* #LANGUAGE# link:../../bitwise-operators/bitwiseor[| Побітове АБО]
+
+--
+// SEE ALSO SECTION ENDS

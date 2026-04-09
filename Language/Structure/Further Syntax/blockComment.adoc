@@ -1,0 +1,81 @@
+---
+title: "/* */"
+title_expanded: block comment
+categories: [ "Structure" ]
+subCategories: [ "Further Syntax" ]
+---
+
+
+
+
+
+= /* */ Block Comment
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+*Коментарі* — це рядки в програмі, які використовуються для інформування себе або інших про те, як працює програма. Компілятор ігнорує їх, і вони не експортуються до процесора, тому не займають місця у флеш-пам'яті мікроконтролера. Єдина мета коментарів — допомогти вам зрозуміти (або запам'ятати), чи повідомити іншим про те, як працює ваша програма.
+[%hardbreaks]
+
+Початок *блокового коментаря* або *багаторядкового коментаря* позначається символом `/\*`, а символ `*/` позначає його кінець. Цей тип коментаря називається так, оскільки він може займати більше одного рядка; як тільки компілятор зчитує `/\*`, він ігнорує все, що йде далі, поки не зустріне `*/`.
+
+// NOTE TO THE EDITOR: The '\' before the '*' in certain places are to escape the '*' from making the text bolder.
+// In places were '\' is not used before '*', it is not actually required.
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+[source,arduino]
+----
+/* This is a valid comment */
+
+/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+
+  This example code is in the public domain.
+  (Another valid comment)
+*/
+
+/*
+  if (gwb == 0) { // single line comment is OK inside a multi-line comment
+    x = 3;          /* but not another multi-line comment - this is invalid */
+  }
+// don't forget the "closing" comment - they have to be balanced!
+*/
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли ви експериментуєте з кодом, "закоментовування" частин програми — це зручний спосіб видалити рядки, які можуть містити помилки. Рядки залишаються в коді, але стають коментарями, тому компілятор просто ігнорує їх. Це може бути особливо корисним під час спроб знайти проблему, або коли програма відмовляється компілюватися, а помилка компілятора незрозуміла чи малоінформативна.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

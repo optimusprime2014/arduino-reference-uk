@@ -1,0 +1,36 @@
+---
+title: boolean
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= boolean
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+`boolean` — це нестандартний псевдонім типу для `link:../../../variables/data-types/bool[bool]`, визначений Arduino. Рекомендується натомість використовувати стандартний тип link:../../../variables/data-types/bool[`bool`], який є ідентичним.
+
+
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

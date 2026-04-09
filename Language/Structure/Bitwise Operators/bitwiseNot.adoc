@@ -1,0 +1,76 @@
+---
+title: "~"
+title_expanded: bitwise not
+categories: [ "Structure" ]
+subCategories: [ "Bitwise Operators" ]
+---
+
+
+
+
+
+= ~ Побітове NOT (НЕ)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Оператором побітового NOT (НЕ) у C++ є символ тильди `~`. На відміну від & та |, оператор побітового NOT застосовується до одного операнда праворуч від нього. Побітове NOT змінює кожен біт на протилежний: 0 стає 1, а 1 стає 0.
+[%hardbreaks]
+
+Іншими словами:
+
+    0  1    operand1
+    -----
+    1  0   ~operand1
+[%hardbreaks]
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int a = 103;  // binary:  0000000001100111
+int b = ~a;   // binary:  1111111110011000 = -104
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Ви можете бути здивовані, побачивши від'ємне число, наприклад -104, як результат цієї операції. Це пояснюється тим, що найвищий біт змінної типу int є так званим знаковим бітом. Якщо найвищий біт дорівнює 1, число вважається від'ємним. Це кодування додатних та від'ємних чисел називається доповняльним кодом (two's complement). Для отримання додаткової інформації див. статтю у Вікіпедії про http://en.wikipedia.org/wiki/Twos_complement[two's complement^].
+
+До речі, цікаво відзначити, що для будь-якого цілого x, ~x дорівнює -x - 1.
+
+Іноді знаковий біт у цілочисельному виразі зі знаком може викликати деякі небажані сюрпризи.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+[role="example"]
+* #EXAMPLE# https://www.arduino.cc/playground/Code/BitMath[BitMath Tutorial^]
+
+--
+//SEE ALSO SECTION ENDS

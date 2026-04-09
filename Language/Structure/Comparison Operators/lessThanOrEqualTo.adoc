@@ -1,0 +1,76 @@
+---
+title: "<="
+title_expanded: less than or equal to
+categories: [ "Structure" ]
+subCategories: [ "Comparison Operators" ]
+---
+
+
+
+
+
+= <= Less Than or Equal To (Менше або дорівнює)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Порівнює змінну ліворуч зі значенням або змінною праворуч від оператора. Повертає true, якщо операнд ліворуч менший або дорівнює операнду праворуч. Зверніть увагу, що ви можете порівнювати змінні різних типів даних, але це може призвести до непередбачуваних результатів. Тому рекомендується порівнювати змінні одного типу даних, включно з їх знаковістю (знакові/беззнакові).
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x <= y; // істинно (true), якщо x менше або дорівнює y, і хибно (false), якщо x більше y`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`y`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+if (x <= y) { // перевіряє, чи x менше або дорівнює y
+  // виконує дії тільки якщо результат порівняння є true
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Від'ємні числа менші за додатні.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

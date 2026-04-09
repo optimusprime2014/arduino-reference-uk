@@ -1,0 +1,79 @@
+---
+title: bitWrite()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= bitWrite()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Записує в біт змінної, наприклад `bool`, `int`, `long`. Зверніть увагу, що `float` та `double` не підтримуються. Ви можете записувати в біт змінних аж до `unsigned long` (32 біти / 4 байти).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`bitWrite(x, n, b)`
+
+
+[float]
+=== Параметри
+`x`: числова змінна, у яку потрібно записати. +
+`n`: який біт числа записати, починаючи з 0 для найменш значущого (крайнього правого) біта. +
+`b`: значення для запису в біт (0 або 1).
+
+
+[float]
+=== Повертає
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Демонструє використання bitWrite шляхом виведення значення змінної в Монітор порту до і після використання `bitWrite()`.
+
+
+[source,arduino]
+----
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) {}  // wait for serial port to connect. Needed for native USB port only
+  byte x = 0b10000000;  // the 0b prefix indicates a binary constant
+  Serial.println(x, BIN); // 10000000
+  bitWrite(x, 0, 1);  // write 1 to the least significant bit of x
+  Serial.println(x, BIN); // 10000001
+}
+
+void loop() {}
+----
+[%hardbreaks]
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

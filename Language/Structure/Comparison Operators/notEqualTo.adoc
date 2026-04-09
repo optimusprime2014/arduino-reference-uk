@@ -1,0 +1,73 @@
+---
+title: "!="
+title_expanded: not equal to
+categories: [ "Structure" ]
+subCategories: [ "Comparison Operators" ]
+---
+
+
+
+
+
+= != Not Equal To (Не дорівнює)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Порівнює змінну ліворуч зі значенням або змінною праворуч від оператора. Повертає true, якщо два операнди не рівні. Зверніть увагу, що ви можете порівнювати змінні різних типів даних, але це може призвести до непередбачуваних результатів. Тому рекомендується порівнювати змінні одного типу даних, включно з їх знаковістю (знакові/беззнакові).
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x != y; // хибно (false), якщо x дорівнює y, і істинно (true), якщо x не дорівнює y`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`y`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+if (x != y) { // перевіряє, чи не дорівнює x значенню y
+  // виконує дії тільки якщо результат порівняння є true
+}
+----
+[%hardbreaks]
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+
+--
+// SEE ALSO SECTION ENDS

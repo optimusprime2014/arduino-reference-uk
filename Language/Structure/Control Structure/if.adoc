@@ -1,0 +1,107 @@
+---
+title: if
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= if
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+[float]
+=== Опис
+Оператор `if` перевіряє умову та виконує наступний оператор або набір операторів, якщо умова є 'true' (істина).
+[%hardbreaks]
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+if (condition) {
+  //statement(s)
+}
+----
+
+
+[float]
+=== Параметри
+`condition`: логічний вираз (тобто може бути `true` або `false`).
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+Дужки можна опустити після оператора if. Якщо це зробити, наступний рядок (визначений крапкою з комою) стає єдиним умовним оператором.
+[%hardbreaks]
+
+[source,arduino]
+----
+if (x > 120) digitalWrite(LEDpin, HIGH);
+
+if (x > 120)
+digitalWrite(LEDpin, HIGH);
+
+if (x > 120) {digitalWrite(LEDpin, HIGH);}
+
+if (x > 120) {
+  digitalWrite(LEDpin1, HIGH);
+  digitalWrite(LEDpin2, HIGH);
+}
+// все правильно
+----
+[%hardbreaks]
+
+
+[float]
+=== Примітки та попередження
+Оператори, які обчислюються в дужках, вимагають використання одного або декількох операторів, наведених нижче.
+[%hardbreaks]
+
+*Comparison Operators:*
+
+ x == y (x is equal to y)
+ x != y (x is not equal to y)
+ x <  y (x is less than y)
+ x >  y (x is greater than y)
+ x <= y (x is less than or equal to y)
+ x >= y (x is greater than or equal to y)
+
+
+Будьте обережні, щоб випадково не використати одинарний знак рівності (наприклад, `if (x = 10)`). Одинарний знак дорівнює — це оператор присвоювання, і він встановлює значення `x` рівним 10 (поміщає значення 10 у змінну `x`). Натомість використовуйте подвійний знак рівності (наприклад, `if (x == 10)`), який є оператором порівняння та перевіряє, _чи_ `x` дорівнює 10 чи ні. Останнє твердження істинне, лише якщо `x` дорівнює 10, але попереднє твердження завжди буде істинним.
+
+Це відбувається тому, що C++ оцінює вираз `if (x=10)` таким чином: 10 присвоюється `x` (пам'ятайте, що одинарний знак рівності є (http://arduino.cc/en/Reference/Assignment[оператором присвоювання^])), тому тепер `x` містить 10. Потім умовний оператор 'if' оцінює 10, що завжди має значення `TRUE`, оскільки будь-яке ненульове число оцінюється як TRUE. Отже, `if (x = 10)` завжди оцінюватиметься як `TRUE`, що не є бажаним результатом під час використання оператора 'if'. Крім того, змінній `x` буде присвоєно значення 10, що також не є бажаною дією.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../else[else]
+
+--
+// SEE ALSO SECTION ENDS

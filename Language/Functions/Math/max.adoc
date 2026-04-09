@@ -1,0 +1,97 @@
+---
+title: max()
+categories: [ "Functions" ]
+subCategories: [ "Math" ]
+---
+
+
+
+
+
+= max(x, y)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обчислює максимальне з двох чисел.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`max(x, y)`
+
+
+[float]
+=== Parameters
+`x`: перше число. Дозволені типи даних: будь-який тип даних. +
+`y`: друге число. Дозволені типи даних: будь-який тип даних.
+
+
+[float]
+=== Returns
+Більше з двох значень параметрів.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код гарантує, що sensVal дорівнює принаймні 20.
+
+[source,arduino]
+----
+sensVal = max(sensVal, 20); // assigns sensVal to the larger of sensVal or 20
+                            // (effectively ensuring that it is at least 20)
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Можливо, це не зовсім інтуїтивно, але `max()` часто використовується для обмеження нижньої межі діапазону змінної, тоді як `min()` використовується для обмеження верхньої межі діапазону.
+
+Через те, як реалізовано функцію `max()`, уникайте використання інших функцій всередині дужок, це може призвести до неправильних результатів
+[source,arduino]
+----
+max(a--, 0);  // avoid this - yields incorrect results
+
+// use this instead:
+max(a, 0);
+a--;  // keep other math outside the function
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../abs[abs()]
+* #LANGUAGE# link:../constrain[constrain()]
+* #LANGUAGE# link:../map[map()]
+* #LANGUAGE# link:../min[min()]
+* #LANGUAGE# link:../pow[pow()]
+* #LANGUAGE# link:../sq[sq()]
+* #LANGUAGE# link:../sqrt[sqrt()]
+
+
+--
+// SEE ALSO SECTION ENDS

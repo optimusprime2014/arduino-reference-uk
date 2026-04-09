@@ -1,0 +1,104 @@
+---
+title: ">>"
+title_expanded: bitshift right
+categories: [ "Structure" ]
+subCategories: [ "Bitwise Operators" ]
+---
+
+
+
+
+
+= >> Побітовий зсув вправо
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Оператор зсуву вправо `>>` призводить до зсуву бітів лівого операнда *вправо* на кількість позицій, визначену правим операндом.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`variable >> number_of_bits;`
+
+
+[float]
+=== Parameters
+`variable`: Допустимі типи даних: будь-який цілочисельний тип (`byte`, `short`, `int`, `long`, `unsigned short`...). +
+`number_of_bits`: додатне число, менше від бітової ширини `variable`. Допустимі типи даних: `int`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int a = 40;     // binary: 0000000000101000
+int b = a >> 3; // binary: 0000000000000101, decimal: 5
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли ви зсуваєте `x` вправо на `y` бітів (`x >> y`), `y` крайніх правих бітів числа `x` «відпадають» і відкидаються. Якщо `x` має беззнаковий тип (наприклад, `unsigned int`), `y` крайніх лівих бітів результату заповнюються нулями. Якщо `x` має знаковий тип (наприклад, `int`), його крайній лівий біт є знаковим бітом, який визначає, додатне це число чи від'ємне. У цьому випадку `y` крайніх лівих бітів результату заповнюються копіями знакового біта. Ця поведінка, яка називається «розширення знака», гарантує, що результат має той самий знак, що і `x`.
+
+[source,arduino]
+----
+int x = -16;          // binary: 1111111111110000
+int y = 3;
+int result = x >> y;  // binary: 1111111111111110, decimal: -2
+----
+Це може бути не та поведінка, яка вам потрібна. Якщо натомість ви хочете, щоб нулі зсувалися зліва, ви можете використати приведення типу, щоб придушити розширення знаку:
+
+[source,arduino]
+----
+int x = -16;                        // binary: 1111111111110000
+int y = 3;
+int result = (unsigned int)x >> y;  // binary: 0001111111111110, decimal: 8190
+----
+Розширення знаку змушує оператор зсуву вправо `>>` виконувати ділення на степені 2, навіть з від'ємними числами. Наприклад:
+
+[source,arduino]
+----
+int x = -1000;
+int y = x >> 3; // integer division of -1000 by 8, causing y = -125.
+----
+Але пам’ятайте про округлення для від'ємних чисел:
+[source,arduino]
+----
+int x = -1001;
+int y = x >> 3; // division by shifting always rounds down, causing y = -126
+int z = x / 8;  // division operator rounds towards zero, causing z = -125
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+[role="example"]
+* #EXAMPLE# http://www.arduino.cc/playground/Code/BitMath[BitMath Tutorial^]
+
+--
+// SEE ALSO SECTION ENDS

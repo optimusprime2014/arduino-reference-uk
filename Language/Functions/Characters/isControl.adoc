@@ -1,0 +1,78 @@
+---
+title: "isControl()"
+categories: [ "Functions" ]
+subCategories: [ "Characters" ]
+---
+
+
+
+
+
+= isControl(thisChar)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Перевіряє, чи є символ керуючим символом. Повертає true, якщо thisChar є керуючим символом.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`isControl(thisChar)`
+
+
+[float]
+=== Параметри
+`thisChar`: змінна. Дозволені типи даних: `char`.
+
+
+[float]
+=== Повертає
+`true`: якщо thisChar є керуючим символом.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+if (isControl(myChar)) {  // tests if myChar is a control character
+  Serial.println("The character is a control character");
+}
+else {
+  Serial.println("The character is not a control character");
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Див. також
+
+[role="language"]
+* #LANGUAGE#  link:../../../variables/data-types/char[char]
+* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
+* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
+* #LANGUAGE# link:../../communication/serial/read[read()]
+
+--
+// SEE ALSO SECTION ENDS

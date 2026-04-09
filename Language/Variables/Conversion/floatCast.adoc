@@ -1,0 +1,71 @@
+---
+title: float()
+categories: [ "Variables" ]
+subCategories: [ "Conversion" ]
+---
+
+
+
+
+
+= float()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Перетворює значення на тип даних `link:../../data-types/float[float]`.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`float(x)` +
+`(float)x` (Перетворення типу у стилі C)
+
+
+[float]
+=== Parameters
+`x`: значення. Дозволені типи даних: будь-який тип.
+
+
+[float]
+=== Returns
+Тип даних: link:../../data-types/float[`float`].
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Notes and Warnings
+Дивіться довідник для `link:../../data-types/float[float]` для деталей про точність і обмеження чисел з плаваючою комою на Arduino.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+
+[role="language"]
+* #LANGUAGE# link:../../data-types/float[float]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,86 @@
+---
+title: micros()
+categories: [ "Functions" ]
+subCategories: [ "Time" ]
+---
+
+
+
+
+
+= micros()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Повертає кількість мікросекунд, що пройшла з моменту початку виконання поточної програми платою Arduino. Це число переповниться (повернеться до нуля) приблизно через 70 хвилин. На платах родини Arduino Portenta ця функція має роздільну здатність в одну мікросекунду на всіх ядрах. На Arduino-платах з частотою 16 МГц (наприклад, Duemilanove та Nano) ця функція має роздільну здатність у чотири мікросекунди (тобто повернене значення завжди кратне чотирьом). На Arduino-платах з частотою 8 МГц (наприклад, LilyPad) ця функція має роздільну здатність у вісім мікросекунд.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`time = micros()`
+
+
+[float]
+=== Parameters
+Немає
+
+
+[float]
+=== Returns
+Повертає кількість мікросекунд з моменту початку виконання поточної програми платою Arduino. Тип даних: `unsigned long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Цей код повертає кількість мікросекунд з моменту запуску плати Arduino.
+
+[source,arduino]
+----
+unsigned long time;
+
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  Serial.print("Time: ");
+  time = micros();
+
+  Serial.println(time); //prints time since program started
+  delay(1000);          // wait a second so as not to send massive amounts of data
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+В одній мілісекунді налічується 1 000 мікросекунд, а в одній секунді — 1 000 000 мікросекунд.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,122 @@
+---
+title: analogReference()
+categories: [ "Functions" ]
+subCategories: [ "Analog I/O" ]
+---
+
+
+//
+
+
+= analogReference()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Налаштовує опорну напругу, що використовується для аналогового входу (тобто значення, що використовується як верхня межа вхідного діапазону). Варіанти:
+
+Arduino AVR Boards (Uno, Mega, Leonardo тощо)
+
+* DEFAULT: типова аналогова опорна напруга 5 вольт (на платах Arduino 5В) або 3.3 вольта (на платах Arduino 3.3В)
+* INTERNAL: вбудована опорна напруга, що дорівнює 1.1 вольта на ATmega168 або ATmega328P і 2.56 вольта на ATmega32U4 та ATmega8 (недоступно на Arduino Mega)
+* INTERNAL1V1: вбудована 1.1В опорна напруга (лише Arduino Mega)
+* INTERNAL2V56: вбудована 2.56В опорна напруга (лише Arduino Mega)
+* EXTERNAL: напруга, прикладена до виводу AREF (лише від 0 до 5В), використовується як опорна.
+
+Arduino Renesas Boards (UNO R4, Portenta C33)
+
+* AR_DEFAULT: типова аналогова опорна напруга 5 вольт.
+* AR_INTERNAL: вбудована опорна напруга, що дорівнює 1.5 вольта на RA4M1 для UNO R4
+* AR_INTERNAL_1_5V: вбудована опорна напруга, що дорівнює 1.5 В на R7FA6M5 для Portenta C33
+* AR_INTERNAL_2_0V: вбудована опорна напруга, що дорівнює 2.0 В на R7FA6M5 для Portenta C33
+* AR_INTERNAL_2_5V: вбудована опорна напруга, що дорівнює 2.5 В на R7FA6M5 для Portenta C33
+* AR_EXTERNAL: напруга, прикладена до виводу AREF (лише від 0 до 5В), використовується як опорна.
+
+Arduino SAMD Boards (Zero тощо)
+
+* AR_DEFAULT: типова аналогова опорна напруга 3.3В
+* AR_INTERNAL: вбудована 2.23В опорна напруга
+* AR_INTERNAL1V0: вбудована 1.0В опорна напруга
+* AR_INTERNAL1V65: вбудована 1.65В опорна напруга
+* AR_INTERNAL2V23: вбудована 2.23В опорна напруга
+* AR_EXTERNAL: напруга, прикладена до виводу AREF, використовується як опорна
+
+Arduino megaAVR Boards (Uno WiFi Rev2)
+
+* DEFAULT: вбудована 0.55В опорна напруга
+* INTERNAL: вбудована 0.55В опорна напруга
+* VDD: Vdd мікроконтролера ATmega4809. 5В на Uno WiFi Rev2
+* INTERNAL0V55: вбудована 0.55В опорна напруга
+* INTERNAL1V1: вбудована 1.1В опорна напруга
+* INTERNAL1V5: вбудована 1.5В опорна напруга
+* INTERNAL2V5: вбудована 2.5В опорна напруга
+* INTERNAL4V3: вбудована 4.3В опорна напруга
+* EXTERNAL: напруга, прикладена до виводу AREF (лише від 0 до 5В), використовується як опорна
+
+Arduino SAM Boards (Due)
+
+* AR_DEFAULT: типова аналогова опорна напруга 3.3В. Це єдиний підтримуваний варіант для Due.
+
+Arduino Mbed OS Nano Boards (Nano 33 BLE), Arduino Mbed OS Edge Boards (Edge Control)
+
+* AR_VDD: типова 3.3 В опорна напруга
+* AR_INTERNAL: вбудована 0.6 В опорна напруга
+* AR_INTERNAL1V2: 1.2 В опорна напруга (вбудована 0.6 В опорна напруга з посиленням 2x)
+* AR_INTERNAL2V4: 2.4 В опорна напруга (вбудована 0.6 В опорна напруга з посиленням 4x)
+
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`analogReference(type)`
+
+
+[float]
+=== Parameters
+`type`: який тип опорної напруги використовувати (див. список варіантів в описі).
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Notes and Warnings
+Після зміни аналогової опорної напруги перші кілька зчитувань з `analogRead()` можуть бути неточними.
+
+*Don't use anything less than 0V or more than 5V for external reference voltage on the AREF pin! If you're using an external reference on the AREF pin, you must set the analog reference to EXTERNAL before calling `analogRead()`.* Otherwise, you will short together the active reference voltage (internally generated) and the AREF pin, possibly damaging the microcontroller on your Arduino board.
+
+Alternatively, you can connect the external reference voltage to the AREF pin through a 5K resistor, allowing you to switch between external and internal reference voltages. Note that the resistor will alter the voltage that gets used as the reference because there is an internal 32K resistor on the AREF pin. The two act as a voltage divider, so, for example, 2.5V applied through the resistor will yield 2.5 * 32 / (32 + 5) = ~2.2V at the AREF pin.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/AnalogInputPins[Description of the analog input pins^]
+
+--
+// SEE ALSO SECTION ENDS

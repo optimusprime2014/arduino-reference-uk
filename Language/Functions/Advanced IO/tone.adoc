@@ -1,0 +1,88 @@
+---
+title: tone()
+categories: [ "Functions" ]
+subCategories: [ "Advanced I/O" ]
+---
+
+
+
+
+
+= tone()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Генерує прямокутну хвилю заданої частоти (і з шпаруватістю 50%) на виводі. Можна вказати тривалість, в іншому випадку генерація хвилі триває до виклику link:../notone[noTone()]. Цей вивід можна підключити до п'єзодинаміка або іншого динаміка для відтворення звуків.
+
+Одночасно може генеруватися лише один тон. Якщо тон вже відтворюється на іншому виводі, виклик `tone()` не матиме ефекту. Якщо тон відтворюється на тому ж виводі, виклик встановить його нову частоту.
+
+Використання функції `tone()` заважатиме ШІМ-виводу (PWM) на виводах 3 і 11 (на платах, відмінних від Mega).
+
+Неможливо згенерувати тони, нижчі за 31 Гц. Для технічних деталей див. https://github.com/bhagman/Tone#ugly-details[нотатки Бретта Хагмана].
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`tone(pin, frequency)` +
+`tone(pin, frequency, duration)`
+
+
+[float]
+=== Parameters
+`pin`: вивід Arduino, на якому генерується тон. +
+`frequency`: частота тону в герцах. Дозволені типи даних: `unsigned int`. +
+`duration`: тривалість тону в мілісекундах (необов'язково). Дозволені типи даних: `unsigned long`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Notes and Warnings
+
+* Якщо ви хочете відтворювати різні звуки на декількох виводах, вам потрібно викликати `noTone()` для одного вивода перед викликом `tone()` для наступного вивода.
+* Ця функція є неблокуючою, що означає, що навіть якщо ви вкажете параметр `duration`, виконання скетчу продовжиться негайно, навіть якщо відтворення тону ще не закінчилося.
+
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../analog-io/analogwrite[analogWrite()]
+
+[role="example"]
+
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples/toneMelody[Tone Melody^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/tonePitchFollower[Pitch Follower^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples/toneKeyboard[Tone Keyboard^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples/toneMultiple[Tone Multiple^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/PWM[PWM^]
+
+--
+// SEE ALSO SECTION ENDS

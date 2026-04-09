@@ -1,0 +1,71 @@
+---
+title: SPI
+categories: [ "Functions" ]
+subCategories: [ "Communication" ]
+---
+
+
+= SPI
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+
+
+Ця бібліотека дозволяє вам спілкуватися з пристроями SPI, при цьому Arduino виступає в ролі головного (controller) пристрою. Ця бібліотека постачається з кожною платформою Arduino (avr, megaavr, mbed, samd, sam, arc32), тому *вам не потрібно встановлювати* бібліотеку окремо.
+
+Щоб використовувати цю бібліотеку
+
+`#include <SPI.h>`
+
+Щоб дізнатися більше про Arduino та SPI, ви можете відвідати посібник https://docs.arduino.cc/learn/communication/spi[Arduino & Serial Peripheral Interface (SPI)].
+
+--
+// OVERVIEW SECTION ENDS
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+|================================================================================================================================================
+|                                                    Плати                                            | Піни SPI за замовчуванням                            | Додаткові піни SPI | Примітки
+| UNO R3, UNO R3 SMD, UNO WiFi Rev2, UNO Mini Ltd| 10(CS), 11(COPI), 12(CIPO), 13(SCK) | | Піни SPI доступні на гребінці ICSP
+| UNO R4 Minima, UNO R4 WiFi| 10(CS), 11(COPI), 12(CIPO), 13(SCK) | | Піни SPI доступні на гребінці ICSP
+| Leonardo, Yún Rev2, Zero| 10(CS), 11(COPI), 12(CIPO), 13(SCK) | | Піни SPI доступні на гребінці ICSP
+| Micro                | 14(CIPO), 15(SCK), 16(COPI)      | |
+| Плати Nano          | 11(COPI), 12(CIPO), 13(SCK)      | |
+| Плати MKR           | 8(COPI), 9(SCK), 10(CIPO)        | |
+| Due                  | 74(CIPO), 75(MOSI), 76(SCK) | Піни SPI доступні на виділеній гребінці SPI |
+| GIGA R1 WiFi         | 89(CIPO), 90(COPI), 91(SCK) | 12(CIPO), 11(COPI), 13(SCK), 10(CS) | Зверніть увагу, що піни 89,90,91 розташовані на гребінці SPI
+| Mega 2560 Rev3       | 50(CIPO), 51(COPI), 52(SCK), 53(CS) |  | Піни SPI доступні на гребінці ICSP
+|================================================================================================================================================
+
+--
+// HOW TO USE SECTION ENDS
+
+// FUNCTIONS SECTION STARTS
+[#functions]
+--
+
+'''
+
+[float]
+=== Функції
+link:../spi/spisettings[SPISettings] +
+link:../spi/begin[begin()] +
+link:../spi/begintransaction[beginTransaction()] +
+link:../spi/endtransaction[endTransaction()] +
+link:../spi/end[end()] +
+link:../spi/setbitorder[setBitOrder()] +
+link:../spi/setclockdivider[setClockDivider()] +
+link:../spi/setdatamode[setDataMode()] +
+link:../spi/transfer[transfer()] +
+link:../spi/usinginterrupt[usingInterrupt()]
+
+'''
+
+--
+// SEEALSO SECTION ENDS

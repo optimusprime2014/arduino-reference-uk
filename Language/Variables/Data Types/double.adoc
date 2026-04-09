@@ -1,0 +1,61 @@
+---
+title: double
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= double
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Число з плаваючою комою подвійної точності. На платах Uno та інших на базі ATMEGA воно займає 4 байти. Тобто реалізація `double` є абсолютно такою ж, як і `float`, без збільшення точності.
+
+На Arduino Due `double` має 8-байтову (64-бітну) точність.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`double var = val;`
+
+
+[float]
+=== Параметри
+`var`: ім'я змінної. +
+`val`: значення, яке присвоюється цій змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+
+[float]
+=== Примітки та попередження
+Користувачі, які запозичують код з інших джерел, що містить змінні `double`, можливо, захочуть перевірити код, щоб дізнатися, чи передбачувана точність відрізняється від фактично досягнутої на Arduino на базі ATMEGA.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

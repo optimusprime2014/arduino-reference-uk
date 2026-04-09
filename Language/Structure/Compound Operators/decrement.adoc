@@ -1,0 +1,74 @@
+---
+title: "--"
+title_expanded: decrement
+categories: [ "Structure" ]
+subCategories: [ "Compound Operators" ]
+---
+
+
+
+
+
+= -- Decrement (Декремент)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Зменшує значення змінної на 1.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x--;  // зменшує x на один і повертає старе значення x` +
+`--x;  // зменшує x на один і повертає нове значення x`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`, `long` (включаючи беззнакові варіанти).
+
+
+[float]
+=== Returns
+Початкове або нове зменшене значення змінної.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+x = 2;
+y = --x;  // тепер x містить 1, y містить 1
+y = x--;  // x містить 0, але y все ще містить 1
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,91 @@
+---
+title: Keyboard
+categories: [ "Functions" ]
+subCategories: [ "USB" ]
+---
+
+
+
+
+= Keyboard
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Функції клавіатури дозволяють платам на базі мікроконтролерів 32u4 або SAMD надсилати натискання клавіш до підключеного комп'ютера через їхній власний USB-порт.
+[%hardbreaks]
+*Примітка: Не кожен можливий символ ASCII, особливо недрукований, можна надіслати за допомогою бібліотеки Keyboard.* +
+Бібліотека підтримує використання клавіш-модифікаторів. Клавіші-модифікатори змінюють поведінку іншої клавіші при одночасному натисканні. link:../keyboard/keyboardmodifiers[Дивіться тут] для отримання додаткової інформації про підтримувані клавіші та їх використання.
+
+--
+// OVERVIEW SECTION ENDS
+
+[float]
+=== Сумісне обладнання
+HID підтримується на наступних платах:
+[options="header"]
+|=================================================================================================
+| Плата                                                                | Підтримувані піни
+| link:https://docs.arduino.cc/hardware/leonardo[Leonardo]             | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/micro[Micro]                   | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/due[Due]                       | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/zero[Zero]                     | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/uno-r4-minima[UNO R4 Minima]   | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/uno-r4-wifi[UNO R4 WiFi]       | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/giga-r1-wifi[Giga R1]          | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/nano-esp32[Nano ESP32]         | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/#mkr-family[MKR Family]                 | Усі цифрові та аналогові піни
+|=================================================================================================
+
+[float]
+=== Примітки та попередження
+Ці основні бібліотеки дозволяють платам на базі 32u4 та SAMD (Leonardo, Esplora, Zero, Due та сімейству MKR) виглядати як звичайна (native) миша та/або клавіатура для підключеного комп'ютера.
+[%hardbreaks]
+*Одне застереження щодо використання бібліотек Mouse та Keyboard*: якщо бібліотека Mouse або Keyboard постійно працює, запрограмувати вашу плату буде складно. Функції, такі як `Mouse.move()` та `Keyboard.print()`, будуть переміщати ваш курсор або надсилати натискання клавіш до підключеного комп'ютера, і їх слід викликати лише тоді, коли ви готові з ними працювати. Рекомендується використовувати систему керування, щоб увімкнути цю функціональність, наприклад, фізичний перемикач або реагування лише на певний ввід, який ви можете контролювати. Зверніться до прикладів Mouse та Keyboard щодо деяких способів обробки цього.
+[%hardbreaks]
+Під час використання бібліотеки Mouse або Keyboard, можливо, краще спочатку перевірити ваш вивід за допомогою link:../../communication/serial/print[Serial.print()]. Таким чином, ви можете бути впевнені, що знаєте, які значення повідомляються.
+
+
+// FUNCTIONS SECTION STARTS
+[#functions]
+--
+
+'''
+
+[float]
+=== Функції
+link:../keyboard/keyboardbegin[Keyboard.begin()] +
+link:../keyboard/keyboardend[Keyboard.end()] +
+link:../keyboard/keyboardpress[Keyboard.press()] +
+link:../keyboard/keyboardprint[Keyboard.print()] +
+link:../keyboard/keyboardprintln[Keyboard.println()] +
+link:../keyboard/keyboardrelease[Keyboard.release()] +
+link:../keyboard/keyboardreleaseall[Keyboard.releaseAll()] +
+link:../keyboard/keyboardwrite[Keyboard.write()]
+
+'''
+
+--
+// FUNCTIONS SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="example"]
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardAndMouseControl[KeyboardAndMouseControl^]: Демонструє команди Mouse та Keyboard в одній програмі.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardMessage[KeyboardMessage^]: Надсилає текстовий рядок під час натискання кнопки.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardLogout[KeyboardLogout^]: Виходить із системи поточного користувача за допомогою команд клавіш.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardSerial[KeyboardSerial^]: Зчитує байт із послідовного порту та надсилає назад натискання клавіші.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardReprogram[KeyboardReprogram^]: відкриває нове вікно в Arduino IDE і перепрограмовує плату за допомогою простої програми blink.
+
+--
+// SEE ALSO SECTION ENDS

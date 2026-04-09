@@ -1,0 +1,85 @@
+---
+title: bitSet()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= bitSet()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Встановлює (записує 1) біт числової змінної.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`bitSet(x, n)`
+
+
+[float]
+=== Параметри
+`x`: числова змінна, біт якої потрібно встановити. +
+`n`: який біт встановити, починаючи з 0 для найменш значущого (крайнього правого) біта.
+
+
+[float]
+=== Повертає
+`x`: значення числової змінної після встановлення біта на позиції `n`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Виводить результат `bitSet(x,n)` на двох заданих цілих числах. Двійкове представлення числа 4 дорівнює 0100, тому коли `n=1`, другий біт справа встановлюється в 1. Після цього в двійковій системі залишається 0110, тому повертається 6.
+
+[source,arduino]
+----
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
+
+  int x = 4;
+  int n = 1;
+  Serial.print(bitSet(x, n)); // print the output of bitSet(x,n)
+}
+
+void loop() {
+}
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../bitclear[bitClear()]
+
+--
+// SEE ALSO SECTION ENDS

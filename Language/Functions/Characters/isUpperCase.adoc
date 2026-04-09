@@ -1,0 +1,74 @@
+---
+title: "isUpperCase()"
+categories: [ "Functions" ]
+subCategories: [ "Characters" ]
+---
+
+= isUpperCase(thisChar)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Перевіряє, чи є символ у верхньому регістрі (тобто літерою у верхньому регістрі). Повертає true, якщо thisChar є літерою у верхньому регістрі.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`isUpperCase(thisChar)`
+
+
+[float]
+=== Параметри
+`thisChar`: змінна. Дозволені типи даних: `char`.
+
+
+[float]
+=== Повертає
+`true`: якщо thisChar у верхньому регістрі.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+if (isUpperCase(myChar)) {  // tests if myChar is an upper case letter
+  Serial.println("The character is upper case");
+}
+else {
+  Serial.println("The character is not upper case");
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Див. також
+
+[role="language"]
+* #LANGUAGE#  link:../../../variables/data-types/char[char]
+* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
+* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
+* #LANGUAGE# link:../../communication/serial/read[read()]
+
+--
+// SEE ALSO SECTION ENDS

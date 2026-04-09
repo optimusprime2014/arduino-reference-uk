@@ -1,0 +1,72 @@
+---
+title: "++"
+title_expanded: increment
+categories: [ "Structure" ]
+subCategories: [ "Compound Operators" ]
+---
+
+
+
+
+
+= ++ Increment (Інкремент)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Збільшує значення змінної на 1.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x{plus}{plus};  // збільшує x на один і повертає старе значення x` +
+`{plus}{plus}x;  // збільшує x на один і повертає нове значення x`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`, `long` (включаючи беззнакові варіанти).
+
+[float]
+=== Returns
+Початкове або нове збільшere значення змінної.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+x = 2;
+y = ++x;  // тепер x містить 3, y містить 3
+y = x++;  // x містить 4, але y все ще містить 3
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,90 @@
+---
+title: randomSeed()
+categories: [ "Functions" ]
+subCategories: [ "Random Numbers" ]
+---
+
+
+
+
+
+= randomSeed(seed)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+`randomSeed()` ініціалізує генератор псевдовипадкових чисел, змушуючи його почати з довільної точки у його випадковій послідовності. Ця послідовність, хоча й дуже довга і випадкова, завжди однакова.
+
+Якщо важливо, щоб послідовність значень, що генерується `random()`, відрізнялася при наступних виконаннях скетчу, використовуйте `randomSeed()`, щоб ініціалізувати генератор випадкових чисел достатньо випадковим вхідним значенням, наприклад, з `analogRead()` на непідключеному піні.
+
+З іншого боку, інколи може бути корисним використовувати псевдовипадкові послідовності, які повторюються точно. Цього можна досягти, викликавши `randomSeed()` з фіксованим числом перед запуском випадкової послідовності.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`randomSeed(seed)`
+
+
+[float]
+=== Parameters
+`seed`: ненульове число для ініціалізації псевдовипадкової послідовності. Допустимі типи даних: `unsigned long`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код генерує псевдовипадкове число і надсилає згенероване число на послідовний порт.
+
+[source,arduino]
+----
+long randNumber;
+
+void setup() {
+  Serial.begin(9600);
+  randomSeed(analogRead(0));
+}
+
+void loop() {
+  randNumber = random(300);
+  Serial.println(randNumber);
+  delay(50);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Якщо `seed` дорівнює 0, `randomSeed(seed)` не матиме жодного ефекту.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,91 @@
+---
+title: "-"
+title_expanded: "subtraction"
+categories: [ "Structure" ]
+subCategories: [ "Arithmetic Operators" ]
+---
+
+
+
+
+
+= - Віднімання (Subtraction)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис (Description)
+*Віднімання* (Subtraction) — одна з чотирьох основних арифметичних операцій. Оператор `-` (мінус) діє на два операнди, щоб отримати різницю другого з першого.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис (Syntax)
+`difference = operand1 - operand2;`
+
+
+[float]
+=== Параметри (Parameters)
+`difference`: змінна (variable). Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand1`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand2`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду (Example Code)
+
+[source,arduino]
+----
+int a = 5;
+int b = 10;
+int c = 0;
+c = a - b;  // змінна 'c' отримує значення -5 після виконання цього оператора
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження (Notes and Warnings)
+1. Операція віднімання може переповнитися, якщо результат менший за той, який може бути збережений у типі даних (наприклад, віднявши 1 від цілого числа зі значенням -32,768 отримуємо 32,767).
+
+2. Якщо одне з чисел (операндів) має тип float або double, для обчислення використовуватиметься математика з рухомою комою.
+
+3. Якщо операнди мають тип даних float / double, а змінна, яка зберігає різницю, є цілим числом, то зберігається лише ціла частина, а дробова частина числа втрачається.
+
+[source,arduino]
+----
+float a = 5.5;
+float b = 6.6;
+int c = 0;
+c = a - b;  // змінна 'c' зберігає значення лише -1 на відміну від очікуваної різниці -1.1
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також (See also)
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

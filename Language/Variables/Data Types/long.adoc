@@ -1,0 +1,69 @@
+---
+title: long
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+
+
+
+
+= long
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Змінні типу long – це змінні розширеного розміру для зберігання чисел, вони зберігають 32 біти (4 байти), від -2,147,483,648 до 2,147,483,647.
+
+При виконанні математичних операцій з цілими числами принаймні одне зі значень має бути типу `long` — або цілочисельною константою за якою слідує літера `L`, або змінною типу `long`, що примусово переводить її у формат `long`. Дивіться сторінку link:../../constants/integerconstants[Цілочисельні константи] для отримання додаткової інформації.
+[%hardbreaks]
+
+[float]
+=== Синтаксис
+`long var = val;`
+
+
+[float]
+=== Параметри
+`var`: ім'я змінної. +
+`val`: значення, яке присвоюється змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+long speedOfLight_km_s = 300000L;  // see the Integer Constants page for explanation of the 'L'
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+
+--
+// SEE ALSO SECTION ENDS

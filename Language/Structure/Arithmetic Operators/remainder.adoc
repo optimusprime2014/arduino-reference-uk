@@ -1,0 +1,95 @@
+---
+title: "%"
+title_expanded: "remainder"
+categories: [ "Structure" ]
+subCategories: [ "Arithmetic Operators" ]
+---
+
+
+
+
+
+= % Остача
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Операція *Остача* обчислює остачу від ділення одного цілого числа на інше. Вона корисна для утримання змінної в певному діапазоні (наприклад, розмір масиву). Символ `%` (відсоток) використовується для виконання операції остачі від ділення.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`remainder = dividend % divisor;`
+
+[float]
+=== Parameters
+`remainder`: змінна. Допустимі типи даних: `int`, `float`, `double`. +
+`dividend`: змінна або константа. Допустимі типи даних: `int`. +
+`divisor`: *не нульова* змінна або константа. Допустимі типи даних: `int`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int x = 0;
+x = 7 % 5;  // x now contains 2
+x = 9 % 5;  // x now contains 4
+x = 5 % 5;  // x now contains 0
+x = 4 % 5;  // x now contains 4
+x = -4 % 5; // x now contains -4
+x = 4 % -5; // x now contains 4
+----
+
+[source,arduino]
+----
+/* update one value in an array each time through a loop */
+
+int values[10];
+int i = 0;
+
+void setup() {}
+
+void loop() {
+  values[i] = analogRead(0);
+  i = (i + 1) % 10; // remainder operator rolls over variable
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+1. Оператор остачі не працює з числами з плаваючою комою (float).
+
+2. Якщо *перший* операнд є від'ємним, результат буде від'ємним (або нульовим).
+Тому результат `x % 10` не завжди буде між 0 та 9, якщо `x` може бути від'ємним.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

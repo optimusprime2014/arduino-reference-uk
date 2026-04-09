@@ -1,0 +1,109 @@
+---
+title: "{}"
+title_expanded: curly braces
+categories: [ "Structure" ]
+subCategories: [ "Further Syntax" ]
+---
+
+
+
+
+= {} Фігурні дужки
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Фігурні дужки (також їх називають просто "дужки") є важливою частиною мови програмування C++. Вони використовуються в кількох різних конструкціях, описаних нижче, і це іноді може заплутати початківців. +
+За відкриваючою фігурною дужкою `{` завжди повинна йти закриваюча фігурна дужка `}`. Ця умова часто називається збалансованими дужками. Arduino IDE (інтегроване середовище розробки) містить зручну функцію для перевірки балансу фігурних дужок. Просто виберіть дужку або навіть клацніть точку вставки відразу після дужки, і її логічний супутник буде виділено.
+[%hardbreaks]
+Програмісти-початківці та програмісти, які переходять на C++ з мови BASIC, часто вважають використання дужок заплутаним або страшним. Зрештою, ті самі фігурні дужки замінюють оператор RETURN у підпрограмі (функції), оператор ENDIF в умовній конструкції та оператор NEXT у циклі FOR.
+[%hardbreaks]
+Незбалансовані дужки часто можуть призвести до загадкових, незрозумілих помилок компілятора, які іноді буває важко відстежити у великій програмі. Через різне використання дужки також неймовірно важливі для синтаксису програми, і переміщення дужки на один або два рядки часто кардинально змінюватиме значення програми.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Основні варіанти використання фігурних дужок перелічені в прикладах нижче.
+
+
+[float]
+==== Функції
+
+[source,arduino]
+----
+void myfunction(datatype argument) {
+  // any statement(s)
+}
+----
+[%hardbreaks]
+
+
+[float]
+==== Цикли
+
+[source,arduino]
+----
+while (boolean expression) {
+  // any statement(s)
+}
+
+do {
+  // any statement(s)
+} while (boolean expression);
+
+for (initialisation; termination condition; incrementing expr) {
+  // any statement(s)
+}
+----
+[%hardbreaks]
+
+
+
+
+[float]
+==== Умовні конструкції
+
+[source,arduino]
+----
+if (boolean expression) {
+  // any statement(s)
+}
+
+else if (boolean expression) {
+  // any statement(s)
+}
+else {
+  // any statement(s)
+}
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

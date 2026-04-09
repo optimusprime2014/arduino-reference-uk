@@ -1,0 +1,72 @@
+---
+title: const
+categories: [ "Variables" ]
+subCategories: [ "Variable Scope & Qualifiers" ]
+---
+
+
+
+
+
+= const keyword
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Ключове слово `const` означає постійний. Це _кваліфікатор_ змінної, який змінює поведінку змінної, роблячи її "тільки для читання" (_read-only_). Це означає, що змінна може використовуватися як і будь-яка інша змінна свого типу, але її значення не може бути змінено. Ви отримаєте помилку компілятора, якщо спробуєте присвоїти значення змінній `const`.
+
+Константи, визначені за допомогою ключового слова `const`, підпорядковуються правилам link:../scope[області видимості змінних], які керують іншими змінними. Це, а також підводні камені використання `link:../../../structure/further-syntax/define[#define]`, робить ключове слово `const` найкращим методом для визначення констант і має перевагу над використанням link:../../../structure/further-syntax/define[`#define`].
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+const float pi = 3.14;
+float x;
+// ....
+x = pi * 2; // it's fine to use consts in math
+pi = 7;     // illegal - you can't write to (modify) a constant
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+*link:../../../structure/further-syntax/define[`#define`] або `const`*
+
+Ви можете використовувати як `const`, так і link:../../../structure/further-syntax/define[`#define`] для створення числових або рядкових констант. Для link:../../data-types/array[масивів] вам потрібно буде використовувати `const`. Загалом `const` має перевагу над link:../../../structure/further-syntax/define[`#define`] для визначення констант.
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../../structure/further-syntax/define[#define]
+
+--
+// SEE ALSO SECTION ENDS

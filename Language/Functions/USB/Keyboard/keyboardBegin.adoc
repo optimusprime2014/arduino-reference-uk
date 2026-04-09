@@ -1,0 +1,93 @@
+---
+title: Keyboard.begin()
+---
+
+
+
+
+= Keyboard.begin()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+При використанні з платами Leonardo або Due, `Keyboard.begin()` починає емулювати клавіатуру, підключену до комп'ютера. Щоб завершити керування, використовуйте link:../keyboardend[Keyboard.end()].
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`Keyboard.begin()` +
+`Keyboard.begin(layout)`
+
+
+[float]
+=== Parameters
+`layout`: розкладка клавіатури, що використовується. Цей параметр необов'язковий, за замовчуванням має значення `KeyboardLayout_en_US`.
+
+
+[float]
+=== Keyboard layouts
+Наразі бібліотека підтримує наступні національні розкладки клавіатури:
+
+* `KeyboardLayout_da_DK`: Данія
+* `KeyboardLayout_de_DE`: Німеччина
+* `KeyboardLayout_en_US`: США
+* `KeyboardLayout_es_ES`: Іспанія
+* `KeyboardLayout_fr_FR`: Франція
+* `KeyboardLayout_hu_HU`: Угорщина
+* `KeyboardLayout_it_IT`: Італія
+* `KeyboardLayout_pt_PT`: Португалія
+* `KeyboardLayout_sv_SE`: Швеція
+
+
+[float]
+=== Returns
+Нічого (Nothing)
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Keyboard.h>
+
+void setup() {
+  // make pin 2 an input and turn on the
+  // pullup resistor so it goes high unless
+  // connected to ground:
+  pinMode(2, INPUT_PULLUP);
+  Keyboard.begin();
+}
+
+void loop() {
+  //if the button is pressed
+  if (digitalRead(2) == LOW) {
+    //Send the message
+    Keyboard.print("Hello!");
+  }
+}
+----
+
+
+[float]
+=== Notes and Warnings
+Користувацькі розкладки можна створювати шляхом копіювання та модифікації наявної розкладки. Див. інструкції у файлі KeyboardLayout.h бібліотеки Keyboard.
+
+--
+// HOW TO USE SECTION ENDS

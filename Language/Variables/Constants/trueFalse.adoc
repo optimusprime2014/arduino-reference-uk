@@ -1,0 +1,47 @@
+---
+title: 'true | false'
+categories: [ "Variables" ]
+subCategories: [ "Constants" ]
+---
+
+= true | false
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+В мові Arduino використовуються дві константи для представлення істини (true) та хибності (false): `true` та `false`.
+
+[float]
+=== true
+`true` часто кажуть, що визначається як 1, що є правильним, але true має ширше визначення. Будь-яке ціле число, яке не дорівнює нулю, є true в логічному (Boolean) сенсі. Отже, -1, 2 і -200 також визначаються як true у логічному сенсі.
+[%hardbreaks]
+
+Зверніть увагу, що константи `true` та `false` набираються малими літерами на відміну від `HIGH`, `LOW`, `INPUT` та `OUTPUT`.
+[%hardbreaks]
+
+
+[float]
+=== false
+`false` визначити простіше. false визначається як 0 (нуль).
+[%hardbreaks]
+
+Зверніть увагу, що константи `true` та `false` набираються малими літерами на відміну від `HIGH`, `LOW`, `INPUT` та `OUTPUT`.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

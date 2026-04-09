@@ -1,0 +1,53 @@
+---
+title: lowByte()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= lowByte()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Витягує молодший (крайній правий) байт змінної (наприклад, слова).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`lowByte(x)`
+
+
+[float]
+=== Параметри
+`x`: значення будь-якого типу
+
+
+[float]
+=== Повертає
+Тип даних: `byte`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../../variables/data-types/word[word()]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,89 @@
+---
+title: pinMode()
+categories: [ "Functions" ]
+subCategories: [ "Digital I/O" ]
+---
+
+
+//
+:ext-relative: .html
+
+= pinMode()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Налаштовує вказаний пін так, щоб він поводився як вхід або як вихід. Дивіться сторінку http://arduino.cc/en/Tutorial/DigitalPins[Digital Pins] для отримання детальної інформації про функціональність пінів.
+[%hardbreaks]
+Також можливо увімкнути внутрішні підтягуючі резистори за допомогою режиму `INPUT_PULLUP`. Крім того, режим `INPUT` явно вимикає внутрішні підтягуючі резистори.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`pinMode(pin, mode)`
+
+
+[float]
+=== Parameters
+`pin`: номер піна Arduino, для якого встановлюється режим. +
+`mode`: `INPUT`, `OUTPUT` або `INPUT_PULLUP`. Дивіться сторінку http://arduino.cc/en/Tutorial/DigitalPins[Digital Pins] для більш повного опису функціональності.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+Цей код робить цифровий пін 13 `OUTPUT` і перемикає його між `HIGH` та `LOW`
+
+[source,arduino]
+----
+void setup() {
+  pinMode(13, OUTPUT);    // sets the digital pin 13 as output
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // sets the digital pin 13 on
+  delay(1000);            // waits for a second
+  digitalWrite(13, LOW);  // sets the digital pin 13 off
+  delay(1000);            // waits for a second
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Аналогові вхідні піни можна використовувати як цифрові піни, позначаючи їх як A0, A1 тощо.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/DigitalPins[Description of the digital pins^]
+
+--
+// SEE ALSO SECTION ENDS

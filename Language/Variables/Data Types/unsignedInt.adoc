@@ -1,0 +1,107 @@
+---
+title: unsigned int
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= unsigned int
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+На платах Uno та інших на базі ATMEGA беззнакові цілі числа (unsigned ints) збігаються з int тим, що вони зберігають 2-байтове значення. Однак замість того, щоб зберігати від'ємні числа, вони зберігають лише додатні значення, забезпечуючи корисний діапазон від 0 до 65 535 ((2^16) - 1).
+
+Due зберігає 4-байтове (32-бітне) значення, в діапазоні від 0 до 4 294 967 295 (2^32 - 1).
+
+Різниця між беззнаковими цілими (unsigned ints) і знаковими цілими (ints) полягає в тому, як інтерпретується старший біт, який іноді називають "знаковим" бітом. У типі int Arduino (який має знак), якщо старший біт дорівнює "1", число інтерпретується як від'ємне, а інші 15 бітів інтерпретуються з використанням (http://en.wikipedia.org/wiki/2%27s_complement[доповняльного коду]).
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`unsigned int var = val;`
+
+
+[float]
+=== Parameters
+`var`: ім'я змінної. +
+`val`: значення, яке ви їй призначаєте.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Опишіть, про що приклад коду, і додайте відповідний код   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+unsigned int ledPin = 13;
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли беззнакові змінні змушені перевищувати свою максимальну місткість, вони "переповнюються" назад до 0, і навпаки:
+
+[source,arduino]
+----
+unsigned int x;
+x = 0;
+x = x - 1;  // x now contains 65535 - rolls over in neg direction
+x = x + 1;  // x now contains 0 - rolls over
+----
+
+Математичні обчислення зі змінними без знаку можуть дати несподіваний результат, навіть якщо ваша змінна без знаку ніколи не переповнюється.
+
+Мікроконтролер (MCU) застосовує такі правила:
+
+Обчислення виконується в області видимості цільової змінної. Наприклад, якщо цільова змінна має знак, він буде виконувати математичні операції зі знаком, навіть якщо обидві вхідні змінні є беззнаковими.
+
+Однак при обчисленні, яке вимагає проміжного результату, область видимості проміжного результату не вказується кодом. У цьому випадку MCU буде виконувати обчислення без знаку для проміжного результату, оскільки обидва входи без знаку!
+
+
+[source,arduino]
+----
+unsigned int x = 5;
+unsigned int y = 10;
+int result;
+
+result = x - y; // 5 - 10 = -5, as expected
+result = (x - y) / 2; // 5 - 10 in unsigned math is 65530!  65530/2 = 32765
+
+// solution: use signed variables, or do the calculation step by step.
+result = x - y; // 5 - 10 = -5, as expected
+result = result / 2;  //  -5/2 = -2 (only integer math, decimal places are dropped)
+----
+Навіщо взагалі використовувати змінні без знаку?
+
+- Поведінка з переповненням є бажаною, наприклад, лічильники.
+- Змінна зі знаком занадто мала, але ви хочете уникнути втрати пам'яті та швидкості, пов'язаної з long/float.
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+
+--
+// SEE ALSO SECTION ENDS

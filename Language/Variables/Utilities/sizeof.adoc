@@ -1,0 +1,95 @@
+---
+title: sizeof()
+categories: [ "Variables" ]
+subCategories: [ "Utilities" ]
+---
+
+= sizeof
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Оператор `sizeof` повертає кількість байтів у типі змінної або кількість байтів, зайнятих масивом.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`sizeof(variable)`
+
+
+[float]
+=== Parameters
+`variable`: Об'єкт, розмір якого потрібно отримати. Дозволені типи даних: будь-який тип змінної або масив (наприклад, `link:../../data-types/int[int]`, `link:../../data-types/float[float]`, `link:../../data-types/byte[byte]`).
+
+
+[float]
+=== Returns
+Кількість байтів у змінній або байтів, зайнятих у масиві. Тип даних: `link:../../data-types/size_t[size_t]`.
+
+--
+// OVERVIEW SECTION ENDS
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Оператор `sizeof` корисний для роботи з масивами (наприклад, рядками), коли зручно мати можливість змінювати розмір масиву, не ламаючи інші частини програми.
+
+Ця програма виводить текстовий рядок по одному символу за раз. Спробуйте змінити текстову фразу.
+
+[source,arduino]
+----
+char myStr[] = "this is a test";
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  for (byte i = 0; i < sizeof(myStr) - 1; i++) {
+    Serial.print(i, DEC);
+    Serial.print(" = ");
+    Serial.write(myStr[i]);
+    Serial.println();
+  }
+  delay(5000);  // slow down the program
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Зверніть увагу, що `sizeof` повертає загальну кількість байтів. Тому для масивів більших типів змінних, таких як link:../../data-types/int[`int`], цикл for виглядатиме приблизно так.
+
+[source,arduino]
+----
+int myValues[] = {123, 456, 789};
+
+// this for loop works correctly with an array of any type or size
+for (byte i = 0; i < (sizeof(myValues) / sizeof(myValues[0])); i++) {
+  // do something with myValues[i]
+}
+----
+
+Зверніть увагу, що правильно відформатований рядок закінчується символом NULL, який має значення ASCII 0.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

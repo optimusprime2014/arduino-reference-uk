@@ -1,0 +1,78 @@
+---
+title: "isPunct()"
+categories: [ "Functions" ]
+subCategories: [ "Characters" ]
+---
+
+
+
+
+
+= isPunct(thisChar)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Перевіряє, чи є символ розділовим знаком (кома, крапка з комою, знак оклику тощо). Повертає true, якщо thisChar є розділовим знаком.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`isPunct(thisChar)`
+
+
+[float]
+=== Параметри
+`thisChar`: змінна. Дозволені типи даних: `char`.
+
+
+[float]
+=== Повертає
+`true`: якщо thisChar є розділовим знаком.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+if (isPunct(myChar)) {  // tests if myChar is a punctuation character
+  Serial.println("The character is a punctuation");
+}
+else {
+  Serial.println("The character is not a punctuation");
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Див. також
+
+[role="language"]
+* #LANGUAGE#  link:../../../variables/data-types/char[char]
+* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
+* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
+* #LANGUAGE# link:../../communication/serial/read[read()]
+
+--
+// SEE ALSO SECTION ENDS

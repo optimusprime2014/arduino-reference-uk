@@ -1,0 +1,80 @@
+---
+title: Floating Point Constants
+categories: [ "Variables" ]
+subCategories: [ "Constants" ]
+---
+
+
+
+
+
+= Floating Point Constants
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Подібно до цілочисельних констант, константи з плаваючою комою використовуються для того, щоб зробити код більш читабельним. Константи з плаваючою комою замінюються під час компіляції на значення, до якого обчислюється вираз.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+float n = 0.005;  // 0.005 is a floating point constant
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Константи з плаваючою комою також можуть бути виражені в різних форматах експоненційного запису. 'E' і 'e' однаково приймаються як дійсні індикатори експоненти.
+[%hardbreaks]
+
+|===
+|floating-point constant |evaluates to: |also evaluates to:
+
+|10.0
+|10
+|
+
+|2.34E5
+|2.34 * 10^5
+|234000
+
+|67e-12
+|67.0 * 10^-12
+|0.000000000067
+
+|===
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

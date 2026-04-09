@@ -1,0 +1,55 @@
+---
+title: (unsigned int)
+categories: [ "Variables" ]
+subCategories: [ "Conversion" ]
+---
+
+
+
+
+
+= (unsigned int)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Перетворює значення на тип даних `link:../../data-types/unsignedint[unsigned int]`.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`(unsigned int)x`
+
+
+[float]
+=== Parameters
+`x`: значення будь-якого типу
+
+[float]
+=== Returns
+link:../../data-types/unsignedint[`unsigned int`]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../data-types/unsignedint[unsigned int]
+
+
+--
+// SEE ALSO SECTION ENDS

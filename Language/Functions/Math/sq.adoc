@@ -1,0 +1,85 @@
+---
+title: sq()
+categories: [ "Functions" ]
+subCategories: [ "Math" ]
+---
+
+
+
+
+
+= sq(x)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обчислює квадрат числа: число, помножене саме на себе.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`sq(x)`
+
+
+[float]
+=== Parameters
+`x`: число. Дозволені типи даних: будь-який тип даних.
+
+
+[float]
+=== Returns
+Квадрат числа. Тип даних: `double`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Notes and Warnings
+Через те, як реалізовано функцію `sq()`, уникайте використання інших функцій всередині дужок, це може призвести до неправильних результатів.
+
+Цей код дасть неправильні результати:
+[source,arduino]
+----
+int inputSquared = sq(Serial.parseInt()); // avoid this
+----
+
+Використовуйте натомість це:
+[source,arduino]
+----
+int input = Serial.parseInt();  // keep other operations outside the sq function
+int inputSquared = sq(input);
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../abs[abs()]
+* #LANGUAGE# link:../constrain[constrain()]
+* #LANGUAGE# link:../map[map()]
+* #LANGUAGE# link:../max[max()]
+* #LANGUAGE# link:../min[min()]
+* #LANGUAGE# link:../pow[pow()]
+* #LANGUAGE# link:../sqrt[sqrt()]
+
+--
+// SEE ALSO SECTION ENDS

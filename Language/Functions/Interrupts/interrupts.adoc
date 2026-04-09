@@ -1,0 +1,80 @@
+---
+title: interrupts()
+categories: [ "Functions" ]
+subCategories: [ "Interrupts" ]
+---
+
+
+
+
+
+= interrupts()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Знову вмикає переривання (після того, як вони були вимкнені за допомогою link:../nointerrupts[noInterrupts()]). Переривання дозволяють виконувати певні важливі завдання у фоновому режимі та увімкнені за замовчуванням. Деякі функції не працюватимуть, поки переривання вимкнено, а вхідна комунікація може бути проігнорована. Однак переривання можуть дещо порушити час виконання коду, і їх можна вимкнути для особливо важливих ділянок коду.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`interrupts()`
+
+
+[float]
+=== Parameters
+Немає
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+Цей код вмикає переривання.
+
+[source,arduino]
+----
+void setup() {}
+
+void loop() {
+  noInterrupts();
+  // critical, time-sensitive code here
+  interrupts();
+  // other code here
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../external-interrupts/attachinterrupt[attachInterrupts()]
+* #LANGUAGE# link:../../external-interrupts/detachinterrupt[detachInterrupts()]
+
+--
+// SEE ALSO SECTION ENDS

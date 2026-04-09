@@ -1,0 +1,104 @@
+---
+title: switch...case
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= switch...case statement
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Подібно до операторів link:../if[if], оператор link:../switchcase[switch case] керує ходом виконання програм, дозволяючи програмістам вказувати різний код, який має виконуватися за різних умов. Зокрема, оператор switch порівнює значення змінної зі значеннями, вказаними в операторах case. Коли знайдено оператор case, значення якого збігається зі значенням змінної, виконується код у цьому операторі case.
+[%hardbreaks]
+
+Ключове слово link:../break[break] завершує виконання оператора switch і зазвичай використовується в кінці кожного case. Без оператора break оператор switch продовжить виконувати наступні вирази ("наскрізне проходження"), доки не зустріне break або не досягне кінця оператора switch.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+switch (var) {
+  case label1:
+    // statements
+    break;
+  case label2:
+    // statements
+    break;
+  default:
+    // statements
+    break;
+}
+----
+
+
+[float]
+=== Параметри
+`var`: *цілочисельна* змінна, значення якої порівнюється з різними cases (випадками). Дозволений будь-який цілочисельний тип даних*, такий як `byte`, `char`, `int`, `long`.
+`label1`, `label2`: константи. Тут також дозволено будь-який цілочисельний тип даних.
+
+*Ви також можете використовувати тип даних `bool`, коли вказуєте лише два варіанти switch case.
+
+Зверніть увагу, що ви також можете використовувати від'ємні значення як вхідні дані.
+
+[float]
+=== Повертає
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+switch (var) {
+  case 1:
+    // зробити щось, коли var дорівнює 1
+    break;
+  case 2:
+    // зробити щось, коли var дорівнює 2
+    break;
+  default:
+    // якщо нічого іншого не підходить, виконати за замовчуванням
+    // default необов'язковий
+    break;
+}
+
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

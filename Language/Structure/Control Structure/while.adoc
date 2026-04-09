@@ -1,0 +1,77 @@
+---
+title: while
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= while loop
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+[%hardbreaks]
+Цикл `while` буде виконуватися безперервно та нескінченно, доки вираз у дужках () не стане хибним. Щось має змінити змінну, яка перевіряється, інакше цикл while ніколи не завершиться. Це може бути у вашому коді, наприклад, змінна, що збільшується (інкремент), або зовнішня умова, така як тестування датчика.
+
+[float]
+=== Синтаксис
+[source,arduino]
+----
+while (condition) {
+  // statement(s)
+}
+----
+
+
+[float]
+=== Параметри
+`condition`: логічний вираз, який оцінюється як `true` або `false`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+var = 0;
+while (var < 200) {
+  // зробити щось повторюване 200 разів
+  var++;
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+[role="example"]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples/WhileStatementConditional[While Loop^]
+
+--
+// SEE ALSO SECTION ENDS

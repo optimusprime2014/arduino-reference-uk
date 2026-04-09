@@ -1,0 +1,91 @@
+---
+title: digitalPinToInterrupt()
+categories: [ "Functions" ]
+subCategories: [ "External Interrupts" ]
+---
+
+
+
+
+
+= digitalPinToInterrupt()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Функція `digitalPinToInterrupt()` приймає контакт як аргумент і повертає той самий контакт *якщо* він може бути використаний як переривання. Наприклад, `digitalPinToInterrupt(4)` на Arduino UNO не працюватиме, оскільки переривання підтримуються лише на контактах 2,3.
+
+Дивіться link:../../external-interrupts/attachinterrupt[attachInterrupt()] для повного списку підтримуваних контактів переривань на всіх платах.
+
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`digitalPinToInterrupt(pin)`
+
+
+[float]
+=== Parameters
+- `pin` - контакт, який ми хочемо використовувати для переривання.
+
+
+[float]
+=== Returns
+- Контакт для переривання (наприклад, `2`)+
+- Якщо контакт не доступний для переривання, повертає `-1`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+Цей приклад перевіряє, чи можна використовувати контакт як переривання.
+
+[source,arduino]
+----
+int pin = 2;
+
+void setup() {
+  Serial.begin(9600);
+  int checkPin = digitalPinToInterrupt(pin);
+
+  if (checkPin == -1) {
+    Serial.println("Not a valid interrupt pin!");
+  } else {
+    Serial.println("Valid interrupt pin.");
+  }
+}
+
+void loop() {
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../external-interrupts/attachinterrupt[attachInterrupts()]
+* #LANGUAGE# link:../../external-interrupts/detachinterrupt[detachInterrupts()]
+
+--
+// SEE ALSO SECTION ENDS

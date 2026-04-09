@@ -1,0 +1,81 @@
+---
+title: "|"
+title_expanded: bitwise or
+categories: [ "Structure" ]
+subCategories: [ "Bitwise Operators" ]
+---
+
+
+
+
+
+= | Побітове OR (АБО)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Оператором побітового OR (АБО) у C++ є символ вертикальної риски |. Як і оператор &, | працює незалежно з кожним бітом у двох своїх цілочисельних виразах, але те, що він робить, звичайно ж, відрізняється. Побітове OR двох бітів дорівнює 1, якщо один або обидва вхідних біти дорівнюють 1, в іншому випадку дорівнює 0.
+[%hardbreaks]
+
+Іншими словами:
+
+    0  0  1  1    operand1
+    0  1  0  1    operand2
+    ----------
+    0  1  1  1    (operand1 | operand2) - returned result
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int a =  92;    // in binary: 0000000001011100
+int b = 101;    // in binary: 0000000001100101
+int c = a | b;  // result:    0000000001111101, or 125 in decimal.
+----
+[%hardbreaks]
+
+Одне з найпоширеніших застосувань побітового OR - це встановлення декількох бітів у числі з упакованими бітами.
+
+[source,arduino]
+----
+// Note: This code is AVR architecture specific
+// set direction bits for pins 2 to 7, leave PD0 and PD1 untouched (xx | 00 == xx)
+// same as pinMode(pin, OUTPUT) for pins 2 to 7 on Uno or Nano
+DDRD = DDRD | 0b11111100;
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+
+[role="language"]
+* #LANGUAGE# link:../../boolean-operators/logicalor[|| Logical OR]
+
+[role="example"]
+* #EXAMPLE# https://www.arduino.cc/playground/Code/BitMath[BitMath Tutorial^]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,61 @@
+= Reference-uk
+
+Reference-uk — це репозиторій для документації Language Reference синтаксису Arduino **українською** мовою.
+Усі файли термінів Reference у форматі AsciiDoc.
+
+Дякуємо, що знайшли час зробити свій внесок у контент Arduino, це дійсно допомагає всій спільноті Arduino. Якщо ви хочете дізнатися більше про те, як зробити внесок у цей проєкт, будь ласка, перегляньте https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[цей покроковий посібник].
+
+== Створення та редагування контенту
+Якщо ви хочете додати новий контент, створіть новий файл (у будь-якому текстовому редакторі або редакторі коду) і збережіть його як .adoc.
+Не використовуйте дужки або будь-які спеціальні символи в назві файлу.
+У link:AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`AsciiDoc_sample/AsciiDoc_Dictionary`] ви знайдете огляд синтаксису AsciiDoc. Він включає заголовки, текст, посилання, зображення, таблиці, код і різні вбудовані елементи (відео, слайд-шоу, аудіо та код). Ви можете побачити його відображення https://www.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[тут].
+
+Якщо ви хочете зробити внесок у Language Reference або відредагувати існуючий контент, ви можете знайти два шаблони в AsciiDoc_sample/Reference_Terms:
+
+* Використовуйте link:AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (відображається https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[тут]) для таких термінів, як link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite].
+* Використовуйте link:AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (відображається https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[тут]) для груп функцій, таких як link:http://arduino.cc/en/Reference/Serial[Serial].
+
+Будь ласка, зверніть увагу, що кожен файл Reference має містити принаймні опис, деякий приклад коду та посилання на іншу релевантну інформацію (розділ See Also).
+
+Якщо вам потрібно додати зображення до Asciidoc, будь ласка, створіть папку з назвою attachments у тому ж каталозі, що й файл Asciidoc. Зображення можуть бути збережені у форматі SVG та PNG, максимальний розмір 200 КБ.
+
+== Зробити внесок у контент на Github
+Якщо ви не знайомі з Git, ви можете зробити внесок у контент безпосередньо на Github через їхній онлайн-інтерфейс. Ми склали короткий посібник, щоб показати вам, як це зробити - https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[ПЕРЕГЛЯНЬТЕ ЙОГО!]
+
+link:https://help.github.com/articles/editing-files-in-another-user-s-repository/[Ви також можете дотримуватися цього посібника] (написаного командою Github), щоб дізнатися, як відредагувати файл .adoc і запропонувати зміну файлу команді Arduino.
+Пропонуючи зміну, будь ласка, дотримуйтесь вказівок, описаних у файлах шаблонів Reference.
+
+
+== Подання pull request
+Ми раді, що ви хочете зробити внесок у Arduino Reference: це найкращий спосіб допомогти спільноті.
+
+Ваш внесок додає або змінює існуючий код або повні описи, будь ласка, завжди посилайтеся на існуюче issue або відкривайте нове перед внесенням змін.
+
+=== Структура папок
+[source]
+----
+reference-en
+├─ AsciiDoc_sample
+│   ├── AsciiDoc_Dictionary
+│   │   ├── AsciiDoc_Template-Dictionary.adoc
+│   │   └── attachments
+│   └── Reference_Terms
+│       ├── AsciiDoc_Template-Parent_Of_Entities.adoc
+│       ├── AsciiDoc_Template-Single_Entity.adoc
+│       └── attachments
+├── Language
+│   ├── Functions
+│   ├── Structure
+│   └── Variables
+├── LICENSE.md
+└── README.adoc
+
+----
+
+У папці Language дерево файлів має таку ж структуру, як і на link:https://www.arduino.cc/reference/en[вебсторінці Arduino Reference]
+
+=== Ліцензія
+
+Будь ласка, зверніть увагу, що ваш внесок у Arduino Reference ліцензується за ліцензією Creative Commons Attribution-Share Alike 3.0 License. дивіться https://creativecommons.org/licenses/by-sa/3.0/
+
+image:https://i.creativecommons.org/l/by-sa/3.0/88x31.png[Creative Commons License, title="Creative Commons License"] Цей твір ліцензується за link:https://creativecommons.org/licenses/by-sa/3.0/deed.uk[Creative Commons Attribution-ShareAlike 3.0 Unported License].

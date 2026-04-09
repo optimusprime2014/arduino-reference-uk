@@ -1,0 +1,64 @@
+---
+title: ";"
+title_expanded: semicolon
+categories: [ "Structure" ]
+subCategories: [ "Further Syntax" ]
+---
+
+
+
+
+
+= ; Крапка з комою
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Використовується для завершення оператора.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+int a = 13;
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Якщо ви забудете закінчити рядок крапкою з комою, це призведе до помилки компілятора. Текст помилки може бути очевидним і стосуватися відсутньої крапки з комою, або ж ні. Якщо з'являється незрозуміла або на перший погляд нелогічна помилка компілятора, одне з перших, що слід перевірити - це відсутня крапка з комою в безпосередній близькості, що передує рядку, на який поскаржився компілятор.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

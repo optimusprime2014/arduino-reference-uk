@@ -1,0 +1,100 @@
+---
+title: bitRead()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= bitRead()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Зчитує біт змінної, наприклад `bool`, `int`. Зверніть увагу, що `float` та `double` не підтримуються. Ви можете зчитувати біт змінних аж до `unsigned long long` (64 біти / 8 байтів).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`bitRead(x, n)`
+
+
+[float]
+=== Параметри
+`x`: число, з якого потрібно зчитати. +
+`n`: який біт зчитувати, починаючи з 0 для найменш значущого (крайнього правого) біта.
+
+
+[float]
+=== Повертає
+Значення біта (0 або 1).
+
+[float]
+=== Приклад коду
+
+Цей приклад коду демонструє, як зчитувати дві змінні — один лічильник, що збільшується, і один, що зменшується — та виводити як двійкові, так і десяткові значення змінних.
+
+Функція `readBit()` проходить через кожен біт змінної (починаючи з крайнього правого біта) і виводить його.
+
+[source,arduino]
+----
+long negative_var = -0;  //
+unsigned long long positive_var = 0;
+
+//predefined sizes when looping through bits
+//e.g. long_size is 32 bit (which is 0-31). Therefore, we subtract "1".
+const int bool_size = (1 - 1);
+const int int_size = (8 - 1);
+const int long_size = (32 - 1);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  //run readBit function, passing the pos/neg variables
+  readBit("Positive ", positive_var);
+  readBit("Negative ", negative_var);
+  Serial.println();
+
+  //increase and decrease the variables
+  negative_var--;
+  positive_var++;
+
+  delay(1000);
+}
+
+/*this function takes a variable, prints it out bit by bit (starting from the right)
+then prints the decimal number for comparison.*/
+void readBit(String direction, long counter) {
+  Serial.print(direction + "Binary Number: ");
+  //loop through each bit
+  for (int b = long_size; b >= 0; b--) {
+    byte bit = bitRead(counter, b);
+    Serial.print(bit);
+  }
+  Serial.print(" Decimal Number: ");
+  Serial.println(counter);
+}
+----
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

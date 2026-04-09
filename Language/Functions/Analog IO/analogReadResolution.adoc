@@ -1,0 +1,120 @@
+---
+title: analogReadResolution()
+categories: [ "Functions" ]
+subCategories: [ "Analog I/O" ]
+---
+
+
+
+
+= analogReadResolution()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+analogReadResolution() є розширенням Analog API для сімейств плат Zero, Due, MKR, Nano 33 (BLE та IoT) та Portenta.
+
+Встановлює розмір (у бітах) значення, що повертається функцією `analogRead()`. За замовчуванням це 10 біт (повертає значення від 0 до 1023) для зворотної сумісності з платами на базі AVR.
+
+Плати сімейств *Zero, Due, MKR та Nano 33 (BLE та IoT)* мають 12-бітні можливості АЦП, до яких можна отримати доступ, змінивши роздільну здатність на 12. Це дозволить `analogRead()` повертати значення від 0 до 4095. +
+*Portenta H7* має 16-бітний АЦП, який дозволить отримувати значення від 0 до 65535.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`analogReadResolution(bits)`
+
+
+[float]
+=== Parameters
+`bits`: визначає роздільну здатність (у бітах) значення, що повертається функцією `analogRead()`. Ви можете встановити це значення від 1 до 32. Ви можете встановити роздільну здатність вище за підтримувані 12 або 16 біт, але значення, що повертаються `analogRead()`, будуть мати наближення. Див. примітку нижче для деталей.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код показує, як використовувати АЦП з різною роздільною здатністю.
+
+[source,arduino]
+----
+void setup() {
+  // open a serial connection
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the input on A0 at default resolution (10 bits)
+  // and send it out the serial connection
+  analogReadResolution(10);
+  Serial.print("ADC 10-bit (default) : ");
+  Serial.print(analogRead(A0));
+
+  // change the resolution to 12 bits and read A0
+  analogReadResolution(12);
+  Serial.print(", 12-bit : ");
+  Serial.print(analogRead(A0));
+
+  // change the resolution to 16 bits and read A0
+  analogReadResolution(16);
+  Serial.print(", 16-bit : ");
+  Serial.print(analogRead(A0));
+
+  // change the resolution to 8 bits and read A0
+  analogReadResolution(8);
+  Serial.print(", 8-bit : ");
+  Serial.println(analogRead(A0));
+
+  // a little delay to not hog Serial Monitor
+  delay(100);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Якщо ви встановите значення `analogReadResolution()` вище за можливості вашої плати, Arduino буде повертати значення лише з її максимальною роздільною здатністю, заповнюючи додаткові біти нулями.
+
+Наприклад: використання плати Due з `analogReadResolution(16)` дасть вам наближене 16-бітне число, в якому перші 12 біт містять реальне показання АЦП, а останні 4 біти *заповнені нулями*.
+
+Якщо ви встановите значення `analogReadResolution()` нижче за можливості вашої плати, зайві найменш значущі біти, зчитані з АЦП, будуть *відкинуті*.
+
+Використання 16-бітної роздільної здатності (або будь-якої роздільної здатності *вище* за фактичні апаратні можливості) дозволяє писати скетчі, які автоматично обробляють пристрої з АЦП вищої роздільної здатності, коли вони з'являться на майбутніх платах, не змінюючи жодного рядка коду.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/AnalogInputPins[Description of the analog input pins^]
+
+[role="language"]
+* #LANGUAGE# link:../../analog-io/analogread[analogRead()]
+
+--
+// SEE ALSO SECTION ENDS

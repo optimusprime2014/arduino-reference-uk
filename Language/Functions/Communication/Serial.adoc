@@ -1,0 +1,116 @@
+---
+title: Serial
+categories: [ "Functions" ]
+subCategories: [ "Communication" ]
+---
+
+= Serial()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Використовується для зв'язку між платою Arduino та комп'ютером або іншими пристроями. Усі плати Arduino мають принаймні один послідовний порт (також відомий як UART або USART), а деякі мають кілька.
+[options="header"]
+
+|================================================================================================================================================
+| Плата                     | Піни Serial                   | Піни Serial1     | Піни Serial2        | Піни Serial3     | Піни Serial4
+| UNO R3, UNO R3 SMD Mini   | 0(RX), 1(TX)                  |                  |                     |                  |
+| Nano (classic)            | 0(RX), 1(TX)                  |                  |                     |                  |
+| UNO R4 Minima, UNO R4 WiFi|                               | 0(RX0), 1(TX0)   |                     |                  |
+| Leonardo, Micro, Yún Rev2 |                               | 0(RX), 1(TX)     |                     |                  |
+| Uno WiFi Rev.2            |                               | 0(RX), 1(TX)     |                     |                  |
+| MKR boards                |                               | 13(RX), 14(TX)   |                     |                  |
+| Zero                      |                               | 0(RX), 1(TX)     |                     |                  |
+| GIGA R1 WiFi              |                               | 0(RX), 1(TX)     | 19(RX1), 18(TX1)    | 17(RX2), 16(TX2) | 15(RX3), 14(TX3)
+| Due                       | 0(RX), 1(TX)                  | 19(RX1), 18(TX1) | 17(RX2), 16(TX2)    | 15(RX3), 14(TX3) |
+| Mega 2560 Rev3            | 0(RX), 1(TX)                  | 19(RX1), 18(TX1) | 17(RX2), 16(TX2)    | 15(RX3), 14(TX3) |
+| Nano 33 IoT               |                               | 0(RX0), 1(TX0)   |                     |                  |
+| Nano RP2040 Connect       |                               | 0(RX0), 1(TX0)   |                     |                  |
+| Nano BLE / BLE Sense      |                               | 0(RX0), 1(TX0)   |                     |                  |
+|================================================================================================================================================
+
+
+[options="header"]
+
+Плата Nano ESP32 є винятком, оскільки вона базується на ядрі ESP32. Тут `Serial0` відноситься до `RX0` та `TX0`, тоді як `Serial1` та `Serial2` є додатковими портами, які можна призначити будь-якому вільному GPIO.
+
+|================================================================================================================================================
+| Плата                     | Піни Serial0                   | Піни Serial1        | Піни Serial2        | Піни Serial3     | Піни Serial4
+| Nano ESP32                | 0(RX0), 1(TX0)                 | Будь-який вільний GPIO       | Будь-який вільний GPIO       |                  |
+|================================================================================================================================================
+
+Ви можете прочитати більше про налаштування додаткових послідовних портів Nano ESP32 у https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet/#uart[цій статті].
+
+[%hardbreaks]
+На старіших платах (Uno, Nano, Mini та Mega) піни 0 і 1 використовуються для зв'язку з комп'ютером. Підключення будь-чого до цих пінів може перешкоджати цьому зв'язку, включаючи спричинення збоїв під час завантаження коду на плату.
+[%hardbreaks]
+Ви можете використовувати вбудований монітор порту (serial monitor) середовища Arduino для зв'язку з платою Arduino. Натисніть кнопку монітора порту на панелі інструментів і виберіть ту саму швидкість передачі даних (baud rate), яка використовується під час виклику `begin()`.
+[%hardbreaks]
+Послідовний зв'язок на пінах TX/RX використовує логічні рівні TTL (5 В або 3,3 В залежно від плати). Не підключайте ці піни безпосередньо до послідовного порту RS232; вони працюють з напругою +/- 12 В і можуть пошкодити вашу плату Arduino.
+[%hardbreaks]
+Щоб використовувати ці додаткові послідовні порти для зв'язку з вашим персональним комп'ютером, вам знадобиться додатковий адаптер USB-to-serial, оскільки вони не підключені до адаптера USB-to-serial плати Mega. Щоб використовувати їх для зв'язку із зовнішнім послідовним пристроєм TTL, підключіть пін TX до піна RX вашого пристрою, RX до піна TX вашого пристрою, а землю вашої плати Mega до землі вашого пристрою.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// FUNCTIONS SECTION STARTS
+[#functions]
+--
+
+'''
+
+[float]
+=== Функції
+link:../serial/ifserial[if(Serial)] +
+link:../serial/available[available()] +
+link:../serial/availableforwrite[availableForWrite()] +
+link:../serial/begin[begin()] +
+link:../serial/end[end()] +
+link:../serial/find[find()] +
+link:../serial/finduntil[findUntil()] +
+link:../serial/flush[flush()] +
+link:../serial/parsefloat[parseFloat()] +
+link:../serial/parseint[parseInt()] +
+link:../serial/peek[peek()] +
+link:../serial/print[print()] +
+link:../serial/println[println()] +
+link:../serial/read[read()] +
+link:../serial/readbytes[readBytes()] +
+link:../serial/readbytesuntil[readBytesUntil()] +
+link:../serial/readstring[readString()] +
+link:../serial/readstringuntil[readStringUntil()] +
+link:../serial/settimeout[setTimeout()] +
+link:../serial/write[write()] +
+link:../serial/serialevent[serialEvent()]
+
+'''
+
+--
+// FUNCTIONS SECTION ENDS
+
+
+// SEEALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="example"]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/ReadASCIIString[ReadASCIIString^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/ASCIITable[ASCII TAble^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/Dimmer[Dimmer^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/Graph[Graph^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/PhysicalPixel[Physical Pixel^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/SerialCallResponse[Serial Call Response^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/SerialCallResponseASCII[Serial Call Response ASCII^]
+
+
+--
+// SEEALSO SECTION ENDS

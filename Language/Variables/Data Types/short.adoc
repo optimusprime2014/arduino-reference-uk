@@ -1,0 +1,70 @@
+---
+title: short
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+
+
+
+
+= short
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Тип short є 16-бітним типом даних.
+
+На всіх платах Arduino (на базі ATMega та ARM) `short` зберігає 16-бітне (2-байтове) значення. Це дає діапазон від -32,768 до 32,767 (мінімальне значення -2^15 та максимальне значення (2^15) - 1).
+[%hardbreaks]
+
+[float]
+=== Синтаксис
+`short var = val;`
+
+
+[float]
+=== Параметри
+`var`: ім'я змінної. +
+`val`: значення, яке ви присвоюєте цій змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+short ledPin = 13
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,82 @@
+---
+title: noInterrupts()
+categories: [ "Functions" ]
+subCategories: [ "Interrupts" ]
+---
+
+
+
+
+
+= noInterrupts()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Вимикає переривання (ви можете знову увімкнути їх за допомогою link:../interrupts[`interrupts()`]). Переривання дозволяють виконувати певні важливі завдання у фоновому режимі та увімкнені за замовчуванням. Деякі функції не працюватимуть, поки переривання вимкнені, а вхідна комунікація може бути проігнорована. Однак переривання можуть дещо порушити час виконання коду, і їх можна вимкнути для особливо важливих ділянок коду.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`noInterrupts()`
+
+
+[float]
+=== Parameters
+Немає
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+Цей код показує, як увімкнути переривання.
+
+[source,arduino]
+----
+void setup() {}
+
+void loop() {
+  noInterrupts();
+  // critical, time-sensitive code here
+  interrupts();
+  // other code here
+}
+----
+[%hardbreaks]
+
+
+[float]
+=== Notes and Warnings
+Зверніть увагу, що вимкнення переривань на платах Arduino з підтримкою USB (наприклад, link:https://docs.arduino.cc/hardware/leonardo[Leonardo^]) призведе до того, що плата більше не відображатиметься в меню Port, оскільки це вимикає функціонал USB.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

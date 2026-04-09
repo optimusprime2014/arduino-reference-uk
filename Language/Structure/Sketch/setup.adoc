@@ -1,0 +1,60 @@
+---
+title: setup()
+categories: [ "Functions" ]
+subCategories: [ "Sketch" ]
+---
+
+
+
+
+
+= setup()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Функція `setup()` викликається під час запуску скетчу. Використовуйте її для ініціалізації змінних, режимів пінів, початку використання бібліотек тощо. Функція `setup()` запуститься лише один раз, після кожного ввімкнення живлення або скидання плати Arduino.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+int buttonPin = 3;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  // ...
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

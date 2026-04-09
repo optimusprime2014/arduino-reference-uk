@@ -1,0 +1,104 @@
+---
+title: Mouse.release()
+---
+
+
+
+
+= Mouse.release()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Надсилає повідомлення про те, що попередньо натиснуту кнопку (викликану через link:../mousepress[Mouse.press()]) відпущено. `Mouse.release()` за замовчуванням стосується лівої кнопки.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`Mouse.release()` +
+`Mouse.release(button)`
+
+
+[float]
+=== Parameters
+`button`: яку кнопку миші натиснути. Дозволені типи даних: `char`.
+
+* `MOUSE_LEFT` (за замовчуванням)
+* `MOUSE_RIGHT`
+* `MOUSE_MIDDLE`
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Опишіть, про що йдеться у прикладі коду, та додайте відповідний код  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Mouse.h>
+
+void setup() {
+  //Перемикач, який розпочне натискання миші
+  pinMode(2, INPUT);
+  //Перемикач, який завершить натискання миші
+  pinMode(3, INPUT);
+  //ініціалізувати бібліотеку Mouse
+  Mouse.begin();
+}
+
+void loop() {
+  //якщо перемикач, підключений до контакту 2, замкнуто, натиснути та утримувати ліву кнопку миші
+  if (digitalRead(2) == HIGH) {
+    Mouse.press();
+  }
+  //якщо перемикач, підключений до контакту 3, замкнуто, відпустити ліву кнопку миші
+  if (digitalRead(3) == HIGH) {
+    Mouse.release();
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли ви використовуєте команду `Mouse.release()`, Arduino перебирає керування вашою мишею! Переконайтеся, що ви маєте контроль, перш ніж використовувати команду. Використання кнопки для перемикання стану керування мишею є ефективним кроком.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../mouseclick[Mouse.click()]
+* #LANGUAGE# link:../mouseend[Mouse.end()]
+* #LANGUAGE# link:../mousemove[Mouse.move()]
+* #LANGUAGE# link:../mousepress[Mouse.press()]
+* #LANGUAGE# link:../mouseispressed[Mouse.isPressed()]
+
+--
+// SEE ALSO SECTION ENDS

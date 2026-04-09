@@ -1,0 +1,53 @@
+---
+title: highByte()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= highByte()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Витягує старший (крайній лівий) байт слова (або другий наймолодший байт більшого типу даних).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`highByte(x)`
+
+
+[float]
+=== Параметри
+`x`: значення будь-якого типу
+
+
+[float]
+=== Повертає
+Тип даних: `byte`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../../variables/data-types/word[word()]
+
+--
+// SEE ALSO SECTION ENDS

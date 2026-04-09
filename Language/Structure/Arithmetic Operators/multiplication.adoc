@@ -1,0 +1,91 @@
+---
+title: "*"
+title_expanded: "multiplication"
+categories: [ "Structure" ]
+subCategories: [ "Arithmetic Operators" ]
+---
+
+
+
+
+
+= * Множення
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+*Множення* - це одна з чотирьох основних арифметичних операцій. Оператор `*` (зірочка) оперує двома операндами для отримання добутку.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`product = operand1 * operand2;`
+
+
+[float]
+=== Parameters
+`product`: змінна. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand1`: змінна або константа. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand2`: змінна або константа. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int a = 5;
+int b = 10;
+int c = 0;
+c = a * b;  // the variable 'c' gets a value of 50 after this statement is executed
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+1. Операція множення може викликати переповнення, якщо результат більший за той, який може бути збережений у типі даних.
+
+2. Якщо одне з чисел (операндів) належить до типу float або double, для обчислення використовуватиметься математика з плаваючою комою.
+
+3. Якщо операнди мають тип даних float / double, а змінна, яка зберігає добуток, є цілим числом, то зберігається лише ціла частина, а дробова частина числа втрачається.
+
+[source,arduino]
+----
+float a = 5.5;
+float b = 6.6;
+int c = 0;
+c = a * b;  // the variable 'c' stores a value of 36 only as opposed to the expected product of 36.3
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

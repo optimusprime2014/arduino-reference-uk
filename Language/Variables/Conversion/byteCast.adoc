@@ -1,0 +1,55 @@
+---
+title: byte()
+categories: [ "Variables" ]
+subCategories: [ "Conversion" ]
+---
+
+
+
+
+
+= byte()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Перетворює значення на тип даних `link:../../data-types/byte[byte]`.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`byte(x)` +
+`(byte)x` (Перетворення типу у стилі C)
+
+
+[float]
+=== Parameters
+`x`: значення. Дозволені типи даних: будь-який тип.
+
+
+[float]
+=== Returns
+Тип даних: link:../../data-types/byte[`byte`].
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../data-types/byte[byte]
+
+--
+// SEE ALSO SECTION ENDS

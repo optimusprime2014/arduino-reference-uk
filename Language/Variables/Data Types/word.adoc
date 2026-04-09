@@ -1,0 +1,61 @@
+---
+title: word
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= word
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Слово (word) може зберігати ціле число без знака розміром принаймні 16 біт (від 0 до 65535).
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`word var = val;`
+
+
+[float]
+=== Parameters
+`var`: ім'я змінної. +
+`val`: значення, яке присвоюється цій змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+word w = 10000;
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,88 @@
+---
+title: int
+categories: [ "Variables" ]
+subCategories: [ "Data Types" ]
+---
+
+= int
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Цілі числа (int) – це ваш основний тип даних для зберігання чисел.
+
+На платах Arduino Uno (та інших на базі ATmega) `int` зберігає 16-бітне (2-байтове) значення. Це дає діапазон від -32,768 до 32,767 (мінімальне значення -2^15 та максимальне значення (2^15) - 1).
+На платах Arduino Due та платах на базі SAMD (наприклад, MKR1000 і Zero) `int` зберігає 32-бітне (4-байтове) значення. Це дає діапазон від -2,147,483,648 до 2,147,483,647 (мінімальне значення -2^31 та максимальне значення (2^31) - 1).
+
+Змінні `int` зберігають від'ємні числа за допомогою методу (http://en.wikipedia.org/wiki/2%27s_complement[доповняльного коду]). Найстарший біт, який іноді називають "знаковим" бітом, позначає число як від'ємне. Усі інші біти інвертуються, після чого до них додається 1.
+
+Arduino самостійно обробляє від'ємні числа, тому арифметичні операції виконуються прозоро і очікуваним чином. Натомість може виникнути несподіване ускладнення під час використання оператора link:../../../structure/bitwise-operators/bitshiftright[побітового зсуву вправо] (`>>`).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`int var = val;`
+
+
+[float]
+=== Параметри
+`var`: ім'я змінної. +
+`val`: значення, яке ви присвоюєте цій змінній.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Цей код створює ціле число з назвою 'countUp', яке спочатку дорівнює 0 (нулю). З кожним циклом змінна збільшується на 1 (один), відображаючись у моніторі послідовного порту.
+
+[source,arduino]
+----
+int countUp = 0;            //creates a variable integer called 'countUp'
+
+void setup() {
+  Serial.begin(9600);       // use the serial port to print the number
+}
+
+void loop() {
+  countUp++;                //Adds 1 to the countUp int on every loop
+  Serial.println(countUp);  // prints out the current state of countUp
+  delay(1000);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Коли знакові змінні перевищують свою максимальну або мінімальну місткість, вони _переповнюються_. Результат переповнення є непередбачуваним, тому цього слід уникати. Типовим симптомом переповнення є "перескок" змінної від максимального значення до мінімального або навпаки, але це не завжди так. Якщо вам потрібна така поведінка, використовуйте `link:../unsignedint[unsigned int]`.
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+
+--
+// SEE ALSO SECTION ENDS

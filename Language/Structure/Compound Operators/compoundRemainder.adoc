@@ -1,0 +1,78 @@
+---
+title: "%="
+title_expanded: compound remainder
+categories: [ "Structure" ]
+subCategories: [ "Compound Operators" ]
+---
+
+
+
+
+
+= %= Compound Remainder (Складене обчислення залишку)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Це зручне скорочення для обчислення залишку від ділення одного цілого числа на інше з присвоєнням результату назад змінній, над якою виконувався розрахунок.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x %= divisor;   // еквівалентно виразу x = x % divisor;`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`. +
+`divisor`: *ненульова* змінна або константа. Дозволені типи даних: `int`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int x = 7;
+x %= 5;    // тепер x містить 2
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+1. Складений оператор залишку не працює з числами з плаваючою комою (floats).
+
+2. Якщо *перший* операнд від'ємний, то результат буде від'ємним (або нулем).
+Тому результат `x %= 10` не завжди буде знаходитись в межах від 0 до 9, якщо `x` може бути від'ємним.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+//SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE#  link:../../arithmetic-operators/remainder[Remainder]
+
+--
+// SEE ALSO SECTION ENDS

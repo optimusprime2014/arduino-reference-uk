@@ -1,0 +1,88 @@
+---
+title: Keyboard.write()
+---
+
+
+
+
+= Keyboard.write()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Надсилає натискання клавіші на підключений комп'ютер. Це подібно до натискання та відпускання клавіші на вашій клавіатурі. Ви можете надсилати деякі символи ASCII або додаткові link:../keyboardmodifiers[клавіші-модифікатори та спеціальні клавіші].
+
+Підтримуються лише символи ASCII, які є на клавіатурі. Наприклад, ASCII 8 (backspace) працюватиме, але ASCII 25 (Substitution) - ні. При надсиланні великих літер `Keyboard.write()` надсилає команду shift плюс потрібний символ, так само, як при наборі на клавіатурі. Якщо надсилається числовий тип, він надсилається як символ ASCII (наприклад, Keyboard.write(97) надішле 'a').
+
+Повний список символів ASCII дивіться на http://www.asciitable.com/[ASCIITable.com].
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`Keyboard.write(character)`
+
+
+[float]
+=== Параметри
+`character`: `char` або `int`, що надсилається на комп'ютер. Може бути надіслано у будь-якій нотації, прийнятній для `char`. Наприклад, усі наведені нижче варіанти є прийнятними і надсилають те саме значення, 65 або ASCII A:
+[source,arduino]
+----
+Keyboard.write(65);         // sends ASCII value 65, or A
+Keyboard.write('A');            // same thing as a quoted character
+Keyboard.write(0x41);       // same thing in hexadecimal
+Keyboard.write(0b01000001); // same thing in binary (weird choice, but it works)
+----
+
+
+[float]
+=== Повертає
+Кількість надісланих байтів. Тип даних: `size_t`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Keyboard.h>
+
+void setup() {
+  // make pin 2 an input and turn on the
+  // pullup resistor so it goes high unless
+  // connected to ground:
+  pinMode(2, INPUT_PULLUP);
+  Keyboard.begin();
+}
+
+void loop() {
+  //if the button is pressed
+  if (digitalRead(2) == LOW) {
+    //Send an ASCII 'A',
+    Keyboard.write(65);
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Коли ви використовуєте команду `Keyboard.write()`, Arduino перехоплює керування вашою клавіатурою! Переконайтеся, що у вас є контроль, перш ніж використовувати команду. Кнопка для перемикання стану керування клавіатурою є ефективним рішенням.
+
+--
+// HOW TO USE SECTION ENDS

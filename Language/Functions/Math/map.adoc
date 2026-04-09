@@ -1,0 +1,122 @@
+---
+title: map()
+categories: [ "Functions" ]
+subCategories: [ "Math" ]
+---
+
+
+
+
+
+= map(value, fromLow, fromHigh, toLow, toHigh)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Перепризначає число з одного діапазону в інший. Тобто значення *fromLow* буде перетворено на *toLow*, значення *fromHigh* на *toHigh*, проміжні значення на відповідні проміжні значення тощо.
+
+Не обмежує значення в межах діапазону, оскільки значення поза діапазоном іноді можуть бути потрібними та корисними. Функцію `constrain()` можна використовувати до або після цієї функції, якщо потрібно встановити обмеження для діапазонів.
+
+Зверніть увагу, що "нижня межа" будь-якого діапазону може бути більшою або меншою за "верхню межу", тому функцію `map()` можна використовувати для перевертання діапазону чисел, наприклад:
+
+`y = map(x, 1, 50, 50, 1);`
+
+Функція також добре працює з від'ємними числами, тому цей приклад:
+
+`y = map(x, 1, 50, 50, -100);`
+
+також є дійсним і працює добре.
+
+Функція `map()` використовує цілочисельну математику, тому не буде генерувати дробові значення, навіть коли математично вони мали б з'явитися. Дробові залишки відкидаються, не округлюються і не усереднюються.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`map(value, fromLow, fromHigh, toLow, toHigh)`
+
+
+[float]
+=== Parameters
+`value`: число для перетворення. +
+`fromLow`: нижня межа поточного діапазону значення. +
+`fromHigh`: верхня межа поточного діапазону значення. +
+`toLow`: нижня межа цільового діапазону значення. +
+`toHigh`: верхня межа цільового діапазону значення.
+
+
+[float]
+=== Returns
+Перетворене значення. Тип даних: `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+/* Map an analog value to 8 bits (0 to 255) */
+void setup() {}
+
+void loop() {
+  int val = analogRead(0);
+  val = map(val, 0, 1023, 0, 255);
+  analogWrite(9, val);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Appendix
+
+Для схильних до математики, ось повний код функції:
+
+[source,arduino]
+----
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+----
+
+[float]
+=== Notes & Warnings
+
+Як згадувалося раніше, функція map() використовує цілочисельну математику. Тому дробові частини можуть бути відкинуті через це. Наприклад, дроби типу 3/2, 4/3, 5/4 будуть повернуті як 1 з функції map(), незважаючи на їхні різні фактичні значення. Тому, якщо ваш проект потребує точних розрахунків (наприклад, напруга з точністю до 3 знаків після коми), будь ласка, розгляньте можливість уникання map() і реалізації розрахунків вручну у вашому коді.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../abs[abs()]
+* #LANGUAGE# link:../constrain[constrain()]
+* #LANGUAGE# link:../max[max()]
+* #LANGUAGE# link:../min[min()]
+* #LANGUAGE# link:../pow[pow()]
+* #LANGUAGE# link:../sq[sq()]
+* #LANGUAGE# link:../sqrt[sqrt()]
+
+--
+// SEE ALSO SECTION ENDS

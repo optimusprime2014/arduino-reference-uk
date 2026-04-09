@@ -1,0 +1,99 @@
+---
+title: Mouse.click()
+---
+
+
+
+
+= Mouse.click()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Надсилає миттєве натискання комп'ютеру в місці розташування курсора. Це те саме, що натиснути та відразу відпустити кнопку миші.
+
+`Mouse.click()` за замовчуванням використовує ліву кнопку миші.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`Mouse.click()` +
+`Mouse.click(button)`
+
+
+[float]
+=== Parameters
+`button`: яку кнопку миші натиснути. Дозволені типи даних: `char`.
+
+* `MOUSE_LEFT` (за замовчуванням)
+* `MOUSE_RIGHT`
+* `MOUSE_MIDDLE`
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Опишіть, про що йдеться у прикладі коду, та додайте відповідний код  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Mouse.h>
+
+void setup() {
+  pinMode(2, INPUT);
+  //ініціалізувати бібліотеку Mouse
+  Mouse.begin();
+}
+
+void loop() {
+  //якщо кнопка натиснута, відіслати клік лівою кнопкою миші
+  if (digitalRead(2) == HIGH) {
+    Mouse.click();
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли ви використовуєте команду `Mouse.click()`, Arduino перебирає керування вашою мишею! Переконайтеся, що ви маєте контроль, перш ніж використовувати команду. Використання кнопки для перемикання стану керування мишею є ефективним кроком.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../mouseend[Mouse.end()]
+* #LANGUAGE# link:../mousemove[Mouse.move()]
+* #LANGUAGE# link:../mousepress[Mouse.press()]
+* #LANGUAGE# link:../mouserelease[Mouse.release()]
+* #LANGUAGE# link:../mouseispressed[Mouse.isPressed()]
+
+--
+// SEE ALSO SECTION ENDS

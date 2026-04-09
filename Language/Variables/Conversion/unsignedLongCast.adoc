@@ -1,0 +1,55 @@
+---
+title: (unsigned long)
+categories: [ "Variables" ]
+subCategories: [ "Conversion" ]
+---
+
+
+
+
+
+= (unsigned long)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Перетворює значення на тип даних `link:../../data-types/unsignedlong[unsigned long]`.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`(unsigned long)x`
+
+
+[float]
+=== Parameters
+`x`: значення будь-якого типу
+
+[float]
+=== Returns
+link:../../data-types/unsignedlong[`unsigned long`]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../../data-types/unsignedlong[unsigned long]
+
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,80 @@
+---
+title: pow()
+categories: [ "Functions" ]
+subCategories: [ "Math" ]
+---
+
+
+
+
+
+= pow(base, exponent)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обчислює значення числа, піднесеного до степеня. `pow()` можна використовувати для піднесення числа до дробового степеня. Це корисно для генерування експоненціального відображення значень або кривих.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`pow(base, exponent)`
+
+
+[float]
+=== Parameters
+`base`: число. Дозволені типи даних: `float`. +
+`exponent`: степінь, до якого підноситься база. Дозволені типи даних: `float`.
+
+
+[float]
+=== Returns
+Результат піднесення до степеня. Тип даних: `double`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Обчислює значення x, піднесене до степеня y:
+[source,arduino]
+----
+z = pow(x, y);
+----
+Дивіться скетч (http://arduino.cc/playground/Main/Fscale[fscale]) для більш складного прикладу використання `pow()`.
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../abs[abs()]
+* #LANGUAGE# link:../constrain[constrain()]
+* #LANGUAGE# link:../map[map()]
+* #LANGUAGE# link:../max[max()]
+* #LANGUAGE# link:../min[min()]
+* #LANGUAGE# link:../sq[sq()]
+* #LANGUAGE# link:../sqrt[sqrt()]
+
+
+--
+// SEE ALSO SECTION ENDS

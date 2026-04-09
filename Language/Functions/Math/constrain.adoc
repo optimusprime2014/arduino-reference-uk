@@ -1,0 +1,101 @@
+---
+title: constrain()
+categories: [ "Functions" ]
+subCategories: [ "Math" ]
+---
+
+
+
+
+
+= constrain(x, a, b)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Обмежує число певним діапазоном.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`constrain(x, a, b)`
+
+
+[float]
+=== Parameters
+`x`: число, яке потрібно обмежити. Дозволені типи даних: усі типи даних. +
+`a`: нижня межа діапазону. Дозволені типи даних: усі типи даних. +
+`b`: верхня межа діапазону. Дозволені типи даних: усі типи даних.
+
+
+[float]
+=== Returns
+x: якщо x знаходиться між a та b. +
+a: якщо x менше за a. +
+b: якщо x більше за b.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код обмежує значення сенсора від 10 до 150.
+
+[source,arduino]
+----
+sensVal = constrain(sensVal, 10, 150);  // limits range of sensor values to between 10 and 150
+----
+
+[float]
+=== Notes and Warnings
+Через те, як реалізована функція `constrain()`, уникайте використання інших функцій всередині дужок, це може призвести до неправильних результатів.
+
+Цей код дасть неправильні результати:
+[source,arduino]
+----
+int constrainedInput = constrain(Serial.parseInt(), minimumValue, maximumValue);   // avoid this
+----
+
+Використовуйте натомість це:
+[source,arduino]
+----
+int input = Serial.parseInt();  // keep other operations outside the constrain function
+int constrainedInput = constrain(input, minimumValue, maximumValue);
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../abs[abs()]
+* #LANGUAGE# link:../map[map()]
+* #LANGUAGE# link:../max[max()]
+* #LANGUAGE# link:../min[min()]
+* #LANGUAGE# link:../pow[pow()]
+* #LANGUAGE# link:../sq[sq()]
+* #LANGUAGE# link:../sqrt[sqrt()]
+
+--
+// SEE ALSO SECTION ENDS

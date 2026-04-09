@@ -1,0 +1,89 @@
+---
+title: "+"
+title_expanded: "addition"
+categories: [ "Structure" ]
+subCategories: [ "Arithmetic Operators" ]
+---
+
+
+
+
+
+= + Додавання (Addition)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис (Description)
+*Додавання* (Addition) — одна з чотирьох основних арифметичних операцій. Оператор `+` (плюс) діє на два операнди для отримання суми.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис (Syntax)
+`sum = operand1 + operand2;`
+
+[float]
+=== Параметри (Parameters)
+`sum`: змінна (variable). Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand1`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`operand2`: змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду (Example Code)
+
+[source,arduino]
+----
+int a = 5;
+int b = 10;
+int c = 0;
+c = a + b;  // змінна 'c' отримує значення 15 після виконання цього оператора
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження (Notes and Warnings)
+1. Операція додавання може переповнитися, якщо результат більший за той, який може бути збережений у типі даних (наприклад, додавання 1 до цілого числа зі значенням 32,767 дає -32,768).
+
+2. Якщо одне з чисел (операндів) має тип float або double, для обчислення використовуватиметься математика з рухомою комою.
+
+3. Якщо операнди мають тип даних float / double, а змінна, яка зберігає суму, є цілим числом, то зберігається лише ціла частина, а дробова частина числа втрачається.
+
+[source,arduino]
+----
+float a = 5.5;
+float b = 6.6;
+int c = 0;
+c = a + b;  // змінна 'c' зберігає значення лише 12 на відміну від очікуваної суми 12.1
+----
+[%hardbreaks]
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також (See also)
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

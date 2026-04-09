@@ -1,0 +1,89 @@
+---
+title: pulseIn()
+categories: [ "Functions" ]
+subCategories: [ "Advanced I/O" ]
+---
+
+
+
+
+
+= pulseIn()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Зчитує імпульс (`HIGH` або `LOW`) на піні. Наприклад, якщо `value` дорівнює `HIGH`, `pulseIn()` чекає, поки пін перейде з `LOW` в `HIGH`, починає відлік часу, потім чекає, поки пін перейде в `LOW` і зупиняє відлік. Повертає довжину імпульсу в мікросекундах або здається і повертає 0, якщо протягом часу очікування не було отримано повного імпульсу.
+
+Час виконання цієї функції був визначений емпірично і, ймовірно, буде давати похибки на довгих імпульсах. Працює з імпульсами довжиною від 10 мікросекунд до 3 хвилин.
+
+ПРИМІТКА: якщо використовується необов'язковий тайм-аут, код буде виконуватися швидше.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`pulseIn(pin, value)` +
+`pulseIn(pin, value, timeout)`
+
+
+[float]
+=== Параметри
+`pin`: номер піна Arduino, на якому ви хочете прочитати імпульс. Допустимі типи даних: `int`. +
+`value`: тип імпульсу для зчитування: або link:../../../variables/constants/highlow/[HIGH] або link:../../../variables/constants/highlow/[LOW]. Допустимі типи даних: `int`. +
+`timeout` (необов'язково): кількість мікросекунд для очікування початку імпульсу; за замовчуванням — одна секунда. Допустимі типи даних: `unsigned long`.
+
+
+[float]
+=== Повертає
+Довжина імпульсу (в мікросекундах) або 0, якщо імпульс не розпочався до закінчення часу очікування. Тип даних: `unsigned long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Розкажіть про те, що робить цей приклад і додайте відповідний код   ►►►►► ЦЕЙ РОЗДІЛ ОБОВ'ЯЗКОВИЙ ◄◄◄◄◄
+Приклад виводить тривалість імпульсу на піні 7.
+
+[source,arduino]
+----
+int pin = 7;
+unsigned long duration;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(pin, INPUT);
+}
+
+void loop() {
+  duration = pulseIn(pin, HIGH);
+  Serial.println(duration);
+}
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

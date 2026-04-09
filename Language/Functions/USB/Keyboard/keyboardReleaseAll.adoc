@@ -1,0 +1,84 @@
+---
+title: Keyboard.releaseAll()
+---
+
+
+
+
+= Keyboard.releaseAll()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Відпускає всі поточні натиснуті клавіші. Дивіться link:../keyboardpress[Keyboard.press()] для отримання додаткової інформації.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`Keyboard.releaseAll()`
+
+
+[float]
+=== Параметри
+Немає
+
+
+[float]
+=== Повертає
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Keyboard.h>
+
+// use this option for OSX:
+char ctrlKey = KEY_LEFT_GUI;
+// use this option for Windows and Linux:
+//  char ctrlKey = KEY_LEFT_CTRL;
+
+void setup() {
+  // make pin 2 an input and turn on the
+  // pullup resistor so it goes high unless
+  // connected to ground:
+  pinMode(2, INPUT_PULLUP);
+  // initialize control over the keyboard:
+  Keyboard.begin();
+}
+
+void loop() {
+  while (digitalRead(2) == HIGH) {
+    // do nothing until pin 2 goes low
+    delay(500);
+  }
+  delay(1000);
+  // new document:
+  Keyboard.press(ctrlKey);
+  Keyboard.press('n');
+  delay(100);
+  Keyboard.releaseAll();
+  // wait for new window to open:
+  delay(1000);
+}
+----
+
+--
+// HOW TO USE SECTION ENDS

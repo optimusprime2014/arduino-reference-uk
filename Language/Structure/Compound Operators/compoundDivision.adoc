@@ -1,0 +1,71 @@
+---
+title: "/="
+title_expanded: compound division
+categories: [ "Structure" ]
+subCategories: [ "Compound Operators" ]
+---
+
+
+
+
+
+= /= Compound Division (Складене ділення)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Це зручне скорочення для виконання ділення змінної на іншу константу або змінну.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`x /= y; // еквівалентно виразу x = x / y;`
+
+
+[float]
+=== Parameters
+`x`: змінна. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`y`: *ненульова* змінна або константа. Дозволені типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+x = 2;
+x /= 2; // тепер x містить 1
+----
+[%hardbreaks]
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+//SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE#  link:../../arithmetic-operators/division[Normal Division]
+
+--
+// SEE ALSO SECTION ENDS

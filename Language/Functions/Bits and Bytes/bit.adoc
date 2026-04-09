@@ -1,0 +1,50 @@
+---
+title: bit()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= bit()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Обчислює значення вказаного біта (біт 0 дорівнює 1, біт 1 дорівнює 2, біт 2 дорівнює 4 тощо).
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`bit(n)`
+
+
+[float]
+=== Параметри
+`n`: біт, значення якого потрібно обчислити. Зверніть увагу, що `n` має бути від 0 до 31 (32 біти).
+
+
+[float]
+=== Повертає
+Значення біта.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

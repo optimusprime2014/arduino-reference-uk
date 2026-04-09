@@ -1,0 +1,84 @@
+---
+title: bitClear()
+categories: [ "Functions" ]
+subCategories: [ "Bits and Bytes" ]
+---
+
+
+
+
+
+= bitClear()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Очищає (записує 0) біт числової змінної.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`bitClear(x, n)`
+
+
+[float]
+=== Параметри
+`x`: числова змінна, біт якої потрібно очистити. +
+`n`: який біт потрібно очистити, починаючи з 0 для найменш значущого (крайнього правого) біта.
+
+
+[float]
+=== Повертає
+`x`: значення числової змінної після очищення біта на позиції `n`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+// Опишіть, про що приклад коду, і додайте відповідний код
+Виводить результат `bitClear(x,n)` на двох заданих цілих числах. Двійкове представлення числа 6 дорівнює 0110, тому коли `n=1`, другий біт справа встановлюється в 0. Після цього в двійковій системі залишається 0100, тому повертається 4.
+
+[source,arduino]
+----
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
+
+  int x = 6;
+  int n = 1;
+  Serial.print(bitClear(x, n)); // print the output of bitClear(x,n)
+}
+
+void loop() {
+}
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+--
+// SEE ALSO SECTION ENDS

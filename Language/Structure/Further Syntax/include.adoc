@@ -1,0 +1,97 @@
+---
+title: "#include"
+title_expanded: include
+categories: [ "Structure" ]
+subCategories: [ "Further Syntax" ]
+---
+
+
+
+
+
+= #include
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Директива `#include` використовується для включення зовнішніх бібліотек у ваш скетч. Це дає програмісту доступ до великої групи стандартних C-бібліотек (груп готових функцій), а також бібліотек, написаних спеціально для Arduino.
+[%hardbreaks]
+
+Основну довідкову сторінку для C-бібліотек AVR (AVR - це посилання на мікросхеми Atmel, на яких базується Arduino) можна знайти http://www.nongnu.org/avr-libc/user-manual/modules.html[тут^].
+[%hardbreaks]
+
+Зауважте, що директива `#include`, подібно до `link:../define[#define]`, не має крапки з комою в кінці, і компілятор видасть загадкові повідомлення про помилку, якщо ви її додасте.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`#include <LibraryFile.h>` +
+`#include "LocalFile.h"`
+
+
+[float]
+=== Параметри
+`LibraryFile.h`: коли використовується синтаксис кутових дужок, файл буде шукатися в шляхах до бібліотек. +
+`LocalFile.h`: Коли використовується синтаксис подвійних лапок, вказаний файл спочатку шукатиметься в тій самій папці, де міститься файл, у якому використовується директива `#include`, а потім у шляхах до бібліотек, якщо його не було знайдено в локальному шляху. Використовуйте цей синтаксис для заголовних файлів у папці скетчу.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Цей приклад підключає бібліотеку Servo, щоб можна було використовувати її функції для керування сервоприводом.
+
+
+[source,arduino]
+----
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  for (int pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (int pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
+----
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+
+--
+// SEE ALSO SECTION ENDS

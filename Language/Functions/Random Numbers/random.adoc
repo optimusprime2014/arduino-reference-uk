@@ -1,0 +1,103 @@
+---
+title: random()
+categories: [ "Functions" ]
+subCategories: [ "Random Numbers" ]
+---
+
+
+
+
+
+= random()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Функція random генерує псевдовипадкові числа.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`random(max)` +
+`random(min, max)`
+
+
+[float]
+=== Parameters
+`min`: нижня межа випадкового значення, включно (додатково). +
+`max`: верхня межа випадкового значення, ексклюзивно (не включається).
+
+
+[float]
+=== Returns
+Випадкове число між min та max-1. Тип даних: `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код генерує випадкові числа та відображає їх.
+
+[source,arduino]
+----
+long randNumber;
+
+void setup() {
+  Serial.begin(9600);
+
+  // if analog input pin 0 is unconnected, random analog
+  // noise will cause the call to randomSeed() to generate
+  // different seed numbers each time the sketch runs.
+  // randomSeed() will then shuffle the random function.
+  randomSeed(analogRead(0));
+}
+
+void loop() {
+  // print a random number from 0 to 299
+  randNumber = random(300);
+  Serial.println(randNumber);
+
+  // print a random number from 10 to 19
+  randNumber = random(10, 20);
+  Serial.println(randNumber);
+
+  delay(50);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Якщо важливо, щоб послідовність значень, що генерується `random()`, відрізнялася при наступних виконаннях скетчу, використовуйте `randomSeed()`, щоб ініціалізувати генератор випадкових чисел достатньо випадковим вхідним значенням, наприклад, з `analogRead()` на непідключеному піні.
+
+З іншого боку, інколи може бути корисним використовувати псевдовипадкові послідовності, які повторюються точно. Цього можна досягти, викликавши `randomSeed()` з фіксованим числом перед запуском випадкової послідовності.
+
+Параметр `max` має бути обраний відповідно до типу даних змінної, в якій зберігатиметься значення. У будь-якому випадку, абсолютний максимум обмежується типом `long` генерованого значення (32 біти - 2,147,483,647). Установка `max` на більше значення не викличе помилку під час компіляції, але під час виконання скетчу генеровані числа будуть не такими, як очікується.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS

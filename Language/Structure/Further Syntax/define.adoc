@@ -1,0 +1,94 @@
+---
+title: "#define"
+title_expanded: define
+categories: [ "Structure" ]
+subCategories: [ "Further Syntax" ]
+---
+
+
+
+
+
+= #define
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+`#define` це корисна складова C++, яка дозволяє програмісту дати ім'я певному постійному значенню ще до моменту компіляції програми. Визначені константи в arduino не займають пам'яті програми на кристалі. Під час компіляції компілятор замінить посилання на ці константи їх визначеними значеннями.
+[%hardbreaks]
+
+Втім, це може мати і деякі небажані побічні ефекти, якщо, наприклад, ім'я константи, яку було визначено за допомогою #define, входить до складу імені якоїсь іншої змінної або константи. В цьому разі текст буде замінено визначеним числом (чи текстом).
+[%hardbreaks]
+
+Загалом для визначення констант переважно використовується ключове слово `link:../../../variables/variable-scope-qualifiers/const[const]`, і його слід використовувати замість `#define`.
+[%hardbreaks]
+
+[float]
+=== Синтаксис
+`#define constantName value`
+
+
+[float]
+=== Параметри
+`constantName`: назва макросу, який слід визначити. +
+`value`: значення, яке буде присвоєно макросу.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+#define ledPin 3
+// The compiler will replace any mention of ledPin with the value 3 at compile time.
+----
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження
+Після директиви #define не ставиться крапка з комою. Якщо ви її поставите, компілятор видасть загадкові помилки далі по сторінці.
+
+[source,arduino]
+----
+#define ledPin 3; // this is an error
+----
+
+Аналогічно, якщо поставити знак рівності після директиви #define, це також призведе до загадкової помилки компілятора далі по коду.
+
+[source,arduino]
+----
+#define ledPin  = 3 // this is also an error
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+* #LANGUAGE# link:../../../variables/variable-scope-qualifiers/const[const]
+
+--
+// SEE ALSO SECTION ENDS

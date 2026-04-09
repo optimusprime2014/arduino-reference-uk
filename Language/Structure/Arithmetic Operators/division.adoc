@@ -1,0 +1,86 @@
+---
+title: "/"
+title_expanded: "division"
+categories: [ "Structure" ]
+subCategories: [ "Arithmetic Operators" ]
+---
+
+
+
+
+
+= / Ділення
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+*Ділення* - це одна з чотирьох основних арифметичних операцій. Оператор `/` (коса риска) оперує двома операндами для отримання результату.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`result = numerator / denominator;`
+
+
+[float]
+=== Parameters
+`result`: змінна. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`numerator`: змінна або константа. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`. +
+`denominator`: *не нульова* змінна або константа. Допустимі типи даних: `int`, `float`, `double`, `byte`, `short`, `long`.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+
+[source,arduino]
+----
+int a = 50;
+int b = 10;
+int c = 0;
+c = a / b;  // the variable 'c' gets a value of 5 after this statement is executed
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+1. Якщо одне з чисел (операндів) належить до типу float або double, для обчислення використовуватиметься математика з плаваючою комою.
+
+2. Якщо операнди мають тип даних float / double, а змінна, яка зберігає результат, є цілим числом, то зберігається лише ціла частина, а дробова частина числа втрачається.
+
+[source,arduino]
+----
+float a = 55.5;
+float b = 6.6;
+int c = 0;
+c = a / b;  // the variable 'c' stores a value of 8 only as opposed to the expected result of 8.409
+----
+[%hardbreaks]
+
+--
+// HOW TO USE SECTION ENDS
+
+// SEE ALSO SECTION STARTS
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,65 @@
+---
+title: continue
+categories: [ "Structure" ]
+subCategories: [ "Control Structure" ]
+---
+
+
+
+
+
+= continue
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+[%hardbreaks]
+Оператор `continue` пропускає залишок поточної ітерації циклу (`link:../for[for]`, `link:../while[while]` або `link:../dowhile[do...while]`). Він продовжує роботу з перевірки умовного виразу циклу та переходу до наступних ітерацій.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+Наступний код записує значення від 0 до 255 на пін `PWMpin`, але пропускає значення в діапазоні від 41 до 119.
+[source,arduino]
+----
+for (int x = 0; x <= 255; x ++) {
+  if (x > 40 && x < 120) {  // create jump in values
+    continue;
+  }
+
+  analogWrite(PWMpin, x);
+  delay(50);
+}
+----
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+
+// SEE ALSO SECTION BEGINS
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="language"]
+
+--
+// SEE ALSO SECTION ENDS

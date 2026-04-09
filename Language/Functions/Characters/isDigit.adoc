@@ -1,0 +1,78 @@
+---
+title: "isDigit()"
+categories: [ "Functions" ]
+subCategories: [ "Characters" ]
+---
+
+
+
+
+
+= isDigit(thisChar)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Перевіряє, чи є символ цифрою. Повертає true, якщо thisChar містить цифру.
+[%hardbreaks]
+
+
+[float]
+=== Синтаксис
+`isDigit(thisChar)`
+
+
+[float]
+=== Параметри
+`thisChar`: змінна. Дозволені типи даних: `char`.
+
+
+[float]
+=== Повертає
+`true`: якщо thisChar є цифрою.
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду
+
+[source,arduino]
+----
+if (isDigit(myChar)) {  // tests if myChar is a digit
+  Serial.println("The character is a number");
+}
+else {
+  Serial.println("The character is not a number");
+}
+----
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Див. також
+
+[role="language"]
+* #LANGUAGE#  link:../../../variables/data-types/char[char]
+* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
+* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
+* #LANGUAGE# link:../../communication/serial/read[read()]
+
+--
+// SEE ALSO SECTION ENDS

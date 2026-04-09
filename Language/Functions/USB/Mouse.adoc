@@ -1,0 +1,86 @@
+---
+title: Mouse
+categories: [ "Functions" ]
+subCategories: [ "USB" ]
+
+---
+
+
+
+
+
+= Mouse
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис
+Функції миші дозволяють платам на базі мікроконтролерів 32u4 або SAMD керувати переміщенням курсору на підключеному комп'ютері через їхній власний USB-порт. При оновленні позиції курсору вона завжди фіксується відносно попереднього розташування курсору.
+[%hardbreaks]
+--
+// OVERVIEW SECTION ENDS
+
+[float]
+=== Сумісне обладнання
+HID підтримується на наступних платах:
+[options="header"]
+|=================================================================================================
+| Плата                                                                | Підтримувані піни
+| link:https://docs.arduino.cc/hardware/leonardo[Leonardo]             | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/micro[Micro]                   | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/due[Due]                       | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/zero[Zero]                     | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/uno-r4-minima[UNO R4 Minima]   | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/uno-r4-wifi[UNO R4 WiFi]       | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/giga-r1-wifi[Giga R1]               | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/hardware/nano-esp32[Nano ESP32]         | Усі цифрові та аналогові піни
+| link:https://docs.arduino.cc/#mkr-family[MKR Family]                 | Усі цифрові та аналогові піни
+|=================================================================================================
+
+[float]
+=== Примітки та попередження
+Ці основні бібліотеки дозволяють платам на базі 32u4 та SAMD (Leonardo, Esplora, Zero, Due та сімейству MKR) виглядати як звичайна (native) миша та/або клавіатура для підключеного комп'ютера.
+[%hardbreaks]
+*Одне застереження щодо використання бібліотек Mouse та Keyboard*: якщо бібліотека Mouse або Keyboard постійно працює, запрограмувати вашу плату буде складно. Функції, такі як `Mouse.move()` та `Keyboard.print()`, будуть переміщати ваш курсор або надсилати натискання клавіш до підключеного комп'ютера, і їх слід викликати лише тоді, коли ви готові з ними працювати. Рекомендується використовувати систему керування, щоб увімкнути цю функціональність, наприклад, фізичний перемикач або реагування лише на певний ввід, який ви можете контролювати. Зверніться до прикладів Mouse та Keyboard щодо деяких способів обробки цього.
+[%hardbreaks]
+Під час використання бібліотеки Mouse або Keyboard, можливо, краще спочатку перевірити ваш вивід за допомогою link:../../communication/serial/print[Serial.print()]. Таким чином, ви можете бути впевнені, що знаєте, які значення повідомляються.
+[%hardbreaks]
+// FUNCTIONS SECTION STARTS
+[#functions]
+--
+
+'''
+
+[float]
+=== Функції
+link:../mouse/mousebegin[Mouse.begin()] +
+link:../mouse/mouseclick[Mouse.click()] +
+link:../mouse/mouseend[Mouse.end()] +
+link:../mouse/mousemove[Mouse.move()] +
+link:../mouse/mousepress[Mouse.press()] +
+link:../mouse/mouserelease[Mouse.release()] +
+link:../mouse/mouseispressed[Mouse.isPressed()]
+
+'''
+
+--
+// FUNCTIONS SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також
+
+[role="example"]
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/KeyboardAndMouseControl[KeyboardAndMouseControl^]: Демонструє команди Mouse та Keyboard в одній програмі.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/ButtonMouseControl[ButtonMouseControl^]: Керуйте рухом курсору за допомогою 5 кнопок.
+* #EXAMPLE# http://www.arduino.cc/en/Tutorial/JoystickMouseControl[JoystickMouseControl^]: Керує рухом курсору комп'ютера за допомогою джойстика після натискання кнопки.
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,72 @@
+---
+title: "!"
+title_expanded: logical not
+categories: [ "Structure" ]
+subCategories: [ "Boolean Operators" ]
+---
+
+
+
+
+
+= ! Логічне НІ (Logical NOT)
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Опис (Description)
+*Логічне НІ* (Logical NOT) повертає `true`, якщо операнд є `false`, і навпаки.
+[%hardbreaks]
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Приклад коду (Example Code)
+Цей оператор можна використовувати всередині умови оператора link:../../control-structure/if[if].
+
+[source,arduino]
+----
+if (!x) { // якщо x не true
+  // твердження (statements)
+}
+----
+
+Його можна використовувати для інвертування булевого значення.
+[source,arduino]
+----
+x = !y; // інвертоване значення y зберігається в x
+----
+
+
+[%hardbreaks]
+
+[float]
+=== Примітки та попередження (Notes and Warnings)
+Побітове ні ~ (тильда) виглядає зовсім інакше, ніж булеве ні ! (знак оклику), але ви все одно повинні бути впевнені, який з них вам потрібен і де.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== Дивіться також (See also)
+
+[role="language"]
+* #LANGUAGE# link:../../bitwise-operators/bitwisenot[~ Побітове НІ]
+
+--
+// SEE ALSO SECTION ENDS

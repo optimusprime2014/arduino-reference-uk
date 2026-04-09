@@ -1,0 +1,91 @@
+---
+title: delay()
+categories: [ "Functions" ]
+subCategories: [ "Time" ]
+---
+
+
+
+
+
+= delay()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Призупиняє виконання програми на час (у мілісекундах), що вказаний як параметр. (В одній секунді налічується 1000 мілісекунд).
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`delay(ms)`
+
+
+[float]
+=== Parameters
+`ms`: кількість мілісекунд для затримки. Допустимі типи даних: `unsigned long`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код призупиняє програму на одну секунду перед зміною стану вихідного піна.
+
+[source,arduino]
+----
+int ledPin = 13;              // LED connected to digital pin 13
+
+void setup() {
+  pinMode(ledPin, OUTPUT);    // sets the digital pin as output
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH); // sets the LED on
+  delay(1000);                // waits for a second
+  digitalWrite(ledPin, LOW);  // sets the LED off
+  delay(1000);                // waits for a second
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Незважаючи на те, що легко створити миготливий світлодіод за допомогою функції `delay()`, а багато скетчів використовують короткі затримки для таких завдань, як усунення брязкоту контактів, використання `delay()` у скетчі має значні недоліки. Під час виконання функції затримки неможливо проводити жодних зчитувань датчиків, математичних розрахунків або маніпуляцій з пінами, тож це фактично зупиняє більшість інших дій. Для альтернативних підходів до контролю часу дивіться скетч link:http://arduino.cc/en/Tutorial/BlinkWithoutDelay[Blink Without Delay], який у циклі опитує функцію link:../millis[millis()], допоки не пройде достатньо часу. Досвідчені програмісти зазвичай уникають використання `delay()` для часу очікування подій, що перевищує десятки мілісекунд, хіба що скетч Arduino дуже простий.
+
+Проте деякі дії продовжують виконуватися, поки функція delay() контролює чип Atmega, оскільки вона не вимикає переривання. Послідовний зв’язок, що з’являється на піні RX, записується, значення ШІМ (link:../../analog-io/analogwrite[analogWrite]) і стани пінів зберігаються, та й переривання (link:../../external-interrupts/attachinterrupt[interrupts]) працюватимуть як слід.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/BlinkWithoutDelay[Blink Without Delay^]
+
+--
+// SEE ALSO SECTION ENDS

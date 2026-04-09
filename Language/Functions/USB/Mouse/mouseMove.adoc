@@ -1,0 +1,147 @@
+---
+title: Mouse.move()
+---
+
+
+
+
+= Mouse.move()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Переміщує курсор на підключеному комп'ютері. Рух на екрані завжди відбувається відносно поточного розташування курсора. Перш ніж використовувати `Mouse.move()`, ви повинні викликати link:../mousebegin[Mouse.begin()]
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`Mouse.move(xVal, yVal, wheel)`
+
+
+[float]
+=== Parameters
+`xVal`: значення для переміщення по осі x. Дозволені типи даних: `signed char`. +
+`yVal`: значення для переміщення по осі y. Дозволені типи даних: `signed char`. +
+`wheel`: значення для прокручування колеса. Дозволені типи даних: `signed char`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Опишіть, про що йдеться у прикладі коду, та додайте відповідний код  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+
+
+[source,arduino]
+----
+#include <Mouse.h>
+
+const int xAxis = A1;         //аналоговий датчик для осі X
+const int yAxis = A2;         // аналоговий датчик для осі Y
+
+int range = 12;               // вихідний діапазон руху X або Y
+int responseDelay = 2;        // затримка реакції миші, в мс
+int threshold = range / 4;    // поріг спокою
+int center = range / 2;       // значення позиції спокою
+int minima[] = {1023, 1023};  // фактичні мінімуми analogRead для {x, y}
+int maxima[] = {0, 0};        // фактичні максимуми analogRead для {x, y}
+int axis[] = {xAxis, yAxis};  // номери контактів для {x, y}
+int mouseReading[2];          // кінцеві показники миші для {x, y}
+
+
+void setup() {
+  Mouse.begin();
+}
+
+void loop() {
+  // прочитати та масштабувати дві осі:
+  int xReading = readAxis(0);
+  int yReading = readAxis(1);
+
+  // перемістити мишу:
+  Mouse.move(xReading, yReading, 0);
+  delay(responseDelay);
+}
+
+/*
+  зчитує вісь (0 або 1 для x або y) та масштабує
+  діапазон аналогового входу до діапазону від 0 до <range>
+*/
+
+int readAxis(int axisNumber) {
+  int distance = 0; // відстань від центру вихідного діапазону
+
+  // читати аналоговий вхід:
+  int reading = analogRead(axis[axisNumber]);
+
+  // якщо поточне значення перевищує максимум або мінімум для цієї осі,
+  // скинути максимум або мінімум:
+  if (reading < minima[axisNumber]) {
+    minima[axisNumber] = reading;
+  }
+  if (reading > maxima[axisNumber]) {
+    maxima[axisNumber] = reading;
+  }
+
+  // зіставити значення з діапазону аналогового входу до вихідного діапазону:
+  reading = map(reading, minima[axisNumber], maxima[axisNumber], 0, range);
+
+  // якщо вихідне значення знаходиться за межами
+  // порогу позиції спокою, використати його:
+  if (abs(reading - center) > threshold) {
+    distance = (reading - center);
+  }
+
+  // вісь Y потрібно інвертувати, щоб
+  // правильно відобразити рух:
+  if (axisNumber == 1) {
+    distance = -distance;
+  }
+
+  // повернути відстань для цієї осі:
+  return distance;
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Коли ви використовуєте команду `Mouse.move()`, Arduino перебирає керування вашою мишею! Переконайтеся, що ви маєте контроль, перш ніж використовувати команду. Використання кнопки для перемикання стану керування мишею є ефективним кроком.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="language"]
+* #LANGUAGE# link:../mouseclick[Mouse.click()]
+* #LANGUAGE# link:../mouseend[Mouse.end()]
+* #LANGUAGE# link:../mousepress[Mouse.press()]
+* #LANGUAGE# link:../mouserelease[Mouse.release()]
+* #LANGUAGE# link:../mouseispressed[Mouse.isPressed()]
+
+--
+// SEE ALSO SECTION ENDS

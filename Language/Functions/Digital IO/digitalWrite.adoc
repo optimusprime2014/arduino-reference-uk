@@ -1,0 +1,95 @@
+---
+title: digitalWrite()
+categories: [ "Functions" ]
+subCategories: [ "Digital I/O" ]
+---
+
+
+//
+:ext-relative: .html
+
+= digitalWrite()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Записує значення `HIGH` або `LOW` на цифровий пін.
+
+Якщо пін був налаштований як `OUTPUT` за допомогою `pinMode()`, його напруга буде встановлена у відповідне значення: 5В (або 3.3В на платах з 3.3В) для `HIGH`, 0В (земля) для `LOW`.
+[%hardbreaks]
+
+Якщо пін налаштований як `INPUT`, `digitalWrite()` увімкне (`HIGH`) або вимкне (`LOW`) внутрішній підтягуючий резистор на вхідному піні. Рекомендується встановити `pinMode()` у значення `INPUT_PULLUP`, щоб увімкнути внутрішній підтягуючий резистор. Дивіться посібник http://arduino.cc/en/Tutorial/DigitalPins[Digital Pins^] для отримання додаткової інформації.
+[%hardbreaks]
+
+Якщо ви не встановите `pinMode()` як `OUTPUT` і підключите світлодіод до піна, при виклику `digitalWrite(HIGH)` світлодіод може світитися тьмяно. Без явного встановлення `pinMode()`, `digitalWrite()` увімкне внутрішній підтягуючий резистор, який діє як великий струмообмежувальний резистор.
+[%hardbreaks]
+
+[float]
+=== Syntax
+`digitalWrite(pin, value)`
+
+
+[float]
+=== Parameters
+`pin`: номер піна Arduino. +
+`value`: `HIGH` або `LOW`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Цей код робить цифровий пін 13 `OUTPUT` і перемикає його, чергуючи `HIGH` та `LOW` з інтервалом в одну секунду.
+
+[source,arduino]
+----
+void setup() {
+  pinMode(13, OUTPUT);    // sets the digital pin 13 as output
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // sets the digital pin 13 on
+  delay(1000);            // waits for a second
+  digitalWrite(13, LOW);  // sets the digital pin 13 off
+  delay(1000);            // waits for a second
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Аналогові вхідні піни можна використовувати як цифрові піни, позначаючи їх як A0, A1 тощо. Винятком є піни A6 і A7 на Arduino Nano, Pro Mini та Mini, які можна використовувати лише як аналогові входи.
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/DigitalPins[Description of the digital pins^]
+
+--
+// SEE ALSO SECTION ENDS

@@ -1,0 +1,88 @@
+---
+title: delayMicroseconds()
+categories: [ "Functions" ]
+subCategories: [ "Time" ]
+---
+
+
+
+
+
+= delayMicroseconds()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== Description
+Призупиняє виконання програми на час (у мікросекундах), що вказаний як параметр. В одній мілісекунді міститься тисяча мікросекунд, а в одній секунді — мільйон мікросекунд.
+
+Наразі найбільше значення, яке дасть точну затримку, становить 16383; більші значення можуть призвести до надзвичайно короткої затримки. Це може бути змінено в майбутніх випусках Arduino. Для затримок, що є довшими за кілька тисяч мікросекунд, вам слід використовувати функцію `delay()`.
+[%hardbreaks]
+
+
+[float]
+=== Syntax
+`delayMicroseconds(us)`
+
+
+[float]
+=== Parameters
+`us`: кількість мікросекунд для затримки. Допустимі типи даних: `unsigned int`.
+
+
+[float]
+=== Returns
+Нічого
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== Example Code
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Код налаштовує пін з номером 8 для роботи як вихідного піна. Він надсилає серію імпульсів з періодом приблизно 100 мікросекунд. Приблизність виникає через виконання інших інструкцій коду.
+
+[source,arduino]
+----
+int outPin = 8;               // digital pin 8
+
+void setup() {
+  pinMode(outPin, OUTPUT);    // sets the digital pin as output
+}
+
+void loop() {
+  digitalWrite(outPin, HIGH); // sets the pin on
+  delayMicroseconds(50);      // pauses for 50 microseconds
+  digitalWrite(outPin, LOW);  // sets the pin off
+  delayMicroseconds(50);      // pauses for 50 microseconds
+}
+----
+[%hardbreaks]
+
+[float]
+=== Notes and Warnings
+Ця функція працює дуже точно у діапазоні від 3 мікросекунд до 16383. Ми не можемо гарантувати, що delayMicroseconds буде працювати точно для коротших часів затримки. Затримки тривалішого часу практично можуть бути надзвичайно короткими (перевищення значення).
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== See also
+
+--
+// SEE ALSO SECTION ENDS
