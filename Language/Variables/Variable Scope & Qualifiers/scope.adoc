@@ -8,7 +8,7 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 
 
 
-= Variable Scope
+= variable scope
 
 
 // OVERVIEW SECTION STARTS
@@ -16,8 +16,8 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Description
-Змінні в мові програмування C++, яку використовує Arduino, мають властивість, яка називається scope (область видимості). Це на відміну від ранніх версій мов, таких як BASIC, де кожна змінна є _глобальною_ змінною.
+=== Опис
+Змінні в мові програмування C++, яку використовує Arduino, мають властивість - scope (область видимості). Це на відміну від ранніх версій мов, таких як BASIC, де кожна змінна є _глобальною_ змінною.
 
 Глобальна змінна — це така змінна, яку можуть бачити всі функції в програмі. Локальні змінні видимі лише для тієї функції, в якій вони оголошені. В середовищі Arduino будь-яка змінна, оголошена поза межами функції (наприклад, `link:../../../structure/sketch/setup[setup()]`, `link:../../../structure/sketch/loop[loop()]`, тощо), є _глобальною_ змінною.
 
@@ -37,25 +37,25 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
 [source,arduino]
 ----
-int gPWMval;  // any function will see this variable
+int gPWMval;  // доступ до змінної з будь якого методу чи функції в межах файлу
 
 void setup() {
   // ...
 }
 
 void loop() {
-  int i;    // "i" is only "visible" inside of "loop"
-  float f;  // "f" is only "visible" inside of "loop"
+  int i;    // доступ до "i" та її виклик існує лише в межах циклу
+  float f;  // доступ до "f" та її виклик існує лише в межах циклу
   // ...
 
   for (int j = 0; j < 100; j++) {
-    // variable j can only be accessed inside the for-loop brackets
+    // todo
   }
 }
 ----
@@ -71,7 +71,7 @@ void loop() {
 --
 
 [float]
-=== See also
+=== Додатково
 
 --
 // SEE ALSO SECTION ENDS
