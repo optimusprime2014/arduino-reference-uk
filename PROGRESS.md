@@ -16,7 +16,8 @@ If file is present below then It has translated and checked to Ukrainian lang al
     - Data Types
         - ...
     - Utilities
-        - ...
+        - PROGMEM.adoc [in_progress]
+        - sizeof.adoc [in_progress]
     - Variable Scope & Qualifiers
         - const.adoc [updated]
         - scope.adoc [updated]
