@@ -4,7 +4,7 @@ categories: [ "Variables" ]
 subCategories: [ "Variable Scope & Qualifiers" ]
 ---
 
-= Static
+= static
 
 
 // OVERVIEW SECTION STARTS
@@ -12,10 +12,10 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Description
+=== Опис
 Ключове слово `static` використовується для створення змінних, які видимі лише одній функції. Однак на відміну від локальних змінних, які створюються і знищуються щоразу під час виклику функції, статичні змінні існують поза межами виклику функції, зберігаючи свої дані між викликами функцій.
 
-Змінні, оголошені як статичні, створюватимуться та ініціалізовуватимуться лише під час першого виклику функції.
+Змінні, оголошені як статичні, створюються та ініціалізуються лише під час першого виклику функції.
 [%hardbreaks]
 
 --
@@ -29,21 +29,12 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
 [source,arduino]
 ----
-/* RandomWalk
-  Paul Badger 2007
-  RandomWalk wanders up and down randomly between two
-  endpoints. The maximum move in one loop is governed by
-  the parameter "stepsize".
-  A static variable is moved up and down a random amount.
-  This technique is also known as "pink noise" and "drunken walk".
-*/
-
 #define randomWalkLowRange -20
 #define randomWalkHighRange 20
 int stepsize;
@@ -55,7 +46,6 @@ void setup() {
 }
 
 void loop() {
-  //  test randomWalk function
   stepsize = 5;
   thisTime = randomWalk(stepsize);
   Serial.println(thisTime);
@@ -63,16 +53,16 @@ void loop() {
 }
 
 int randomWalk(int moveSize) {
-  static int place; // variable to store value in random walk - declared static so that it stores
-  // values in between function calls, but no other functions can change its value
+  static int place; // змінна оголошена як статична
+  // значення зберігається між викликами функції без можливості її зміни ззовні
 
   place = place + (random(-moveSize, moveSize + 1));
 
-  if (place < randomWalkLowRange) {                               // check lower and upper limits
-    place = randomWalkLowRange + (randomWalkLowRange - place);    // reflect number back in positive direction
+  if (place < randomWalkLowRange) {                               // перевірка верхньої межі
+    place = randomWalkLowRange + (randomWalkLowRange - place);    // відбиття від межі у позитивному напрямку
   }
-  else if (place > randomWalkHighRange) {
-    place = randomWalkHighRange - (place - randomWalkHighRange);  // reflect number back in negative direction
+  else if (place > randomWalkHighRange) {                         // перевірка нижньої межі
+    place = randomWalkHighRange - (place - randomWalkHighRange);  // відбиття від межі у негативному напрямку
   }
 
   return place;
@@ -90,7 +80,7 @@ int randomWalk(int moveSize) {
 --
 
 [float]
-=== See also
+=== Додатково
 
 --
 // SEE ALSO SECTION ENDS

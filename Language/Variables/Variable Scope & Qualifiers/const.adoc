@@ -8,7 +8,7 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 
 
 
-= const keyword
+= const
 
 
 // OVERVIEW SECTION STARTS
@@ -16,7 +16,7 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Description
+=== Опис
 Ключове слово `const` означає постійний, не змінний. Це _модифікатор_ доступу до змінної, який змінює поведінку змінної та робить її доступною "тільки для читання" (_read-only_). Це означає, що змінна може використовуватися як і будь-яка інша змінна свого типу, але її значення НЕ може бути змінено. Якщо спробуєте присвоїти нове значення змінній `const` - то отримаєте помилку компілятора.
 
 Змінні визначені за допомогою ключового слова `const` називаються _константами_, що підпорядковуються правилам link:../scope[області видимості змінних]. Це, а також інші аспекти використання link:../../../structure/further-syntax/define[#define], робить ключове слово `const` оптимальним методом для визначення констант і має перевагу над використанням link:../../../structure/further-syntax/define[`#define`].
@@ -33,7 +33,7 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
@@ -42,13 +42,13 @@ subCategories: [ "Variable Scope & Qualifiers" ]
 const float pi = 3.14;
 float x;
 // ....
-x = pi * 2; // it's fine to use consts in math
-pi = 7;     // illegal - you can't write to (modify) a constant
+x = pi * 2; // дозволене використання константи
+pi = 7;     // не дозволений виклик - змінювати знячення константи заборонено
 ----
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
+=== Нотатки
 *link:../../../structure/further-syntax/define[`#define`] або `const`*
 
 Ви можете використовувати як `const`, так і link:../../../structure/further-syntax/define[`#define`] для створення числових або рядкових констант. Для link:../../data-types/array[масивів] необхідно використовувати `const`. В загальному випадку `const` має перевагу над link:../../../structure/further-syntax/define[`#define`] для визначення констант.
@@ -63,10 +63,10 @@ pi = 7;     // illegal - you can't write to (modify) a constant
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
-* #LANGUAGE# link:../../../structure/further-syntax/define[#define]
+* link:../../../structure/further-syntax/define[#define]
 
 --
 // SEE ALSO SECTION ENDS
