@@ -61,10 +61,10 @@ short ledPin = 13
 --
 
 [float]
-=== Дивіться також
+=== Додатково
 
 [role="language"]
-* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+* #LANGUAGE# link:../../constants/integerconstants[Цілочисельні Константи]
 
 --
 // SEE ALSO SECTION ENDS

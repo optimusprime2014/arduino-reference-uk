@@ -12,7 +12,7 @@ subCategories: [ "Data Types" ]
 
 [float]
 === Опис
-`boolean` — це нестандартний псевдонім типу для `link:../../../variables/data-types/bool[bool]`, визначений Arduino. Рекомендується натомість використовувати стандартний тип link:../../../variables/data-types/bool[`bool`], який є ідентичним.
+`boolean` — це нестандартний псевдонім логічного типу змінної для `link:../../../variables/data-types/bool[bool]`, визначений Arduino. Рекомендується натомість використовувати стандартний тип link:../../../variables/data-types/bool[`bool`], який є ідентичним.
 
 
 [%hardbreaks]
@@ -28,7 +28,7 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Дивіться також
+=== Додатково
 
 [role="language"]
 

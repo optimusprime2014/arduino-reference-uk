@@ -11,12 +11,12 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
-Змінні типу unsigned long - це змінні розширеного розміру для зберігання чисел, і вони зберігають 32 біти (4 байти). На відміну від стандартних long, unsigned long не зберігають від'ємні числа, тому їхній діапазон становить від 0 до 4 294 967 295 (2^32 - 1).
+=== Опис
+Змінні типу `unsigned long` - це змінні розширеного розміру для зберігання чисел, і вони зберігають 32 біти (4 байти). На відміну від стандартних `long`, `unsigned long` не зберігають від'ємні числа, тому їхній діапазон становить від 0 до 4 294 967 295 (2^32 - 1).
 [%hardbreaks]
 
 [float]
-=== Syntax
+=== Синтаксис
 `unsigned long var = val;`
 
 
@@ -36,9 +36,8 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Example Code
-// Опишіть, про що приклад коду, і додайте відповідний код   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 [source,arduino]
 ----
@@ -51,9 +50,9 @@ void setup() {
 void loop() {
   Serial.print("Time: ");
   time = millis();
-  //prints time since program started
+  // виводимо час у мілісекундах, який минув з моменту запуску програми
   Serial.println(time);
-  // wait a second so as not to send massive amounts of data
+  // затримка 1 секунда
   delay(1000);
 }
 ----
@@ -67,10 +66,10 @@ void loop() {
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
-* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+* #LANGUAGE# link:../../constants/integerconstants[Цілочисельні константи]
 
 --
 // SEE ALSO SECTION ENDS

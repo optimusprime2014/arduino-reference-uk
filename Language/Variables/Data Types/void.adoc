@@ -11,8 +11,8 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
-Ключове слово `void` використовується тільки в оголошеннях функцій. Воно вказує на те, що функція не повинна повертати жодної інформації до функції, з якої вона була викликана.
+=== Опис
+Ключове слово `void` використовується тільки в оголошеннях функцій. Воно вказує на те, що функція не повинна повертати жодної інформації, з якої вона була викликана.
 [%hardbreaks]
 
 --
@@ -26,19 +26,18 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 Код показує, як використовувати `void`.
 
 [source,arduino]
 ----
-// actions are performed in the functions "setup" and "loop"
-// but  no information is reported to the larger program
-
+// Ця функція не повертає жодної інформації
 void setup() {
   // ...
 }
 
+// Ця функція не повертає жодної інформації
 void loop() {
   // ...
 }
@@ -54,10 +53,10 @@ void loop() {
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
-* #LANGUAGE# link:../../constants/integerconstants[Цілочисельні константи (Integer Constants)]
+* #LANGUAGE# link:../../constants/integerconstants[Цілочисельні константи]
 
 --
 // SEE ALSO SECTION ENDS

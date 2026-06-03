@@ -11,18 +11,18 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
+=== Опис
 Байт зберігає 8-бітове беззнакове число, від 0 до 255.
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== Синтаксис
 `byte var = val;`
 
 
 [float]
-=== Parameters
+=== Параметри
 `var`: ім'я змінної. +
 `val`: значення, яке присвоюється цій змінній.
 
@@ -36,6 +36,32 @@ subCategories: [ "Data Types" ]
 [#howtouse]
 --
 
+[float]
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+Цей код створює байт зміннуз назвою 'myByte', яке спочатку дорівнює 100. З кожним циклом значення змінюється.
+
+[source,arduino]
+----
+byte myByte = 100;          // створює байт змінну з назвою 'myByte'
+
+void setup() {
+  Serial.begin(9600);       // відображаючись у моніторі послідовного порту
+}
+
+void loop() {
+  myByte++;                 // змінна збільшується на 1 (один) з кожною ітерацією циклу
+  Serial.println(myByte);   // відображаючись у моніторі послідовного порту
+  delay(1000);
+}
+----
+[%hardbreaks]
+
+[float]
+=== Нотатки
+Байти можуть зберігати лише беззнакові числа в діапазоні від 0 до 255. Якщо вам потрібно зберегти від'ємне число, використовуйте `link:../int[int]`.
+
+
 --
 // HOW TO USE SECTION ENDS
 
@@ -44,7 +70,7 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
 * #LANGUAGE# link:../../conversion/bytecast[byte()]

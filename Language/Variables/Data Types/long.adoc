@@ -49,7 +49,7 @@ subCategories: [ "Data Types" ]
 
 [source,arduino]
 ----
-long speedOfLight_km_s = 300000L;  // see the Integer Constants page for explanation of the 'L'
+long speedOfLight_km_s = 300000L;
 ----
 
 --
@@ -60,10 +60,10 @@ long speedOfLight_km_s = 300000L;  // see the Integer Constants page for explana
 --
 
 [float]
-=== Дивіться також
+=== Додатково
 
 [role="language"]
-* #LANGUAGE# link:../../constants/integerconstants[Integer Constants]
+* #LANGUAGE# link:../../constants/integerconstants[Цілочисельні Константи] +
 
 --
 // SEE ALSO SECTION ENDS
