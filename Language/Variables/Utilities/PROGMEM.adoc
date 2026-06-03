@@ -16,19 +16,19 @@ subCategories: [ "Utilities" ]
 --
 
 [float]
-=== Description
+=== Опис
 
 Зберігає постійні дані лише у флеш-пам'яті (пам'яті програм), замість того, щоб копіювати їх до SRAM під час запуску програми. Існує опис різних https://www.arduino.cc/en/Tutorial/Foundations/Memory[типів пам'яті], доступних на платі Arduino.
 
-Ключове слово `PROGMEM` є модифікатором змінної; воно має використовуватися лише з типами даних, визначеними у pgmspace.h. Воно вказує компілятору "зберігати цю інформацію лише у флеш-пам'яті", замість копіювання до SRAM під час запуску, як це відбувалося б зазвичай.
+Ключове слово `PROGMEM` є модифікатором змінної; воно має використовуватися лише з типами даних, визначеними у pgmspace.h. Воно вказує компілятору "зберігати цю інформацію лише у флеш-пам'яті", замість копіювання до SRAM під час запуску, як це відбувалося за замовчуванням.
 
 PROGMEM є частиною бібліотеки link:http://www.nongnu.org/avr-libc/user-manual/group\__avr__pgmspace.html[pgmspace.h]. Вона підключається автоматично в Arduino IDE.
 
-Хоча `PROGMEM` можна використовувати для однієї змінної, це дійсно варте уваги лише тоді, коли у вас є великий блок даних, який потрібно зберегти, що зазвичай найпростіше зробити в масиві (або іншій структурі даних C++, яка виходить за рамки нашого поточного обговорення).
+Хоча `PROGMEM` можна використовувати для однієї змінної, це варте уваги лише тоді, коли у вас є великий блок даних, який потрібно зберегти, що зазвичай найпростіше зробити в масиві (або іншій структурі даних C++).
 
 Використання `PROGMEM` – це двоетапна процедура. Після визначення змінної з `PROGMEM`, її не можна прочитати як звичайну змінну на основі SRAM: ви повинні читати її за допомогою спеціальних функцій, які також визначені у link:http://www.nongnu.org/avr-libc/user-manual/group\__avr__pgmspace.html[pgmspace.h].
 
-==== Important Note!
+==== Важливо!
 
 `PROGMEM` корисна _тільки_ при роботі з платами AVR (Uno Rev3, Leonardo тощо). Новіші плати (Due, MKR WiFi 1010, GIGA R1 WiFi тощо) автоматично використовують простір програм, коли змінна оголошена як `const`. Однак для зворотної сумісності `PROGMEM` все ще можна використовувати з новішими платами. Ця реалізація наразі знаходиться link:https://github.com/arduino/ArduinoCore-API/blob/master/api/deprecated-avr-comp/avr/pgmspace.h[тут].
 
@@ -37,18 +37,18 @@ PROGMEM є частиною бібліотеки link:http://www.nongnu.org/avr-
 
 
 [float]
-=== Syntax
+=== Синтаксис 
 `const dataType variableName[] PROGMEM = {data0, data1, data3...};`
 
-Зверніть увагу, що оскільки PROGMEM є модифікатором змінної, не існує жорсткого правила щодо того, куди він має йти, тому компілятор Arduino приймає всі визначення нижче, які також є синонімами. Однак експерименти показали, що в різних версіях Arduino (це пов'язано з версією GCC), PROGMEM може працювати в одному місці, але не в іншому. Наведений нижче приклад "таблиці рядків" був протестований на роботу з Arduino 13. Більш ранні версії IDE можуть працювати краще, якщо PROGMEM вказати після імені змінної.
+Оскільки PROGMEM є модифікатором змінної, не існує "жорсткого" правила щодо того, куди він має йти, тому компілятор Arduino приймає всі визначення нижче, які також є синонімами. Однак експерименти показали, що в різних версіях Arduino (це пов'язано з версією GCC), PROGMEM може працювати в одному місці, але не в іншому. Наведений нижче приклад "таблиці рядків" був протестований на роботу з Arduino 13. Більш ранні версії IDE можуть працювати краще, якщо PROGMEM вказати після імені змінної.
 
-`const dataType variableName[] PROGMEM = {};  // use this form` +
-`const PROGMEM dataType variableName[] = {};  // or this one` +
-`const dataType PROGMEM variableName[] = {};  // not this one`
+`const dataType variableName[] PROGMEM = {};  // використовуйте цю форму` +
+`const PROGMEM dataType variableName[] = {};  // або цю` +
+`const dataType PROGMEM variableName[] = {};  // але не цю`
 
 
 [float]
-=== Parameters
+=== Параметри
 `dataType`: Дозволені типи даних: будь-який тип змінної. +
 `variableName`: назва для вашого масиву даних.
 
@@ -63,17 +63,17 @@ PROGMEM є частиною бібліотеки link:http://www.nongnu.org/avr-
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 Наступні фрагменти коду ілюструють, як читати та записувати unsigned chars (байти) та ints (2 байти) до PROGMEM.
 
 [source,arduino]
 ----
-// save some unsigned ints
+// зберігаємо деякі дані в PROGMEM
 const PROGMEM uint16_t charSet[] = { 65000, 32796, 16843, 10, 11234};
 
-// save some chars
-const char signMessage[] PROGMEM = {"I AM PREDATOR,  UNSEEN COMBATANT. CREATED BY THE UNITED STATES DEPART"};
+// зберігаємо довгий текстовий рядок у PROGMEM
+const char signMessage[] PROGMEM = {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris."};
 
 unsigned int displayInt;
 char myChar;
@@ -81,17 +81,17 @@ char myChar;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);  // wait for serial port to connect. Needed for native USB
+  while (!Serial);  // чекаємо підключення послідовного порту. Необхідно для native USB
+  Serial.println("OK");
 
-  // put your setup code here, to run once:
-  // read back a 2-byte int
+  // читаємо назад 2-байтове ціле число
   for (byte k = 0; k < 5; k++) {
     displayInt = pgm_read_word_near(charSet + k);
     Serial.println(displayInt);
   }
   Serial.println();
 
-  // read back a char
+  // читаємо назад символи з текстового рядка
   int signMessageLength = strlen_P(signMessage);
   for (byte k = 0; k < signMessageLength; k++) {
     myChar = pgm_read_byte_near(signMessage + k);
@@ -102,34 +102,29 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // цей код не робить нічого, він просто ілюструє читання даних з PROGMEM у функції setup():
 }
 
 ----
-*Arrays of strings*
+*Масиви рядків*
 
-It is often convenient when working with large amounts of text, such as a project with an LCD, to setup an array of strings. Because strings themselves are arrays, this is actually an example of a two-dimensional array.
+Існує багато випадків, коли вам потрібно зберігати велику кількість тексту. Наприклад, якщо ви використовуєте LCD, ви можете мати набір рядків, які ви хочете відображати. Оскільки рядки є масивами символів, фактично це реалізація двовимірного массива.
 
-These tend to be large structures so putting them into program memory is often desirable. The code below illustrates the idea.
+Цей код ілюструє ідею. Зверніть увагу, що для зберігання рядків у PROGMEM потрібно використовувати спеціальні функції для читання даних, як показано в коді нижче.
 
 [source,arduino]
 ----
 /*
-  PROGMEM string demo
-  How to store a table of strings in program memory (flash),
-  and retrieve them.
+  PROGMEM рядоків
+  Як зберігати таблицю рядків у пам'яті програми (флеш-памяти),
+  і отримувати їх.
 
-  Information summarized from:
+  Більше інформації про PROGMEM можна знайти тут:
   http://www.nongnu.org/avr-libc/user-manual/pgmspace.html
-
-  Setting up a table (array) of strings in program memory is slightly complicated, but
-  here is a good template to follow.
-
-  Setting up the strings is a two-step process. First, define the strings.
 */
 
 #include <avr/pgmspace.h>
-const char string_0[] PROGMEM = "String 0"; // "String 0" etc are strings to store - change to suit.
+const char string_0[] PROGMEM = "String 0";
 const char string_1[] PROGMEM = "String 1";
 const char string_2[] PROGMEM = "String 2";
 const char string_3[] PROGMEM = "String 3";
@@ -137,28 +132,22 @@ const char string_4[] PROGMEM = "String 4";
 const char string_5[] PROGMEM = "String 5";
 
 
-// Then set up a table to refer to your strings.
-
+// Створюємо таблицю рядків, яка є масивом вказівників на рядки, які ми зберегли у PROGMEM.
 const char *const string_table[] PROGMEM = {string_0, string_1, string_2, string_3, string_4, string_5};
 
-char buffer[30];  // make sure this is large enough for the largest string it must hold
+char buffer[30];
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);  // wait for serial port to connect. Needed for native USB
+  while (!Serial);  // чекаємо підключення послідовного порту. Необхідно для native USB
   Serial.println("OK");
 }
 
 
 void loop() {
-  /* Using the string table in program memory requires the use of special functions to retrieve the data.
-     The strcpy_P function copies a string from program space to a string in RAM ("buffer").
-     Make sure your receiving string in RAM is large enough to hold whatever
-     you are retrieving from program space. */
-
-
+  // Читаємо рядки з PROGMEM і виводимо їх на послідовний порт.
   for (int i = 0; i < 6; i++) {
-    strcpy_P(buffer, (char *)pgm_read_ptr(&(string_table[i])));  // Necessary casts and dereferencing, just copy.
+    strcpy_P(buffer, (char *)pgm_read_ptr(&(string_table[i])));  // Виконуємо необхідні приведення типів і розпакування через процес копіювання.
     Serial.println(buffer);
     delay(500);
   }
@@ -167,34 +156,32 @@ void loop() {
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-Please note that variables must be either globally defined, OR defined with the static keyword, in order to work with PROGMEM.
+=== Примітки
+Зверніть увагу, що змінні повинні бути або глобально визначені, або визначені з допомогою ключового слова static.
 
-The following code will NOT work when inside a function:
-
+Цей код НЕ буде працювати, якщо він визначений локально в функції:
 [source,arduino]
 ----
 const char long_str[] PROGMEM = "Hi, I would like to tell you a bit about myself.\n";
 ----
 
-The following code WILL work, even if locally defined within a function:
-
+Цей код НЕ буде працювати, якщо він визначений локально в функції, навіть якщо він оголошений як const:
 [source,arduino]
 ----
 const static char long_str[] PROGMEM = "Hi, I would like to tell you a bit about myself.\n"
 ----
 
 [float]
-=== The `F()` macro
+=== `F()` макрос
 
-When an instruction like :
+У випадку команди на кшталт:
 
 [source,arduino]
 ----
 Serial.print("Write something on  the Serial Monitor");
 ----
 
-is used, the string to be printed is normally saved in RAM. If your sketch prints a lot of stuff on the Serial Monitor, you can easily fill the RAM. This can be avoided by not loading strings from the FLASH memory space until they are needed. You can easily indicate that the string is not to be copied to RAM at start up using the syntax:
+тут використовується рядок, який зберігається в RAM. Якщо ваш блок коду виводить дані на послідовний монітор, ви можете легко заповнити RAM. Цього можна уникнути, не завантажуючи рядки з FLASH до тих пір, доки вони не знадобляться в коді, використовуючи макрос `F()`, який визначений у Arduino.h. Макрос `F()` зберігає рядок у флеш-пам'яті, а не в RAM, і завантажує його лише тоді, коли він потрібен для виводу:
 
 [source,arduino]
 ----
@@ -209,14 +196,14 @@ Serial.print(F("Write something on the Serial Monitor that is stored in FLASH"))
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="example"]
-* #EXAMPLE# https://www.arduino.cc/en/Tutorial/Foundations/Memory[Types of memory available on an Arduino board^]
+* https://www.arduino.cc/en/Tutorial/Foundations/Memory[Типи пам'яті, доступні на платі Arduino]
 
 [role="definition"]
-* #DEFINITION# link:../../data-types/array[array]
-* #DEFINITION# link:../../data-types/string[string]
+* link:../../data-types/array[Масив]
+* link:../../data-types/string[Рядок]
 
 --
 // SEE ALSO SECTION ENDS

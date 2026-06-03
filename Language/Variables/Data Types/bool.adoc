@@ -11,7 +11,7 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
+=== Опис
 У тип `bool` можна записати одне з двох значень: `link:../../constants/truefalse[true]` або `link:../../constants/truefalse[false]`. (Кожна змінна `bool` займає один байт пам'яті.)
 
 
@@ -19,12 +19,12 @@ subCategories: [ "Data Types" ]
 
 
 [float]
-=== Syntax
+=== Синтаксис
 `bool var = val;`
 
 
 [float]
-=== Parameters
+=== Параметри
 `var`: ім'я змінної. +
 `val`: значення, яке присвоюється цій змінній.
 
@@ -39,29 +39,29 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 Цей код показує, як використовувати тип даних `bool`.
 
 [source,arduino]
 ----
-int LEDpin = 5;     // LED on pin 5
-int switchPin = 13; // momentary switch on 13, other side connected to ground
+int LEDpin = 5;     // LED на піні №5
+int switchPin = 13; // кнопка на піні №13
 
 bool running = false;
 
 void setup() {
   pinMode(LEDpin, OUTPUT);
   pinMode(switchPin, INPUT);
-  digitalWrite(switchPin, HIGH);  // turn on pullup resistor
+  digitalWrite(switchPin, HIGH);  // встановлюємо внутрішній підтягуючий резистор для кнопки
 }
 
 void loop() {
   if (digitalRead(switchPin) == LOW) {
-    // switch is pressed - pullup keeps pin high normally
-    delay(100);                     // delay to debounce switch
-    running = !running;             // toggle running variable
-    digitalWrite(LEDpin, running);  // indicate via LED
+    // кнопка натиснута, перемикаємо стан змінної running
+    delay(100);                     // затримка для уникнення "дебаунсу / дребежання" кнопки
+    running = !running;             // перемикаємо значення змінної running
+    digitalWrite(LEDpin, running);  // встановлюємо стан світлодіода відповідно до змінної running
   }
 }
 ----
@@ -75,7 +75,7 @@ void loop() {
 --
 
 [float]
-=== See also
+=== Додатково
 
 
 --

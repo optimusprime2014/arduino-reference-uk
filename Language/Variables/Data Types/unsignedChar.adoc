@@ -11,22 +11,20 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
+=== Опис
 Беззнаковий тип даних, який займає 1 байт пам'яті. Те саме, що й тип даних `link:../byte[byte]`.
-
-Тип даних unsigned char кодує числа від 0 до 255.
-
+Тип даних `unsigned char` кодує числа від 0 до 255.
 Для узгодженості стилю програмування Arduino слід віддавати перевагу типу даних link:../byte[`byte`].
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== Синтаксис
 `unsigned char var = val;`
 
 
 [float]
-=== Parameters
+=== Параметри
 `var`: ім'я змінної. +
 `val`: значення, яке ви їй призначаєте.
 
@@ -41,9 +39,8 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Example Code
-// Опишіть, про що приклад коду, і додайте відповідний код   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-
+=== Приклад коду
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 [source,arduino]
 ----
@@ -59,7 +56,7 @@ unsigned char myChar = 240;
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
 * #LANGUAGE# link:../../../functions/communication/serial/println[Serial.println]

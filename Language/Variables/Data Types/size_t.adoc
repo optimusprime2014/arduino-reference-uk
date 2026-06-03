@@ -34,7 +34,7 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Дивіться також
+=== Додатково
 
 
 --

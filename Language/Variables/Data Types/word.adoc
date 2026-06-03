@@ -11,18 +11,18 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
+=== Опис
 Слово (word) може зберігати ціле число без знака розміром принаймні 16 біт (від 0 до 65535).
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== Синтаксис
 `word var = val;`
 
 
 [float]
-=== Parameters
+=== Параметри
 `var`: ім'я змінної. +
 `val`: значення, яке присвоюється цій змінній.
 
@@ -37,7 +37,7 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
@@ -55,7 +55,7 @@ word w = 10000;
 --
 
 [float]
-=== See also
+=== Додатково
 
 --
 // SEE ALSO SECTION ENDS

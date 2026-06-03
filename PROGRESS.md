@@ -14,10 +14,31 @@ If file is present below then It has translated and checked to Ukrainian lang al
     - Conversion
         - ...
     - Data Types
-        - ...
+        - String [next_section]
+            - Functions
+            - Operators
+            - ...
+        - array.adoc [updated]
+        - bool.adoc [updated]
+        - boolean.adoc [updated]
+        - byte.adoc [updated]
+        - char.adoc [updated]
+        - double.adoc [updated]
+        - float.adoc [updated]
+        - int.adoc [updated]
+        - long.adoc [updated]
+        - short.adoc [updated]
+        - size_t.adoc [updated]
+        - string.adoc [updated]
+        - stringObject.adoc [updated]
+        - unsignedChar.adoc [updated]
+        - unsignedInt.adoc [updated]
+        - unsignedLong.adoc [updated]
+        - void.adoc [updated]
+        - word.adoc [updated]
     - Utilities
-        - PROGMEM.adoc [in_progress]
-        - sizeof.adoc [in_progress]
+        - PROGMEM.adoc [updated]
+        - sizeof.adoc [updated]
     - Variable Scope & Qualifiers
         - const.adoc [updated]
         - scope.adoc [updated]

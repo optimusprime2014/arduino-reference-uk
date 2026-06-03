@@ -11,19 +11,20 @@ subCategories: [ "Data Types" ]
 --
 
 [float]
-=== Description
+=== Опис
 Конструює екземпляр класу String. Існує кілька версій, які створюють рядки з різних типів даних (тобто форматують їх як послідовності символів), зокрема:
 
 * стала послідовність символів, у подвійних лапках (тобто масив char)
 * одиночний сталий символ, у одинарних лапках
-* ще один екземпляр об'єкта String
+* ще один екземпляр класу String
 * стале ціле число (int або long)
 * стале ціле число (int або long), використовуючи вказану систему числення
 * змінна цілого числа (int або long)
 * змінна цілого числа (int або long), використовуючи вказану систему числення
-* число з плаваючою комою (float або double), використовуючи вказану кількість десяткових знаків
+* число з плаваючою крапкою (float або double), використовуючи вказану кількість десяткових знаків
 
-Створення рядка з числа призводить до появи рядка, який містить ASCII-представлення цього числа. Значенням за замовчуванням є десяткова система числення, тому
+Створення рядка з числа призводить до появи рядка, який містить ASCII-представлення цього числа.
+Значенням за замовчуванням є десяткова система числення, тому
 [source,arduino]
 ----
 String thisString = String(13);
@@ -36,14 +37,14 @@ String thisString = String(13);
 String thisString = String(13, HEX);
 ----
 
-дає вам рядок "d", який є шістнадцятковим представленням десяткового значення 13. Або, якщо ви віддаєте перевагу двійковій,
+дає вам рядок "d", який є шістнадцятковим представленням десяткового значення 13. Або, якщо ви віддаєте перевагу двійковій системі числення,
 
 [source,arduino]
 ----
 String thisString = String(13, BIN);
 ----
 
-дає вам рядок "1101", який є двійковим представленням 13.
+дає вам рядок "1101", який є двійковим представленням числа 13.
 [%hardbreaks]
 
 
@@ -57,12 +58,12 @@ String thisString = String(13, BIN);
 [float]
 === Parameters
 `val`: змінна для форматування як String. Допустимі типи даних: string, char, byte, int, long, unsigned int, unsigned long, float, double. +
-`base`: (необов'язково) система числення, у якій слід форматувати ціле значення. +
+`base`: (опцірнально) система числення, у якій слід форматувати ціле значення. +
 `decimalPlaces`: *тільки якщо val має тип float або double*. Бажана кількість десяткових знаків.
 
 
 [float]
-=== Returns
+=== Результат
 Екземпляр класу String.
 
 --
@@ -75,20 +76,20 @@ String thisString = String(13, BIN);
 --
 
 [float]
-=== Example Code
+=== Приклад коду
 Усі наведені нижче оголошення є дійсними для Strings.
 [source,arduino]
 ----
-String stringOne = "Hello String";                    // using a constant String
-String stringOne = String('a');                       // converting a constant char into a String
-String stringTwo = String("This is a string");        // converting a constant string into a String object
-String stringOne = String(stringTwo + " with more");  // concatenating two strings
-String stringOne = String(13);                        // using a constant integer
-String stringOne = String(analogRead(0), DEC);        // using an int and a base
-String stringOne = String(45, HEX);                   // using an int and a base (hexadecimal)
-String stringOne = String(255, BIN);                  // using an int and a base (binary)
-String stringOne = String(millis(), DEC);             // using a long and a base
-String stringOne = String(5.698, 3);                  // using a float and the decimal places
+String stringOne = "Hello String";
+String stringOne = String('a');
+String stringTwo = String("This is a string");
+String stringOne = String(stringTwo + " with more");
+String stringOne = String(13);
+String stringOne = String(analogRead(0), DEC);
+String stringOne = String(45, HEX);
+String stringOne = String(255, BIN);
+String stringOne = String(millis(), DEC);
+String stringOne = String(5.698, 3);
 ----
 
 --
@@ -96,7 +97,7 @@ String stringOne = String(5.698, 3);                  // using a float and the d
 
 
 [float]
-=== Functions
+=== Функції
 
 [role="language"]
 * #LANGUAGE# link:../string/functions/charat[charAt()]
@@ -125,21 +126,21 @@ String stringOne = String(5.698, 3);                  // using a float and the d
 * #LANGUAGE# link:../string/functions/trim[trim()]
 
 [float]
-=== Operators
+=== Оператори
 
 [role="language"]
-* #LANGUAGE# link:../string/operators/elementaccess[[\] (element access)]
-* #LANGUAGE# link:../string/operators/concatenation[+ (concatenation)]
-* #LANGUAGE# link:../string/operators/append[+= (append)]
-* #LANGUAGE# link:../string/operators/comparison[== (comparison)]
-* #LANGUAGE# link:../string/operators/greaterthan[> (greater than)]
-* #LANGUAGE# link:../string/operators/greaterthanorequalto[>= (greater than or equal to)]
-* #LANGUAGE# link:../string/operators/lessthan[< (less than)]
-* #LANGUAGE# link:../string/operators/lessthanorequalto[\<= (less than or equal to)]
-* #LANGUAGE# link:../string/operators/differentfrom[!= (different from)]
+* #LANGUAGE# link:../string/operators/elementaccess[[\] (елемент доступу)]
+* #LANGUAGE# link:../string/operators/concatenation[+ (конкатенація)]
+* #LANGUAGE# link:../string/operators/append[+= (додавання)]
+* #LANGUAGE# link:../string/operators/comparison[== (порівняння, дорівнює)]
+* #LANGUAGE# link:../string/operators/greaterthan[> (більше ніж)]
+* #LANGUAGE# link:../string/operators/greaterthanorequalto[>= (більше ніж або дорівнює)]
+* #LANGUAGE# link:../string/operators/lessthan[< (менше ніж)]
+* #LANGUAGE# link:../string/operators/lessthanorequalto[\<= (менше ніж або дорівнює)]
+* #LANGUAGE# link:../string/operators/differentfrom[!= (НЕ дорівнює)]
 
 [role="example"]
-* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings[String Tutorials^]
+* #EXAMPLE# https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings[String приклади]
 
 
 // SEE ALSO SECTION STARTS
@@ -147,7 +148,7 @@ String stringOne = String(5.698, 3);                  // using a float and the d
 --
 
 [float]
-=== See also
+=== Додатково
 
 [role="language"]
 
