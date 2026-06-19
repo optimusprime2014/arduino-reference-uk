@@ -16,8 +16,17 @@ If file is present below then It has translated and checked to Ukrainian lang al
     - Data Types
         - String [next_section]
             - Functions
+                - 
             - Operators
-            - ...
+                - append.adoc [updated]
+                - comparison.adoc [updated]
+                - concatenation.adoc [updated]
+                - differentFrom.adoc [updated]
+                - elementAccess.adoc [updated]
+                - greaterThan.adoc [updated]
+                - greaterThanOrEqualTo.adoc [updated]
+                - lessThan.adoc [updated]
+                - lessThanOrEqualTo.adoc [updated]
         - array.adoc [updated]
         - bool.adoc [updated]
         - boolean.adoc [updated]
